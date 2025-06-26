@@ -1,0 +1,15 @@
+.site-footer {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 3rem;
+  }
+  
+  .footer-note {
+    margin-top: 0.3rem;
+    font-size: 0.85rem;
+    color: #777;
+  }
+  

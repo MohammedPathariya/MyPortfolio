@@ -1,0 +1,55 @@
+.logo-container {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 0px rgba(79, 157, 146, 0.6);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 3s ease-in-out infinite;
+    cursor: pointer;
+  }
+  
+  .logo-container:hover {
+    box-shadow: 0 0 12px rgba(79, 157, 146, 0.8);
+    transform: scale(1.05);
+  }
+  
+  .logo-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-icon-wrapper svg {
+    font-size: 2rem;
+    color: #4f9d92;
+    opacity: 0.85;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Pulse animation */
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0px rgba(79, 157, 146, 0.4); }
+    50% { box-shadow: 0 0 12px rgba(79, 157, 146, 0.7); }
+    100% { box-shadow: 0 0 0px rgba(79, 157, 146, 0.4); }
+  }
+  
+  /* Wiggle on click */
+  @keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(4deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  .logo-container.clicked .logo-icon-wrapper svg {
+    animation: wiggle 0.4s ease-in-out;
+  }
+  
