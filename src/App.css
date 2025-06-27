@@ -1,14 +1,36 @@
 /* src/App.css */
-.App {
-  text-align: center;
-  font-family: sans-serif;
-  padding: 2rem;
+
+/* ── Theme variables ─────────────────────────────────────────────────────── */
+:root {
+  --bg-color:     #ffffff;
+  --text-color:   #333333;
+  --accent-color: #2a9d8f;
 }
 
+.dark {
+  --bg-color:     #121212;
+  --text-color:   #f0f0f0;
+  --accent-color: #4f9d92;
+}
+
+/* ── Global resets & page styles ────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
 }
 
-section {
-  scroll-margin-top: 80px;
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: sans-serif;
+}
+
+/* ── App container ─────────────────────────────────────────────────────── */
+.App {
+  text-align: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }

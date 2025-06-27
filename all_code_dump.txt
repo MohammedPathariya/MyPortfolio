@@ -1,0 +1,1269 @@
+===== src/App.css =====
+/* src/App.css */
+.App {
+  text-align: center;
+  font-family: sans-serif;
+  padding: 2rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+:root {
+  --bg-color:    #ffffff;
+  --text-color:  #333333;
+  --accent-color: #2a9d8f;  /* hover color, etc */
+}
+
+.dark {
+  --bg-color:    #121212;
+  --text-color:  #f0f0f0;
+  --accent-color: #4f9d92;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+===== src/index.js =====
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+===== src/index.css =====
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+===== src/components/About.js =====
+import React from 'react';
+import './About.css';
+
+const About = () => {
+  return (
+    <section id= 'about' className="about">
+      <div className="about-container">
+        <h2>About Me</h2>
+        <p>
+          I’m Mohammed, a Master’s student in Data Science at Indiana University Bloomington, where I focus on machine learning, time series, and creative data applications.
+        </p>
+        <p>
+          My work explores how data can drive real-world change — from AI-generated music to real-time sign language translation, I enjoy building tools that are both thoughtful and impactful.
+        </p>
+        <p>
+          I have a strong interest in generative AI, computer vision, and turning abstract concepts into practical ML solutions. My goal is always to bridge technical depth with creative execution.
+        </p>
+        <p>
+          Outside of academics, I find inspiration in design, sketching, football, and music — each of which feeds into the way I think about systems, structure, and problem-solving.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+export default About;
+
+
+===== src/components/Education.js =====
+import React from 'react';
+import './Timeline.css';
+import { FaGraduationCap } from 'react-icons/fa';
+
+const educationData = [
+  {
+    title: 'Master of Science in Data Science',
+    institution: 'Indiana University Bloomington',
+    period: 'Aug 2024 – May 2026',
+    description: 'Specialized in Machine Learning, Data Engineering, and Applied AI. Academic projects focused on real-world data problems.',
+  },
+  {
+    title: 'Bachelor of Engineering in Artificial Intelligence & Data Science',
+    institution: 'Savitribai Phule Pune University',
+    period: 'Aug 2020 – May 2024',
+    description: 'Gained strong foundations in AI, Statistics, and Full-Stack Development. Graduated with distinction.',
+  },
+  {
+    title: 'HSC (12th Grade)',
+    institution: 'St. Vincents High School & Junior College, Pune',
+    period: '2018 – 2020',
+    description: 'Completed Higher Secondary Education with focus on Physics, Chemistry, and Mathematics.',
+  }
+];
+
+const Education = () => {
+  return (
+    <section id="education" className="timeline-section">
+      <h2 className="timeline-title">Education</h2>
+      <div className="timeline-container">
+        {educationData.map((item, index) => (
+          <div key={index} className="timeline-item">
+            <div className="timeline-dot" />
+            <div className="timeline-content">
+              <h3 className="timeline-item-title">{item.title}</h3>
+              <h4 className="timeline-institution">{item.institution}</h4>
+              <span className="timeline-period">{item.period}</span>
+              <p className="timeline-description">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Education;
+
+===== src/components/Contact.css =====
+.contact-section {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .contact-section h2 {
+    font-size: 2rem;
+    color: #2a9d8f;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-form {
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .contact-form button {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #21867a;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .social-links a {
+    color: #2a9d8f;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .social-links a:hover {
+    color: #1e6e63;
+  }
+  
+===== src/components/ProjectCard.js =====
+import React from 'react';
+import './Projects.css';
+
+const ProjectCard = ({ project }) => (
+  <div className="project-card">
+    <img src={project.thumbnail} alt={project.title} className="project-thumbnail" />
+    <h3>{project.title}</h3>
+    <p>{project.description}</p>
+    <div className="project-tags">
+      {project.tags.map((tag, idx) => (
+        <span key={idx} className="project-tag">{tag}</span>
+      ))}
+    </div>
+    <div className="project-links">
+      <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href={project.demo} target="_blank" rel="noopener noreferrer">Live Demo</a>
+    </div>
+  </div>
+);
+
+export default ProjectCard;
+
+===== src/components/Experience.js =====
+import React from 'react';
+import './Timeline.css';
+import { FaBriefcase } from 'react-icons/fa';
+
+const experienceData = [
+  {
+    title: 'Data Engineering Intern',
+    institution: 'Sparkwood IT Solutions',
+    period: 'Jan 2023 – Jul 2023',
+    description: 'Built and automated data pipelines using Python and SQL for large-scale product and sales data. Designed relational schemas that improved query performance by 40%. Developed ETL workflows for structured data ingestion and transformation. Collaborated with full-stack teams to deliver real-time data services across platforms.',
+  }
+];
+
+const Experience = () => {
+  return (
+    <section id="experience" className="timeline-section">
+      <h2 className="timeline-title">Experience</h2>
+      <div className="timeline-container">
+        {experienceData.map((item, index) => (
+          <div key={index} className="timeline-item">
+            <div className="timeline-dot" />
+            <div className="timeline-content">
+              <h3 className="timeline-item-title">{item.title}</h3>
+              <h4 className="timeline-institution">{item.institution}</h4>
+              <span className="timeline-period">{item.period}</span>
+              <p className="timeline-description">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Experience;
+
+===== src/components/ProjectFilter.js =====
+import React from 'react';
+import './Projects.css';
+
+const ProjectFilter = ({ tags, selectedTag, onTagChange }) => (
+  <div className="project-filter">
+    {tags.map(tag => (
+      <button
+        key={tag}
+        onClick={() => onTagChange(tag)}
+        className={tag === selectedTag ? 'tag-button active' : 'tag-button'}
+      >
+        {tag}
+      </button>
+    ))}
+  </div>
+);
+
+export default ProjectFilter;
+
+===== src/components/Hero.css =====
+.hero {
+  background-color: #ffffff;
+  padding: 5rem 2rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hero-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.hero-quote {
+  font-size: 1rem;
+  font-style: italic;
+  color: #2a9d8f;
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-image {
+  width: 100%;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+
+===== src/components/Skills.js =====
+// Skills.js
+import React from 'react';
+import './Skills.css';
+import { FaPython, FaJs, FaReact, FaGit, FaDocker, FaChartBar, FaUsers, FaClock, FaComments, FaQuestionCircle, FaTasks } from 'react-icons/fa';
+import { SiTypescript, SiPostgresql, SiFlask, SiMongodb, SiTensorflow, SiScikitlearn, SiPandas, SiNumpy, SiOpencv, SiR, SiExpress, SiSqlite, SiFastapi} from 'react-icons/si';
+import { TbBrandNodejs } from 'react-icons/tb';
+
+const skillsData = [
+    {
+      category: 'Languages',
+      skills: [
+        { icon: <FaPython style={{ color: '#3572A5' }} />, name: 'Python', desc: 'Scripting, ML, and Automation' },
+        { icon: <SiSqlite style={{ color: '#003B57' }} />, name: 'SQL', desc: 'Data Querying and Aggregation' },
+        { icon: <SiR style={{ color: '#276DC3' }} />, name: 'R', desc: 'Statistical Computing' },
+        { icon: <FaJs style={{ color: '#F7DF1E' }} />, name: 'JavaScript', desc: 'Frontend Logic, Interactivity' },
+        { icon: <SiTypescript style={{ color: '#3178C6' }} />, name: 'TypeScript', desc: 'Typed JavaScript Superset' },
+      ],
+    },
+    {
+      category: 'Data Stack',
+      skills: [
+        { icon: <SiTensorflow style={{ color: '#FF6F00' }} />, name: 'TensorFlow', desc: 'Deep Learning Framework' },
+        { icon: <SiScikitlearn style={{ color: '#F7931E' }} />, name: 'Scikit-learn', desc: 'Classical ML Models' },
+        { icon: <SiPandas style={{ color: '#130754' }} />, name: 'Pandas', desc: 'Data Analysis & Cleaning' },
+        { icon: <SiNumpy style={{ color: '#013243' }} />, name: 'NumPy', desc: 'Numerical Computation' },
+        { icon: <SiOpencv style={{ color: '#5C3EE8' }} />, name: 'OpenCV', desc: 'Computer Vision Toolkit' },
+      ],
+    },
+    {
+      category: 'Tools',
+      skills: [
+        { icon: <FaGit style={{ color: '#F1502F' }} />, name: 'Git', desc: 'Version Control System' },
+        { icon: <FaDocker style={{ color: '#0db7ed' }} />, name: 'Docker', desc: 'Containerization Platform' },
+        { icon: <SiPostgresql style={{ color: '#336791' }} />, name: 'PostgreSQL', desc: 'Relational Database' },
+        { icon: <SiMongodb style={{ color: '#4DB33D' }} />, name: 'MongoDB', desc: 'Document Database' },
+        { icon: <FaChartBar style={{ color: '#f2c811' }} />, name: 'Power BI', desc: 'Data Visualization Tool' },
+      ],
+    },
+    {
+      category: 'Frameworks',
+      skills: [
+        { icon: <SiFlask style={{ color: '#000000' }} />, name: 'Flask', desc: 'Python Web Framework' },
+        { icon: <SiFastapi style={{ color: '#009688' }} />, name: 'FastAPI', desc: 'High-performance API Framework' },
+        { icon: <FaReact style={{ color: '#61DAFB' }} />, name: 'React', desc: 'Frontend UI Library' },
+        { icon: <TbBrandNodejs style={{ color: '#3C873A' }} />, name: 'Node.js', desc: 'Backend JavaScript Runtime' },
+        { icon: <SiExpress style={{ color: '#999999' }} />, name: 'Express', desc: 'Minimal Node.js Backend' },
+      ],
+    },
+    {
+      category: 'Soft Skills',
+      skills: [
+        { icon: <FaUsers style={{ color: '#6f42c1' }} />, name: 'Teamwork', desc: 'Collaboration and support' },
+        { icon: <FaClock style={{ color: '#2ecc71' }} />, name: 'Time Management', desc: 'Effective task prioritization' },
+        { icon: <FaComments style={{ color: '#3498db' }} />, name: 'Communication', desc: 'Clear, impactful messaging' },
+        { icon: <FaQuestionCircle style={{ color: '#9b59b6' }} />, name: 'Critical Thinking', desc: 'Analytical problem-solving' },
+        { icon: <FaTasks style={{ color: '#e91e63' }} />, name: 'Attention to Detail', desc: 'Precise, accurate execution' },
+      ],
+    },
+  ];
+  
+  
+
+const Skills = () => {
+  return (
+    <section id="skills" className="skills-section">
+      <h2 className="skills-title">Skills</h2>
+      <p className="skills-subtext">A quick overview of the languages, frameworks, and tools I’ve developed strong proficiency in.</p>
+      <div className="skills-grid">
+        {skillsData.map((group) => (
+          <div className="skills-card" key={group.category}>
+            <h3 className="skills-category">{group.category}</h3>
+            <div className="skills-icons">
+              {group.skills.map((skill) => (
+                <div className="skill-item" key={skill.name}>
+                  <div className="skill-tooltip" data-tooltip={skill.desc}>
+                    <div className="skill-icon">{skill.icon}</div>
+                    <p className="skill-name">{skill.name}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Skills;
+===== src/components/Projects.css =====
+.projects {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  
+  .project-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tag-button {
+    padding: 0.5rem 1rem;
+    background-color: #eaf8f3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .tag-button.active {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .project-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .project-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 2rem auto;
+    gap: 1rem;
+  }
+  
+  .project-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 340px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  .project-thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .project-tags {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .project-tag {
+    background-color: #d2f3e7;
+    padding: 0.3rem 0.7rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+  }
+  
+  .project-links a {
+    margin: 0 0.5rem;
+    color: #ff6b6b;
+    text-decoration: none;
+  }
+  
+  .last-row {
+    justify-content: center;
+  }
+
+  .projects-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #3c9c8d; /* Matches the About Me heading color */
+    text-align: center;
+  }
+  
+===== src/components/Header.js =====
+import React from 'react';
+import './Header.css';
+import ThemeToggle from './ThemeToggle';
+
+const Header = () => {
+  return (
+    <header className="site-header">
+      <div className="header-container">
+        {/* Left side: custom logo */}
+        <nav className="nav-links">
+          <a href="#home">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        {/* theme switch button */}
+        <ThemeToggle /> 
+      </div>
+    </header>
+  );
+};
+
+export default Header;
+
+===== src/components/ProjectsData.js =====
+export const allProjects = [
+    {
+      title: 'LangViz',
+      description: 'A language-agnostic visualization tool that executes Python and R code in Docker containers to render plots directly in the browser.',
+      tags: ['React', 'Flask', 'Docker', 'Python', 'R'],
+      github: 'https://github.com/shubhams14-dev/LangViz',
+      demo: '#',
+      thumbnail: '/images/placeholder.jpg',
+    },
+    {
+      title: 'Spendlytic',
+      description: 'Cloud-native expense tracker with Flask + React stack, designed for personal finance and budget control.',
+      tags: ['Flask', 'React', 'MongoDB', 'JWT'],
+      github: '#',
+      demo: '#',
+      thumbnail: '/images/placeholder.jpg',
+    },
+    {
+      title: 'AudioGroove',
+      description: 'AI-generated music platform using deep learning models to create melodies and rhythms from scratch.',
+      tags: ['TensorFlow', 'Generative AI', 'Music'],
+      github: '#',
+      demo: '#',
+      thumbnail: '/images/placeholder.jpg',
+    },
+    {
+      title: 'Sign Language Translator',
+      description: 'Real-time sign language detection using OpenCV and MediaPipe with gesture classification and visual feedback.',
+      tags: ['Computer Vision', 'MediaPipe', 'OpenCV'],
+      github: '#',
+      demo: '#',
+      thumbnail: '/images/placeholder.jpg',
+    },
+    {
+      title: 'LearnBuddy',
+      description: 'An AI-powered educational assistant that explains topics using a teacher-student conversational format.',
+      tags: ['NLP', 'ChatGPT', 'React'],
+      github: '#',
+      demo: '#',
+      thumbnail: '/images/placeholder.jpg',
+    },
+  ];
+  
+===== src/components/Projects.js =====
+// src/components/Projects.js
+import React, { useState } from 'react';
+import ProjectCard from './ProjectCard';
+import ProjectFilter from './ProjectFilter';
+import { allProjects } from './ProjectsData';
+import './Projects.css';
+
+const Projects = () => {
+  const [selectedTag, setSelectedTag] = useState('All');
+
+  const handleTagChange = (tag) => setSelectedTag(tag);
+
+  const filteredProjects = selectedTag === 'All'
+    ? allProjects
+    : allProjects.filter(project => project.tags.includes(selectedTag));
+
+  const tags = ['All', ...Array.from(new Set(allProjects.flatMap(p => p.tags)))]
+
+  // Split projects into rows of 3
+  const rows = [];
+  for (let i = 0; i < filteredProjects.length; i += 3) {
+    const rowProjects = filteredProjects.slice(i, i + 3);
+    const isLastRow = i + 3 >= filteredProjects.length;
+
+    rows.push(
+      <div
+        key={`row-${i}`}
+        className={`project-row ${isLastRow ? 'last-row' : ''}`}
+      >
+        {rowProjects.map((project, idx) => (
+          <ProjectCard key={idx} project={project} />
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <section id="projects" className="projects">
+      <h2 className="projects-title">Projects</h2>
+      <ProjectFilter tags={tags} selectedTag={selectedTag} onTagChange={handleTagChange} />
+      <div className="project-wrapper">
+        {rows}
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
+===== src/components/ThemeToggle.js =====
+import React, { useState, useEffect } from 'react';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import './ThemeToggle.css';
+
+const ThemeToggle = () => {
+  // start in whatever mode was last saved (or default to light)
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem('theme') || 'light'
+  );
+
+  // whenever `theme` changes, update <html>’s class and save
+  useEffect(() => {
+    document.documentElement.className = theme;
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggle = () => {
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+  };
+
+  return (
+    <button className="theme-toggle" onClick={toggle} aria-label="Toggle theme">
+      {theme === 'light' ? <FaMoon /> : <FaSun />}
+    </button>
+  );
+};
+
+export default ThemeToggle;
+
+===== src/components/About.css =====
+.about {
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+    text-align: center;
+  }
+  
+  .about-container {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  
+  .about h2 {
+    font-size: 2rem;
+    color: #2a9d8f;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about p {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+  }
+  
+===== src/components/Skills.css =====
+.skills-section {
+    background-color: #f9f9f9;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .skills-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4f9d92;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skills-subtext {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+  }
+  
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .skills-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    padding: 2rem;
+    width: 240px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .skills-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  }
+  
+  .skills-category {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+  }
+  
+  .skills-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+  
+  .skill-item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .skill-tooltip {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: #333;
+    transition: transform 0.2s ease;
+    text-align: left;
+    position: relative;
+  }
+  
+  .skill-tooltip:hover {
+    transform: scale(1.05);
+  }
+  
+  .skill-icon {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.4rem;
+  }
+  
+  .skill-name {
+    margin: 0;
+  }
+  
+  /* Tooltip on hover */
+  .skill-tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #111;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 10;
+  }
+  
+  .skill-tooltip:hover::after {
+    opacity: 1;
+  }
+  
+===== src/components/Contact.js =====
+import React from 'react';
+import './Contact.css';
+
+const Contact = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const subject = e.target.subject.value;
+    const body = e.target.message.value;
+
+    window.location.href = `mailto:mjpathar@iu.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+  return (
+    <section id="contact" className="contact-section">
+      <h2>Contact</h2>
+      <p>Feel free to reach out via email or connect with me on other platforms.</p>
+
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+
+      <div className="social-links">
+        <a href="https://www.linkedin.com/in/mjpathariya/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/MohammedPathariya" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.instagram.com/mohammedjp08/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
+
+===== src/components/FeaturedProjects.js =====
+import React from 'react';
+
+const FeaturedProjects = ({ projects }) => (
+  <div className="featured-projects">
+    {projects.map(project => (
+      <div key={project.title} className="featured-card">
+        <img src={project.thumbnail} alt={project.title} />
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+        <div className="tags">
+          {project.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
+        </div>
+        <div className="links">
+          <a href={project.github}>GitHub</a>
+          <a href={project.demo}>Live Demo</a>
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
+export default FeaturedProjects;
+
+===== src/components/Hero.js =====
+import React from 'react';
+import './Hero.css';
+
+const Hero = () => {
+  return (
+    <section id="home" className="hero">
+      <div className="hero-container">
+        <h1 className="hero-title">Mohammed Pathariya</h1>
+
+        <p className="hero-description">
+          ML Enthusiast · Applied Data Scientist · Passionate About Design, Music & Football
+        </p>
+
+        <blockquote className="hero-quote">
+          “Bridging data and intuition to build impactful, intelligent systems.”
+        </blockquote>
+
+        <div className="hero-image">
+          <img src="/hero-single-line.svg" alt="Sketch of person at computer" />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
+
+===== src/components/ThemeToggle.css =====
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: color 0.2s;
+}
+.theme-toggle:hover {
+  color: var(--accent-color);
+}
+
+===== src/components/Header.css =====
+.site-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;               /* space between nav & toggle */
+  background-color: var(--bg-color);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Left placeholder content (logo, emoji, etc.) */
+  .header-left {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #2a9d8f;
+  }
+  
+  .header-logo {
+    font-family: monospace;
+  }
+  
+  /* Navigation links aligned right */
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #2a9d8f;
+  }
+
+  
+  .header-logo-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #2a9d8f;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  
+
+  .logo-glass {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+    background: #2a9d8f; /* semi-transparent */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+  }
+  
+  /* Hover effect with glowing ring */
+  .logo-glass:hover {
+    box-shadow: 0 0 12px rgba(42, 157, 143, 0.7), 0 0 24px rgba(42, 157, 143, 0.4);
+    transform: scale(1.08);
+  }
+  
+===== src/components/Logo.css =====
+.logo-container {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 0px rgba(79, 157, 146, 0.6);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 3s ease-in-out infinite;
+    cursor: pointer;
+  }
+  
+  .logo-container:hover {
+    box-shadow: 0 0 12px rgba(79, 157, 146, 0.8);
+    transform: scale(1.05);
+  }
+  
+  .logo-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-icon-wrapper svg {
+    font-size: 2rem;
+    color: #4f9d92;
+    opacity: 0.85;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Pulse animation */
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0px rgba(79, 157, 146, 0.4); }
+    50% { box-shadow: 0 0 12px rgba(79, 157, 146, 0.7); }
+    100% { box-shadow: 0 0 0px rgba(79, 157, 146, 0.4); }
+  }
+  
+  /* Wiggle on click */
+  @keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(4deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  .logo-container.clicked .logo-icon-wrapper svg {
+    animation: wiggle 0.4s ease-in-out;
+  }
+  
+===== src/components/Logo.js =====
+import React, { useState } from 'react';
+import {
+  FaLaptopCode,
+  FaFutbol,
+  FaMusic,
+  FaBook,
+} from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './Logo.css';
+
+const iconList = [
+  { icon: <FaLaptopCode />, label: "Coding", toast: "💻 Coding mode: building ideas into reality." },
+  { icon: <FaFutbol />, label: "Football", toast: "⚽ Game on! Data plays midfield, ideas score goals." },
+  { icon: <FaMusic />, label: "Music", toast: "🎧 Tuning in to data vibes and lo-fi logic." },
+  { icon: <FaBook />, label: "Reading", toast: "📚 Just another chapter in the story of code." },
+];
+
+const Logo = () => {
+  const [index, setIndex] = useState(0);
+  const [clicked, setClicked] = useState(false);
+
+  const handleClick = () => {
+    setClicked(true);
+    const nextIndex = (index + 1) % iconList.length;
+    setIndex(nextIndex);
+
+    toast(iconList[nextIndex].toast, {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+    });
+
+    setTimeout(() => setClicked(false), 400);
+  };
+
+  return (
+    <>
+      <div
+        className={`logo-container ${clicked ? 'clicked' : ''}`}
+        onClick={handleClick}
+        title={`Currently showing: ${iconList[index].label}`}
+      >
+        <div className="logo-icon-wrapper">
+          {iconList[index].icon}
+        </div>
+      </div>
+      <ToastContainer />
+    </>
+  );
+};
+
+export default Logo;
+
+===== src/components/Footer.css =====
+.site-footer {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 3rem;
+  }
+  
+  .footer-note {
+    margin-top: 0.3rem;
+    font-size: 0.85rem;
+    color: #777;
+  }
+  
+===== src/components/Timeline.css =====
+.timeline-section {
+    background-color: #f9f9f9;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .timeline-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4f9d92;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .timeline-container {
+    position: relative;
+    margin: 2rem auto 0;
+    padding-left: 1.5rem;
+    max-width: 800px;
+    border-left: 2px solid #e0e0e0;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 2.5rem;
+    text-align: left;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    left: -9px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 3px solid #4f9d92;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  .timeline-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .timeline-content h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 0.4rem;
+  }
+  
+  .timeline-period {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #777;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  
+  .timeline-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .timeline-icon {
+    font-size: 1.25rem;
+    vertical-align: middle;
+  }
+  
+
+  .timeline-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .timeline-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    background-color: #f9f9f9;
+    border-radius: 10px;
+  }
+  
+===== src/components/Footer.js =====
+import React from 'react';
+import './Footer.css';
+
+const Footer = () => {
+  return (
+    <footer className="site-footer">
+      <p>© {new Date().getFullYear()} Mohammed Pathariya. All rights reserved.</p>
+      <p className="footer-note">Built with React · Deployed on Vercel</p>
+    </footer>
+  );
+};
+
+export default Footer;
+
+===== src/App.js =====
+import React from 'react';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Contact from './components/Contact';
+import Skills from './components/Skills';
+import Education from './components/Education.js';
+import Experience from './components/Experience.js';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <Header />
+      <Hero />
+      <About />
+      <Projects /> {/* ✅ Add this line to render the projects section */}
+      <Skills />
+      <Education />
+      <Experience />
+      <Contact />
+      <Footer />
+      {/* Add Contact, Resume, etc. here later */}
+    </div>
+  );
+}
+
+export default App;

@@ -5,10 +5,10 @@ const Hero = () => {
   return (
     <section id="home" className="hero">
       <div className="hero-container">
-        <h1 className="hero-title">Mohammed Pathariya</h1>
+        <h1 className="hero-title">Hey, Mohammed here</h1>
 
         <p className="hero-description">
-          ML Enthusiast · Applied Data Scientist · Passionate About Design, Music & Football
+          Data Scientist in Chicago 
         </p>
 
         <blockquote className="hero-quote">

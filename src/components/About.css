@@ -1,24 +1,24 @@
+/* src/components/About.css */
 .about {
-    padding: 4rem 2rem;
-    background-color: #ffffff;
-    text-align: center;
-  }
-  
-  .about-container {
-    max-width: 750px;
-    margin: 0 auto;
-  }
-  
-  .about h2 {
-    font-size: 2rem;
-    color: #2a9d8f;
-    margin-bottom: 1.5rem;
-  }
-  
-  .about p {
-    font-size: 1.05rem;
-    color: #444;
-    margin-bottom: 1.2rem;
-    line-height: 1.7;
-  }
-  
+  background-color: var(--bg-color);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.about-container {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.about p {
+  font-size: 1.05rem;
+  color: var(--text-color);
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}

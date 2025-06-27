@@ -1,28 +1,35 @@
 import React from 'react';
 import './Header.css';
-import Logo from './Logo';
+import ThemeToggle from './ThemeToggle';
+import { FaComments } from 'react-icons/fa';
 
 const Header = () => {
+  const handleChatClick = () => {
+    // TODO: hook this up to open your chat widget/modal
+  };
+
   return (
     <header className="site-header">
       <div className="header-container">
-        {/* Left side: custom logo */}
-        <div className="header-left">
-          <Logo />
-        </div>
-
-        {/* Right side: nav links */}
+        {/* Left: nav links */}
         <nav className="nav-links">
           <a href="#home">Home</a>
-          <a href="#about">About</a>
           <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#education">Education</a>
-          <a href="#experience">Experience</a>
-          <a href="/Mohammed_Resume.pdf" target="_blank" rel="noopener noreferrer" className="resume-button">Resume</a>
           <a href="#blog">Blog</a>
           <a href="#contact">Contact</a>
         </nav>
+
+        {/* Right: theme toggle + chat button */}
+        <div className="header-controls">
+          <ThemeToggle />
+          <button
+            className="chat-toggle"
+            onClick={handleChatClick}
+            aria-label="Open chat"
+          >
+            <FaComments />
+          </button>
+        </div>
       </div>
     </header>
   );

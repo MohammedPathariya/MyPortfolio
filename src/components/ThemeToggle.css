@@ -1,0 +1,15 @@
+/* src/components/ThemeToggle.css */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--text-color);
+  opacity: 0.6;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.theme-toggle:hover {
+  opacity: 1;
+  color: var(--accent-color);
+}
