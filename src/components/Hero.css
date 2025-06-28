@@ -4,17 +4,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  gap: 1rem;                /* ↓ half the gap (was 2rem) */
+  max-width: 1000px;        /* ↑ constrain the whole hero to 1000px */
+  margin: 0 auto;           /* ↑ center that 1000px block */
   padding: 4rem 2rem;
 }
 
+/* Left column */
 .hero-left {
   flex: 1;
   max-width: 600px;
-  margin: 0 auto;
   text-align: left;
+}
+
+/* Right column */
+.hero-right {
+  flex-shrink: 0;
 }
 
 .hero-heading {
@@ -127,10 +132,6 @@
     text-align: center;
   }
   .hero-right {
-    margin: 1rem 0 0;
-  }
-  .hero-photo {
-    width: 100%;
-    max-width: 280px;
+    margin-top: 1rem;
   }
 }
