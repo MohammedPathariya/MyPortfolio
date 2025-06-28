@@ -34,3 +34,10 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
+
+/* ── Mobile adjustments ────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .App {
+    padding: 1rem;
+  }
+}

@@ -1,4 +1,5 @@
 /* src/components/Projects.css */
+
 .projects {
   background-color: var(--bg-color);
   padding: 2rem 1rem;
@@ -100,4 +101,15 @@
 
 .last-row {
   justify-content: center;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .project-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-card {
+    max-width: 100%;
+  }
 }

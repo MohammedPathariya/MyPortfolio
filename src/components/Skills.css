@@ -1,4 +1,5 @@
 /* src/components/Skills.css */
+
 .skills-section {
   background-color: var(--bg-color);
   padding: 4rem 2rem;
@@ -89,7 +90,6 @@
   margin: 0;
 }
 
-/* Tooltip bubble */
 .skill-tooltip::after {
   content: attr(data-tooltip);
   position: absolute;
@@ -110,4 +110,17 @@
 
 .skill-tooltip:hover::after {
   opacity: 1;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .skills-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .skills-card {
+    width: 100%;
+    max-width: 300px;
+  }
 }

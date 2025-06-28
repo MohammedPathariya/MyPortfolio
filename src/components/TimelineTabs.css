@@ -45,9 +45,9 @@
   position: relative;
   max-width: 800px;
   margin: 1rem auto 0;
-  padding: 1rem;                      /* ↑ padding inside border */
-  border: 1px solid #e2e8f0;         /* ↑ subtle grey border */
-  border-radius: 8px;                /* ↑ rounded corners */
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
   background-color: var(--bg-color);
 }
 
@@ -55,7 +55,7 @@
 .timeline-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 1rem;               /* ↓ tighter between items */
+  margin-bottom: 1rem;
 }
 
 /* ── Logo (no frame) ────────────────────────────────────────────────── */
@@ -67,7 +67,7 @@
 .timeline-dot img {
   width: 40px;
   height: 40px;
-  border-radius: 50%;                /* circle shape */
+  border-radius: 50%;
   object-fit: cover;
 }
 
@@ -81,16 +81,16 @@
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--text-color);
-  margin: 0;                         /* remove default margin */
-  margin-bottom: 0.2rem;             /* ↓ tighter under title */
+  margin: 0;
+  margin-bottom: 0.2rem;
 }
 
 .timeline-institution {
   font-size: 1rem;
   font-weight: 400;
   color: var(--text-color);
-  margin: 0;                         /* remove default margin */
-  margin-bottom: 0.5rem;             /* ↓ tighten gap before bullets */
+  margin: 0;
+  margin-bottom: 0.5rem;
 }
 
 .timeline-period {
@@ -98,10 +98,9 @@
   font-style: italic;
   font-size: 0.9rem;
   color: var(--text-color);
-  margin: 0 0 0.5rem;                /* small gap after period */
+  margin: 0 0 0.5rem;
 }
 
-/* ── Bullet list ───────────────────────────────────────────────────── */
 .timeline-bullets {
   list-style: disc inside;
   margin: 0;
@@ -113,4 +112,25 @@
   color: var(--text-color);
   line-height: 1.4;
   margin-bottom: 0.25rem;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .tabs {
+    flex-direction: column;
+    gap: 0;
+  }
+  .tab {
+    text-align: center;
+  }
+  .timeline-container {
+    padding-left: 0;
+    border-left: none;
+  }
+  .timeline-item {
+    flex-direction: column;
+  }
+  .timeline-dot {
+    margin-bottom: 0.5rem;
+  }
 }

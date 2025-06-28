@@ -1,40 +1,32 @@
 /* src/components/Hero.css */
 
-/* 1. Center the hero block itself and constrain width */
 .hero {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1000px;        /* match your main container width */
-  margin: 2rem auto;        /* auto-center, small top/bottom spacing */
-  gap: 2rem;                /* space between text block & image */
-  padding: 0;               /* no extra padding here */
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 4rem 2rem;
 }
 
-/* 2. Left column: 50% width, left-aligned content */
 .hero-left {
-  width: 50%;
+  flex: 1;
+  max-width: 600px;
+  margin: 0 auto;
   text-align: left;
 }
 
-/* 3. Right column: 50%, image will size itself */
-.hero-right {
-  width: 50%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-/* 4. Tighten up all internal spacing */
 .hero-heading {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero-subheading {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: var(--accent-color);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero-tagline {
@@ -49,22 +41,29 @@
   margin-bottom: 0.25rem;
 }
 
+.hero-cta strong {
+  font-weight: 600;
+}
+
+.hero-cta span {
+  margin-left: 0.25rem;
+}
+
 .hero-cta-subtext {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: var(--text-color);
   margin-bottom: 1rem;
 }
 
-/* 5. Buttons + icons: flush against text, minimal margins */
 .hero-buttons {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-top: 0.5rem;
-  margin-bottom: 0;  
+  margin-bottom: 1.5rem;
 }
 
-/* 6. Resume button: smaller padding, transparent until hover */
 .hero-resume-button {
   display: inline-flex;
   align-items: center;
@@ -89,7 +88,6 @@
   color: var(--bg-color);
 }
 
-/* 7. Social icons: same look/feel */
 .hero-social {
   display: flex;
   gap: 0.75rem;
@@ -107,10 +105,32 @@
   color: var(--accent-color);
 }
 
-/* 8. Image styling: keep your existing look */
+.hero-right {
+  flex-shrink: 0;
+}
+
 .hero-photo {
-  max-width: 100%;
+  width: 300px;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .hero {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1rem;
+  }
+  .hero-left {
+    text-align: center;
+  }
+  .hero-right {
+    margin: 1rem 0 0;
+  }
+  .hero-photo {
+    width: 100%;
+    max-width: 280px;
+  }
 }

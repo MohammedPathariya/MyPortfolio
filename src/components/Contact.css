@@ -1,7 +1,8 @@
 /* src/components/Contact.css */
+
 .contact-section {
-  background-color: var(--bg-color);
   padding: 4rem 2rem;
+  background-color: var(--bg-color);
   text-align: center;
 }
 
@@ -61,4 +62,14 @@
 
 .social-links a:hover {
   color: var(--text-color);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+  .contact-form {
+    max-width: 100%;
+  }
 }
