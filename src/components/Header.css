@@ -1,27 +1,27 @@
 /* src/components/Header.css */
+
 .site-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: var(--bg-color);
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;    /* ↓ reduced top/bottom padding */
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 .header-container {
-  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 35rem;
 }
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;              /* ↓ slightly tighter nav links */
 }
 
 .nav-links a {
@@ -35,11 +35,10 @@
   color: var(--accent-color);
 }
 
-/* group theme + chat buttons */
 .header-controls {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;           /* ↓ tighter theme/chat icons */
 }
 
 .theme-toggle,

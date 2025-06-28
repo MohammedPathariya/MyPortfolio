@@ -1,40 +1,116 @@
 /* src/components/Hero.css */
+
+/* 1. Center the hero block itself and constrain width */
 .hero {
-  background-color: var(--bg-color);
-  padding: 5rem 2rem;
   display: flex;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;        /* match your main container width */
+  margin: 2rem auto;        /* auto-center, small top/bottom spacing */
+  gap: 2rem;                /* space between text block & image */
+  padding: 0;               /* no extra padding here */
 }
 
-.hero-container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+/* 2. Left column: 50% width, left-aligned content */
+.hero-left {
+  width: 50%;
+  text-align: left;
 }
 
-.hero-title {
-  font-size: 2.8rem;
+/* 3. Right column: 50%, image will size itself */
+.hero-right {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 4. Tighten up all internal spacing */
+.hero-heading {
+  font-size: 2.5rem;
   font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.hero-subheading {
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.hero-tagline {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+
+.hero-cta {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.hero-cta-subtext {
+  font-size: 0.85rem;
   color: var(--text-color);
   margin-bottom: 1rem;
 }
 
-.hero-description {
-  font-size: 1.15rem;
-  color: var(--text-color);
-  margin-bottom: 1.2rem;
-}
-
-.hero-quote {
-  font-size: 1rem;
-  font-style: italic;
-  color: var(--accent-color);
+/* 5. Buttons + icons: flush against text, minimal margins */
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-top: 0.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;  
 }
 
-.hero-image img {
-  max-width: 400px;
-  width: 100%;
+/* 6. Resume button: smaller padding, transparent until hover */
+.hero-resume-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--text-color);
+  background: none;
+  color: var(--text-color);
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.hero-resume-button svg {
+  margin-left: 0.4rem;
+}
+
+.hero-resume-button:hover {
+  opacity: 1;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+/* 7. Social icons: same look/feel */
+.hero-social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.hero-social a {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  opacity: 0.6;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.hero-social a:hover {
+  opacity: 1;
+  color: var(--accent-color);
+}
+
+/* 8. Image styling: keep your existing look */
+.hero-photo {
+  max-width: 100%;
   height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
