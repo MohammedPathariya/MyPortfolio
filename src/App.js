@@ -16,9 +16,9 @@ function App() {
     <div className="App">
       <Header />
       <Hero />
-      <About />
+      {/* <About /> */}
       <Projects />
-      <Skills />
+      {/* <Skills /> */}
       <TimelineTabs />
       <Contact />
       <Footer />
