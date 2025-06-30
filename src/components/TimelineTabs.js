@@ -85,8 +85,8 @@ export default function TimelineTabs() {
               />
             </div>
             <div className="timeline-content">
-              <h3 className="timeline-item-title">{item.title}</h3>
-              <h4 className="timeline-institution">{item.institution}</h4>
+              <h3 className="timeline-item-title">{item.institution}</h3>
+              <h4 className="timeline-institution">{item.title}</h4>
               <span className="timeline-period">{item.period}</span>
               <ul className="timeline-bullets">
                 {item.points.map((point, i) => (
