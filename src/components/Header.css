@@ -1,43 +1,50 @@
 /* src/components/Header.css */
 
+/* ── Fixed, translucent navbar ───────────────────────────────────────── */
 .site-header {
-  position: fixed;                   /* stick to top */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 72px;                      /* match body padding */
-  background: rgba(255, 255, 255, 0.75);
+  height: 72px;
+  background: rgba(255, 255, 255, 0.75);    /* light translucent */
   backdrop-filter: blur(8px);
   z-index: 1000;
 
   display: flex;
-  align-items: center;               /* vertical center */
-  padding: 0 2rem;                   /* horizontal gutters */
+  align-items: center;
+  padding: 0 2rem;
 }
 
+/* dark‐mode override */
+.dark .site-header {
+  background: rgba(18, 18, 18, 0.75);      /* dark translucent */
+}
+
+/* ── Inner container ─────────────────────────────────────────────────── */
 .header-container {
-  max-width: 1600px;           /* keep your wider navbar */
+  max-width: 1600px;
   width: 100%;
   margin: 0 auto;
 
   display: flex;
-  justify-content: center;     /* center the whole group */
+  justify-content: center;                 /* keep both groups centered */
   align-items: center;
-  gap: 15rem;                  /* space between links & buttons */
+  gap: 10rem;                               /* adjust spacing here */
 }
 
-
+/* ── Nav links ───────────────────────────────────────────────────────── */
 .nav-links {
   display: flex;
-  gap: 2rem;                         /* breathing room between links */
+  gap: 2rem;
 }
 
 .nav-links a {
-  font-size: 1.1rem;                 /* slightly larger */
+  font-size: 1.1rem;
   text-decoration: none;
   color: var(--text-color);
   font-weight: 500;
-  padding: 0.5rem 0;                 /* tappable height */
+  padding: 0.5rem 0;
   transition: color 0.2s ease;
 }
 
@@ -45,6 +52,7 @@
   color: var(--accent-color);
 }
 
+/* ── Theme + Chat controls ───────────────────────────────────────────── */
 .header-controls {
   display: flex;
   align-items: center;
@@ -55,7 +63,7 @@
 .chat-toggle {
   background: none;
   border: none;
-  font-size: 1.5rem;                 /* larger icons */
+  font-size: 1.5rem;
   padding: 0.5rem;
   cursor: pointer;
   color: var(--text-color);
@@ -69,16 +77,17 @@
   color: var(--accent-color);
 }
 
-/* push page content below fixed header */
+/* ── Avoid content being hidden under fixed header ──────────────────── */
 body {
-  padding-top: 72px;                 /* match header height */
+  padding-top: 72px;
 }
 
-/* ── Responsive ────────────────────────────────────────────────────────── */
+/* ── Responsive tweaks ───────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .header-container {
     flex-wrap: wrap;
-    justify-content: center;         /* center when wrapped */
+    justify-content: center;
+    gap: 2rem;
   }
   .nav-links {
     gap: 1rem;
@@ -94,7 +103,7 @@ body {
 
 @media (max-width: 480px) {
   .nav-links {
-    display: none;                   /* collapse links on super-small */
+    display: none;
   }
   .header-controls {
     gap: 0.5rem;
