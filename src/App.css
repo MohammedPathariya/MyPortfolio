@@ -28,11 +28,14 @@ body {
 
 /* ── App container ─────────────────────────────────────────────────────── */
 .App {
+  /* Existing styles */
   text-align: center;
   padding: 2rem;
-  min-height: 100vh;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+
+  /* New: cap width & center */
+  max-width: 1000px;    /* ← you can tweak this value */
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* ── Mobile adjustments ────────────────────────────────────────────────── */

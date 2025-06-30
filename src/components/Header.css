@@ -23,7 +23,7 @@
   display: flex;
   justify-content: center;     /* center the whole group */
   align-items: center;
-  gap: 10rem;                  /* space between links & buttons */
+  gap: 15rem;                  /* space between links & buttons */
 }
 
 
