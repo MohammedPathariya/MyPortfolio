@@ -21,7 +21,7 @@ const Hero = () => (
 
       <div className="hero-cta">
         <strong>
-          Got questions? Submit a ticket to Mohammed Support <span>&rarr;</span>
+          Got questions? Submit a ticket to Mohammed Support<span>&rarr;</span>
         </strong>
       </div>
 
