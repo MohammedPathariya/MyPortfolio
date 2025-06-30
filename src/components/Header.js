@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.css';
 import ThemeToggle from './ThemeToggle';
 import { FaComments } from 'react-icons/fa';
+import { TbMessageChatbot } from "react-icons/tb";
 
 const Header = () => {
   const handleChatClick = () => {
@@ -27,7 +28,7 @@ const Header = () => {
             onClick={handleChatClick}
             aria-label="Open chat"
           >
-            <FaComments />
+            <TbMessageChatbot />
           </button>
         </div>
       </div>
