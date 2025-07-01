@@ -2,6 +2,7 @@ export const allProjects = [
   {
     title: 'AudioGroove',
     description: 'AI-powered music generation system using LSTM and self-attention on MIDI data, deployed as an interactive web application.',
+    featured: true,
     tags: ['PyTorch', 'LSTM', 'Flask', 'Docker'],
     github: '#',
     demo: 'https://audiogroove.vercel.app/',
@@ -10,6 +11,7 @@ export const allProjects = [
   {
     title: 'HandSpeak',
     description: 'Real-time sign language detection using MediaPipe hand landmarks and a lightweight classical ML model—no raw image training required.',
+    featured: false,
     tags: ['MediaPipe', 'Scikit-Learn', 'Flask', 'OpenCV'],
     github: 'https://github.com/MohammedPathariya/HandSpeak',
     demo: '#',
@@ -18,6 +20,7 @@ export const allProjects = [
   {
     title: 'LearnLoop',
     description: 'Integrated AI study assistant combining a student-teacher chatbot, quiz generator, and flashcard creator with persistent session history and analytics.',
+    featured: true,
     tags: ['Flask', 'React', 'OpenAI', 'Docker'],
     github: '#',
     demo: 'https://learnloop-deployment-frontend.vercel.app/',
@@ -26,6 +29,7 @@ export const allProjects = [
   {
     title: 'The Digital Forge',
     description: 'Multi-agent AI platform automating the software development lifecycle with CrewAI agents powered by GPT-4o, surfaced through a Streamlit interface.',
+    featured: true,
     tags: ['CrewAI', 'GPT-4o', 'Streamlit', 'Python'],
     github: '#',
     demo: '#',
@@ -34,6 +38,7 @@ export const allProjects = [
   {
     title: 'Automated Snake Game',
     description: 'Self-playing Snake game trained via Deep Reinforcement Learning, demonstrating an agent that learns to maximize survival and score.',
+    featured: false,
     tags: ['PyTorch', 'Reinforcement Learning', 'Pygame'],
     github: '#',
     demo: '#',
@@ -42,6 +47,7 @@ export const allProjects = [
   {
     title: 'BloomMap',
     description: 'Interactive React map for exploring Bloomington’s public facilities with Flask backend, dynamic filtering, and district-level comparisons.',
+    featured: false,
     tags: ['React', 'Flask', 'GeoPandas', 'Docker'],
     github: '#',
     demo: '#',
@@ -50,6 +56,7 @@ export const allProjects = [
   {
     title: 'CodeCrafter',
     description: 'Language-agnostic visualization web app executing user-written Python or R code in Docker to render static, interactive, and 3D charts.',
+    featured: false,
     tags: ['React', 'Flask', 'Docker', 'Data Viz'],
     github: 'https://github.com/MohammedPathariya/codecrafter-language-agnostic-visualization-app',
     demo: '#',
@@ -58,6 +65,7 @@ export const allProjects = [
   {
     title: 'YAYU – Air Quality Forecasting',
     description: 'AQI prediction using LSTM models on OpenAQ data, with full pipeline from data cleaning to model evaluation.',
+    featured: false,
     tags: ['LSTM', 'Time Series', 'OpenAQ', 'Python'],
     github: 'https://github.com/MohammedPathariya/LSTM-Air-Quality-Forecasting--VAYU',
     demo: '#',
@@ -66,6 +74,7 @@ export const allProjects = [
   {
     title: 'Content Detection',
     description: 'Spam email classification using LSTM and FNN models with NLP preprocessing for text classification.',
+    featured: false,
     tags: ['LSTM', 'FNN', 'NLP'],
     github: '#',
     demo: '#',
@@ -74,6 +83,7 @@ export const allProjects = [
   {
     title: 'Yudishthir Desktop Assistant',
     description: 'Voice-activated desktop assistant with modules for price alerts, certificate generation, location lookup, surveillance, and more.',
+    featured: false,
     tags: ['Speech Recognition', 'Automation', 'OpenCV'],
     github: 'https://github.com/MohammedPathariya/Desktop-Assistant-Yudhishthar',
     demo: '#',
