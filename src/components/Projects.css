@@ -1,26 +1,53 @@
-/* src/components/Projects.css */
+/* Enable smooth scrolling for scrollIntoView */
+html {
+  scroll-behavior: smooth;
+}
 
 .projects {
   background-color: var(--bg-color);
   padding: 2rem 1rem;
-  text-align: center;
+}
+
+/* Header containing centered title + right‐aligned link */
+.projects-header {
+  position: relative;
+  margin-bottom: 1rem;
 }
 
 .projects-title {
+  margin: 0;
   font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 1rem;
   color: var(--accent-color);
+  text-align: center;
 }
 
+.toggle-link {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.toggle-link:hover {
+  text-decoration: underline;
+}
+
+/* Filter bar */
 .project-filter {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
-  margin-bottom: 2rem;
+  margin: 1rem 0 2rem;
 }
 
+/* Tag buttons */
 .tag-button {
   padding: 0.5rem 1rem;
   background-color: var(--bg-color);
@@ -36,6 +63,7 @@
   color: var(--bg-color);
 }
 
+/* Project grid */
 .project-wrapper {
   display: flex;
   flex-direction: column;
@@ -52,6 +80,7 @@
   gap: 1rem;
 }
 
+/* Cards */
 .project-card {
   flex: 1;
   min-width: 280px;
@@ -101,28 +130,6 @@
 
 .last-row {
   justify-content: center;
-}
-
-/* center the See More / Show Less button */
-.see-more-wrapper {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-/* style the toggle button */
-.see-more-button {
-  padding: 0.75rem 1.5rem;
-  background-color: var(--accent-color);
-  color: var(--bg-color);
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.see-more-button:hover {
-  background-color: rgba(42, 157, 143, 0.85);
 }
 
 /* ── Responsive ────────────────────────────────────────────────────────── */

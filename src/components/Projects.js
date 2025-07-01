@@ -1,34 +1,41 @@
 // src/components/Projects.js
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import ProjectCard from './ProjectCard';
 import ProjectFilter from './ProjectFilter';
 import { allProjects } from './ProjectsData';
 import './Projects.css';
 
 const Projects = () => {
-  // Multi-tag selection from before
   const [selectedTags, setSelectedTags] = useState(['All']);
-  // New: toggle to show all or only featured
   const [showAll, setShowAll] = useState(false);
+  const projectsRef = useRef(null);
 
-  // 1) Split out featured vs. rest
+  // Split featured vs. other projects
   const featuredProjects = allProjects.filter(p => p.featured);
-  const otherProjects = allProjects.filter(p => !p.featured);
+  const otherProjects    = allProjects.filter(p => !p.featured);
 
-  // 2) Filtering logic (only applies when showing the “other” section)
-  const filteredOthers = selectedTags.includes('All')
-    ? otherProjects
-    : otherProjects.filter(proj =>
-        proj.tags.some(tag => selectedTags.includes(tag))
+  // Build tag sets
+  const allTags      = Array.from(new Set(allProjects.flatMap(p => p.tags)));
+  const featuredTags = Array.from(new Set(featuredProjects.flatMap(p => p.tags)));
+
+  // Filter featured and full lists by tags
+  const filteredFeatured = selectedTags.includes('All')
+    ? featuredProjects
+    : featuredProjects.filter(p =>
+        p.tags.some(tag => selectedTags.includes(tag))
       );
 
-  // 3) Tag list (don’t include “All” here—ProjectFilter will prepend it)
-  const tags = Array.from(
-    new Set(allProjects.flatMap(p => p.tags))
-  );
+  const filteredFull = selectedTags.includes('All')
+    ? [...featuredProjects, ...otherProjects]
+    : [...featuredProjects, ...otherProjects].filter(p =>
+        p.tags.some(tag => selectedTags.includes(tag))
+      );
 
-  // 4) Helper to split into rows of 3
-  const chunk = (arr) => {
+  // Decide which list to render
+  const projectsToShow = showAll ? filteredFull : filteredFeatured;
+
+  // Chunk into rows of 3
+  const chunk = arr => {
     const rows = [];
     for (let i = 0; i < arr.length; i += 3) {
       rows.push(arr.slice(i, i + 3));
@@ -36,63 +43,55 @@ const Projects = () => {
     return rows;
   };
 
+  const handleToggle = () => {
+    const newShowAll = !showAll;
+    setShowAll(newShowAll);
+    if (showAll) {
+      // Reset filters when collapsing
+      setSelectedTags(['All']);
+    }
+    // Smooth scroll with offset for navbar
+    const nav = document.querySelector('nav');
+    const navHeight = nav ? nav.offsetHeight : 0;
+    const top =
+      projectsRef.current.getBoundingClientRect().top +
+      window.scrollY -
+      navHeight;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+
   return (
-    <section id="projects" className="projects">
-      <h2 className="projects-title">Featured Projects</h2>
+    <section id="projects" className="projects" ref={projectsRef}>
+      <div className="projects-header">
+        <h2 className="projects-title">
+          {showAll ? 'All Projects' : 'Featured Projects'}
+        </h2>
+        <a className="toggle-link" onClick={handleToggle}>
+          {showAll ? 'Show Less' : 'See More Projects'}
+        </a>
+      </div>
+
+      {/* Show only featuredTags initially, then allTags */}
+      <ProjectFilter
+        tags={showAll ? allTags : featuredTags}
+        selectedTags={selectedTags}
+        onTagChange={setSelectedTags}
+      />
+
       <div className="project-wrapper">
-        {chunk(featuredProjects).map((row, i) => (
-          <div key={i} className="project-row">
-            {row.map((project, idx) => (
-              <ProjectCard key={idx} project={project} />
+        {chunk(projectsToShow).map((row, rowIndex) => (
+          <div
+            key={rowIndex}
+            className={`project-row ${
+              rowIndex === chunk(projectsToShow).length - 1 ? 'last-row' : ''
+            }`}
+          >
+            {row.map(project => (
+              <ProjectCard key={project.title} project={project} />
             ))}
           </div>
         ))}
       </div>
-
-      {/* See More toggle */}
-      {!showAll && (
-        <div className="see-more-wrapper">
-          <button
-            className="see-more-button"
-            onClick={() => setShowAll(true)}
-          >
-            See More Projects
-          </button>
-        </div>
-      )}
-
-      {showAll && (
-        <>
-          <h2 className="projects-title">All Projects</h2>
-          <ProjectFilter
-            tags={tags}
-            selectedTags={selectedTags}
-            onTagChange={setSelectedTags}
-          />
-          <div className="project-wrapper">
-            {chunk(filteredOthers).map((row, i) => (
-              <div
-                key={i}
-                className={`project-row ${
-                  i === chunk(filteredOthers).length - 1 ? 'last-row' : ''
-                }`}
-              >
-                {row.map((project, idx) => (
-                  <ProjectCard key={idx} project={project} />
-                ))}
-              </div>
-            ))}
-          </div>
-          <div className="see-more-wrapper">
-            <button
-              className="see-more-button"
-              onClick={() => setShowAll(false)}
-            >
-              Show Less
-            </button>
-          </div>
-        </>
-      )}
     </section>
   );
 };
