@@ -1,29 +1,38 @@
+// src/components/ThemeToggle.js
 import React, { useState, useEffect } from 'react';
-import { FaMoon, FaSun } from 'react-icons/fa';
-import { BsMoonStars } from "react-icons/bs";
-import { LuSunMedium } from "react-icons/lu";
-
+import { BsMoonStars } from 'react-icons/bs';
+import { LuSunMedium } from 'react-icons/lu';
 
 import './ThemeToggle.css';
 
 const ThemeToggle = () => {
-  // start in whatever mode was last saved (or default to light)
+  // Initialize theme from localStorage or default to light
   const [theme, setTheme] = useState(
     () => localStorage.getItem('theme') || 'light'
   );
 
-  // whenever `theme` changes, update <html>’s class and save
+  // On mount, apply the stored theme class to <html>
   useEffect(() => {
-    document.documentElement.className = theme;
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }, []);
 
   const toggle = () => {
-    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+    // Determine the new theme
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    // Toggle the .dark class on <html>
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    // Persist the choice
+    localStorage.setItem('theme', newTheme);
+    // Update state to re-render icon
+    setTheme(newTheme);
   };
 
   return (
-    <button className="theme-toggle" onClick={toggle} aria-label="Toggle theme">
+    <button
+      className="theme-toggle"
+      onClick={toggle}
+      aria-label="Toggle theme"
+    >
       {theme === 'light' ? <BsMoonStars /> : <LuSunMedium />}
     </button>
   );

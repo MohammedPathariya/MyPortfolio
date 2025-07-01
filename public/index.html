@@ -3,6 +3,33 @@
   <head>
     <meta charset="utf-8" />
 
+    <!-- 1) Early inline script to set theme class on <html> -->
+    <script>
+      (function() {
+        const stored = localStorage.getItem('theme');
+        const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (preferDark ? 'dark' : 'light');
+        document.documentElement.classList.add(theme);
+      })();
+    </script>
+
+    <!-- 2) Inline “critical” styles so that before any CSS file loads, -->
+    <!--    the correct background & text colors are applied.         -->
+    <style>
+      /* base colors for light theme */
+      html, body {
+        background-color: #ffffff;
+        color: #333333;
+        /* disable transitions on first paint */
+        transition: none !important;
+      }
+      /* override if dark class present */
+      html.dark, html.dark body {
+        background-color: #121212;
+        color: #f0f0f0;
+      }
+    </style>
+
     <!-- favicon -->
     <link
       rel="icon"
@@ -19,7 +46,7 @@
       content="Portfolio for Mohammed, Machine Learning Engineer"
     />
 
-    <!-- Google Fonts: Inter (body) + Rubik (headings) -->
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap"
       rel="stylesheet"
@@ -29,7 +56,6 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <!-- Short, punchy title -->
     <title>Mohammed’s Lab</title>
   </head>
   <body>
