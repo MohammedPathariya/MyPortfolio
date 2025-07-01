@@ -1,3 +1,5 @@
+/* src/components/Projects.css */
+
 /* Enable smooth scrolling for scrollIntoView */
 html {
   scroll-behavior: smooth;
@@ -13,14 +15,18 @@ html {
   scroll-margin-top: 60px;
 }
 
-/* Header containing centered title + right‐aligned link */
+/* ── Header: Title & Toggle Link ──────────────────────────────────────── */
 .projects-header {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   margin-bottom: 1rem;
 }
 
 .projects-title {
   margin: 0;
+  flex: 1 1 auto;
   font-size: 1.8rem;
   font-weight: bold;
   color: var(--accent-color);
@@ -28,10 +34,6 @@ html {
 }
 
 .toggle-link {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
   font-size: 1rem;
   color: var(--accent-color);
   text-decoration: none;
@@ -43,7 +45,7 @@ html {
   text-decoration: underline;
 }
 
-/* Filter bar */
+/* ── Filter bar ───────────────────────────────────────────────────────── */
 .project-filter {
   display: flex;
   flex-wrap: wrap;
@@ -52,7 +54,7 @@ html {
   margin: 1rem 0 2rem;
 }
 
-/* Tag buttons */
+/* ── Tag buttons ──────────────────────────────────────────────────────── */
 .tag-button {
   padding: 0.5rem 1rem;
   background-color: var(--bg-color);
@@ -68,7 +70,7 @@ html {
   color: var(--bg-color);
 }
 
-/* Project grid */
+/* ── Project grid ─────────────────────────────────────────────────────── */
 .project-wrapper {
   display: flex;
   flex-direction: column;
@@ -85,7 +87,7 @@ html {
   gap: 1rem;
 }
 
-/* Cards */
+/* ── Cards ───────────────────────────────────────────────────────────── */
 .project-card {
   flex: 1;
   min-width: 280px;
@@ -139,6 +141,15 @@ html {
 
 /* ── Responsive ────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
+  /* Stack title & toggle */
+  .projects-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .toggle-link {
+    margin-top: 0.5rem;
+  }
+
   .project-row {
     flex-direction: column;
     align-items: center;

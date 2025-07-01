@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 import ThemeToggle from './ThemeToggle';
-import { TbMessageChatbot } from "react-icons/tb";
+import { TbMessageChatbot } from 'react-icons/tb';
 
 const Header = () => {
   const handleChatClick = () => {
@@ -11,15 +11,15 @@ const Header = () => {
   return (
     <header className="site-header">
       <div className="header-container">
-        {/* Left: nav links */}
+        {/* Nav links always visible, inline */}
         <nav className="nav-links">
           <a href="#home">Home</a>
           <a href="#projects">Projects</a>
-          <a href="#blog">Blog</a>
+          <a href="#education-experience">Journey</a>
           <a href="#contact">Contact</a>
         </nav>
 
-        {/* Right: theme toggle + chat button */}
+        {/* Theme toggle & chat button */}
         <div className="header-controls">
           <ThemeToggle />
           <button

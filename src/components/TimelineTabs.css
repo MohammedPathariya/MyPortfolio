@@ -137,6 +137,19 @@
   margin-bottom: 0.25rem;
 }
 
+.timeline-section {
+  padding: 4rem 1rem;
+  background-color: var(--bg-color);
+}
+
+/* New section title */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
 /* ── Responsive ───────────────────────────────────────────────────────── */
 @media (max-width: 600px) {
   .tabs {

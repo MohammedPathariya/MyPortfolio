@@ -4,9 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;                /* ↓ half the gap (was 2rem) */
-  max-width: 1000px;        /* ↑ constrain the whole hero to 1000px */
-  margin: 0 auto;           /* ↑ center that 1000px block */
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 4rem 2rem;
 }
 
@@ -45,21 +45,14 @@
   font-size: 1rem;
   margin-bottom: 0.25rem;
 }
-
 .hero-cta strong {
   font-weight: 600;
 }
-
 .hero-cta span {
   margin-left: 0.25rem;
 }
 
-.hero-cta-subtext {
-  font-size: 0.875rem;
-  color: var(--text-color);
-  margin-bottom: 1rem;
-}
-
+/* Desktop: left-align buttons */
 .hero-buttons {
   display: flex;
   justify-content: flex-start;
@@ -82,11 +75,9 @@
   opacity: 0.6;
   transition: opacity 0.2s, background-color 0.2s, color 0.2s;
 }
-
 .hero-resume-button svg {
   margin-left: 0.4rem;
 }
-
 .hero-resume-button:hover {
   opacity: 1;
   background-color: var(--accent-color);
@@ -97,21 +88,15 @@
   display: flex;
   gap: 0.75rem;
 }
-
 .hero-social a {
   font-size: 1.4rem;
   color: var(--text-color);
   opacity: 0.6;
   transition: opacity 0.2s, color 0.2s;
 }
-
 .hero-social a:hover {
   opacity: 1;
   color: var(--accent-color);
-}
-
-.hero-right {
-  flex-shrink: 0;
 }
 
 .hero-photo {
@@ -130,6 +115,10 @@
   }
   .hero-left {
     text-align: center;
+  }
+  /* Mobile: center buttons */
+  .hero-buttons {
+    justify-content: center;
   }
   .hero-right {
     margin-top: 1rem;

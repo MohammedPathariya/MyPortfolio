@@ -1,3 +1,4 @@
+// src/components/TimelineTabs.js
 import React, { useState } from 'react';
 import './TimelineTabs.css';
 
@@ -57,7 +58,10 @@ export default function TimelineTabs() {
   const items = activeTab === 'education' ? educationData : experienceData;
 
   return (
-    <section className="timeline-section">
+    <section id="education-experience" className="timeline-section">
+      {/* Section heading */}
+      <h2 className="section-title">Education &amp; Experience</h2>
+
       {/* ── Tabs ─────────────────────────────────────────────────────────── */}
       <div className="tabs">
         <button
