@@ -8,6 +8,11 @@ html {
   padding: 2rem 1rem;
 }
 
+#projects {
+  /* adjust this value to match your nav’s height */
+  scroll-margin-top: 60px;
+}
+
 /* Header containing centered title + right‐aligned link */
 .projects-header {
   position: relative;
