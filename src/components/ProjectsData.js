@@ -38,7 +38,7 @@ export const allProjects = [
   {
     title: 'Automated Snake Game',
     description: 'Self-playing Snake game trained via Deep Reinforcement Learning, demonstrating an agent that learns to maximize survival and score.',
-    featured: true,
+    featured: false,
     tags: ['PyTorch', 'Reinforcement Learning', 'Pygame'],
     github: '#',
     demo: '#',
