@@ -1,6 +1,6 @@
-// src/components/ChatWidget.js
 import React, { useState } from 'react';
 import './ChatWidget.css';
+import { TbMessageChatbot } from 'react-icons/tb'; // chatbot icon
 
 const ChatWidget = ({ isOpen }) => {
   const [messages, setMessages] = useState([
@@ -27,14 +27,19 @@ const ChatWidget = ({ isOpen }) => {
     <div className="chat-widget">
       <div className="chat-messages">
         {messages.map((msg, idx) => (
-          <div
-            key={idx}
-            className={`chat-message ${msg.sender === 'user' ? 'user' : 'bot'}`}
-          >
-            {msg.text}
+          <div key={idx} className={`chat-message ${msg.sender}`}>
+            <div className="chat-avatar">
+              {msg.sender === 'bot' ? (
+                <TbMessageChatbot className="chat-icon bot-icon" />
+              ) : (
+                <i className="fa-regular fa-user chat-icon user-icon"></i>
+              )}
+            </div>
+            <div className="chat-bubble">{msg.text}</div>
           </div>
         ))}
       </div>
+
       <div className="chat-input">
         <input
           type="text"

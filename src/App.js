@@ -10,6 +10,7 @@ import TimelineTabs from './components/TimelineTabs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   return (
