@@ -84,7 +84,7 @@
 }
 
 .chat-message.user {
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-self: flex-end;
 }
 
@@ -104,16 +104,15 @@
   color: #fff;
 }
 
-/* Avatars */
+.chat-icon {
+  font-size: 18px;
+  color: #444;
+}
+
 .chat-avatar {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.chat-icon {
-  font-size: 18px;
-  color: #444;
 }
 
 /* Input */
