@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './ChatWidget.css';
 import { TbMessageChatbot } from 'react-icons/tb';
-import { FaRegUser, FaPaperPlane, FaTrashAlt } from 'react-icons/fa';
+import { FaRegUser, FaPaperPlane, FaTrashAlt, FaAngleDown, FaAngleUp } from 'react-icons/fa';
 
 const ChatWidget = ({ isOpen }) => {
   const [messages, setMessages] = useState([
@@ -44,7 +44,7 @@ const ChatWidget = ({ isOpen }) => {
           <span className="chat-title">Portfolio Support</span>
         </div>
         <span className="chat-collapse" onClick={() => setIsCollapsed(!isCollapsed)}>
-          {isCollapsed ? '⌄' : '⌃'}
+          {isCollapsed ? <FaAngleDown /> : <FaAngleUp />}
         </span>
       </div>
 
