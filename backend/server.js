@@ -48,8 +48,6 @@ Answer only using the following verified information about Mohammed Pathariya:
 
 5. **Experience**
 - Data Engineering Intern at Sparkwood IT Solutions (Jan–Jul 2023): Built pipelines processing 5M+ records/day.
-- Former SAP Basis Consultant at Hitachi Vantara with 3+ years of experience.
-- SAP iXp Program Intern.
 
 6. **Skills**
 - Languages: Python, R, SQL, JavaScript, TypeScript
