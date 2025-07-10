@@ -44,7 +44,8 @@ Answer only using the following verified information about Mohammed Pathariya:
 4. **Education**
 - Indiana University Bloomington: MS in Data Science (2024–2026)
 - Pune University: BE in AI & DS (2020–2024)
-- St. Vincents High School, Pune (2018–2020)
+- St. Vincents Junior College, Pune (2018–2020)
+- St. Vincents High School, Pune (2008-2018)
 
 5. **Experience**
 - Data Engineering Intern at Sparkwood IT Solutions (Jan–Jul 2023): Built pipelines processing 5M+ records/day.
