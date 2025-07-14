@@ -11,20 +11,14 @@ const ThemeToggle = () => {
     () => localStorage.getItem('theme') || 'light'
   );
 
-  // On mount, apply the stored theme class to <html>
+  // Whenever `theme` changes, apply the class and persist it
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
-  }, []);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   const toggle = () => {
-    // Determine the new theme
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    // Toggle the .dark class on <html>
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
-    // Persist the choice
-    localStorage.setItem('theme', newTheme);
-    // Update state to re-render icon
-    setTheme(newTheme);
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
   };
 
   return (
