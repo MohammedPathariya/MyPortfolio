@@ -66,7 +66,14 @@ const Projects = () => {
         <h2 className="projects-title">
           {showAll ? 'All Projects' : 'Featured Projects'}
         </h2>
-        <a className="toggle-link" onClick={handleToggle}>
+        <a
+          href="#projects"
+          className="toggle-link"
+          onClick={e => {
+            e.preventDefault();
+            handleToggle();
+          }}
+        >
           {showAll ? 'Show Less' : 'See More Projects'}
         </a>
       </div>
