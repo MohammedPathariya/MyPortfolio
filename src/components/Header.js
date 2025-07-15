@@ -27,9 +27,10 @@ const Header = () => {
           <div className="header-controls">
             <ThemeToggle />
             <button
-              className="chat-toggle"
+              // Adds the 'strikethrough' class when chat is not shown
+              className={`chat-toggle ${!showChat ? 'strikethrough' : ''}`}
               onClick={handleChatClick}
-              aria-label="Open chat"
+              aria-label={showChat ? 'Close chat' : 'Open chat'}
             >
               <TbMessageChatbot />
             </button>
