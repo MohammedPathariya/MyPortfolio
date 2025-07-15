@@ -74,7 +74,7 @@ const Projects = () => {
             handleToggle();
           }}
         >
-          {showAll ? 'Show Less' : 'See More Projects'}
+          {showAll ? 'Show Featured Only' : 'View All Projects'}
         </a>
       </div>
 
