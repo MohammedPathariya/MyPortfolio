@@ -67,10 +67,16 @@
   padding: 0.5rem;
   cursor: pointer;
   color: var(--text-color);
-  opacity: 0.7;
+  /* UPDATED: Increased opacity to make icons darker/more prominent */
+  opacity: 0.85;
   transition: opacity 0.2s, color 0.2s;
   position: relative;
-  outline: none; /* UPDATED: Removes the blue browser border on click/focus */
+  outline: none; /* Removes the blue browser border on click/focus */
+}
+
+/* NEW: Specific adjustment for the sun icon in dark mode for visual balance */
+.dark .theme-toggle {
+  font-size: 1.6rem; /* Slightly larger to match the chat icon's visual weight */
 }
 
 .theme-toggle:hover,
@@ -79,44 +85,31 @@
   color: var(--accent-color);
 }
 
-/* NEW: Defines the initial state and transition for the strikethrough line */
+/* Defines the initial state and transition for the strikethrough line */
 .chat-toggle::after {
   content: '';
   position: absolute;
   
   /* --- Centering Logic --- */
-  /* 1. Move the line's left edge to the parent's horizontal center. */
   left: 50%; 
-  /* 2. Nudge the line slightly above the true vertical center for better visual balance. */
+  /* Nudge the line slightly above the true vertical center for better visual balance. */
   top: 48%;
   
   /* --- Sizing --- */
-  /* This is the final width of the line. You can adjust this percentage.
-     The centering logic below will work no matter what width you set here. */
   width: 95%; 
   height: 2px;
   background: currentColor;
   
   /* --- Transformation & Animation --- */
-  /* The transform property does three things in order:
-     1. translate(-50%, -50%): Pulls the line left by 50% of its OWN width and up by 50% 
-        of its OWN height. This step completes the centering based on the top/left position.
-     2. rotate(45deg): Rotates the line.
-     3. scaleX(0): Shrinks the line's width to 0, making it invisible initially. */
   transform: translate(-50%, -50%) rotate(45deg) scaleX(0);
-  
-  /* This ensures scaling and rotation happens from the dead center of the line. 
-     This is what makes it "count the width from the center" during the animation. */
   transform-origin: center; 
-  
   opacity: 0;
   transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.2s ease-out;
 }
 
-/* NEW: Defines the final state of the line when the 'strikethrough' class is active */
+/* Defines the final state of the line when the 'strikethrough' class is active */
 .chat-toggle.strikethrough::after {
   opacity: 1;
-  /* Animate to full width by scaling back to 1. The centering and rotation are maintained. */
   transform: translate(-50%, -50%) rotate(45deg) scaleX(1);
 }
 
@@ -141,6 +134,10 @@ body {
   .theme-toggle,
   .chat-toggle {
     font-size: 1.25rem;
+  }
+  /* NEW: Also adjust the sun icon on mobile to keep it balanced */
+  .dark .theme-toggle {
+    font-size: 1.35rem; 
   }
 }
 
