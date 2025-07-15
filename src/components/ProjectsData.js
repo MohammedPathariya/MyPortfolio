@@ -42,7 +42,7 @@ export const allProjects = [
     tags: ['PyTorch', 'Reinforcement Learning', 'Pygame'],
     github: '#',
     demo: '#',
-    thumbnail: '/images/placeholder.jpg',
+    thumbnail: '/images/automatedsnakegame2.png',
   },
   {
     title: 'BloomMap',
