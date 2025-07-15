@@ -63,13 +63,13 @@ export const allProjects = [
     thumbnail: '/images/codecrafter2.png',
   },
   {
-    title: 'YAYU – Air Quality Forecasting',
+    title: 'VAYU – Air Quality Forecasting',
     description: 'AQI prediction using LSTM models on OpenAQ data, with full pipeline from data cleaning to model evaluation.',
     featured: false,
     tags: ['LSTM', 'Time Series', 'OpenAQ', 'Python'],
     github: 'https://github.com/MohammedPathariya/LSTM-Air-Quality-Forecasting--VAYU',
     demo: '#',
-    thumbnail: '/images/placeholder.jpg',
+    thumbnail: '/images/vayu.png',
   },
   {
     title: 'Content Detection',
