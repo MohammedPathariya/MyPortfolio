@@ -71,7 +71,7 @@ const ChatWidget = ({ isOpen }) => {
           <span className="chat-title">Mohammed Support</span>
         </div>
         <span className="chat-collapse" onClick={() => setIsCollapsed(!isCollapsed)}>
-          {isCollapsed ? <FaAngleDown /> : <FaAngleUp />}
+          {isCollapsed ?  <FaAngleUp /> : <FaAngleDown />}
         </span>
       </div>
 

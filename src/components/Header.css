@@ -58,6 +58,7 @@
   align-items: center;
   gap: 1rem;
 }
+
 .theme-toggle,
 .chat-toggle {
   background: none;
@@ -68,12 +69,42 @@
   color: var(--text-color);
   opacity: 0.7;
   transition: opacity 0.2s, color 0.2s;
+  position: relative;
+  outline: none; /* UPDATED: Removes the blue browser border on click/focus */
 }
+
 .theme-toggle:hover,
 .chat-toggle:hover {
   opacity: 1;
   color: var(--accent-color);
 }
+
+/* NEW: Defines the initial state and transition for the strikethrough line */
+.chat-toggle::after {
+  content: '';
+  position: absolute;
+  /* Center the line's origin point */
+  top: 50%;
+  left: 50%;
+  /* Set dimensions */
+  width: 100%; /* Make it long enough to cross the icon diagonally */
+  height: 2px;
+  background: currentColor;
+  /* Start the line rotated, but scaled to zero width (invisible) */
+  transform: translate(-50%, -50%) rotate(45deg) scaleX(0);
+  transform-origin: center; /* Ensure scaling and rotation happens from the center */
+  opacity: 0;
+  /* Define the smooth, springy animation */
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.2s ease-out;
+}
+
+/* NEW: Defines the final state of the line when the 'strikethrough' class is active */
+.chat-toggle.strikethrough::after {
+  opacity: 1;
+  /* Animate to full width */
+  transform: translate(-50%, -50%) rotate(45deg) scaleX(1);
+}
+
 
 /*──────────────────────────────────────────────────────────────────────────
    Push page content below fixed header
