@@ -51,7 +51,7 @@ export const allProjects = [
     tags: ['React', 'Flask', 'GeoPandas', 'Docker'],
     github: '#',
     demo: '#',
-    thumbnail: '/images/placeholder.jpg',
+    thumbnail: '/images/bloommap2.png',
   },
   {
     title: 'CodeCrafter',
