@@ -17,16 +17,17 @@ html {
 
 /* ── Header: Title & Toggle Link ──────────────────────────────────────── */
 .projects-header {
-  display: flex;
-  justify-content: space-between;
+  /* Changed from flex to grid for robust centering */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  flex-wrap: wrap;
   margin-bottom: 1rem;
 }
 
 .projects-title {
   margin: 0;
-  flex: 1 1 auto;
+  /* Removed flex property, using grid for layout */
+  grid-column: 2;
   font-size: 1.8rem;
   font-weight: bold;
   color: var(--accent-color);
@@ -34,6 +35,9 @@ html {
 }
 
 .toggle-link {
+  /* Using grid to place the link in the third column */
+  grid-column: 3;
+  justify-self: end; /* Aligns link to the far right */
   font-size: 1rem;
   color: var(--accent-color);
   text-decoration: none;
@@ -141,12 +145,21 @@ html {
 
 /* ── Responsive ────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  /* Stack title & toggle */
+  /* Revert to flex for stacking title & toggle */
   .projects-header {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
+
+  /* Reset grid properties for children in flex context */
+  .projects-title {
+    grid-column: auto;
+  }
+  
   .toggle-link {
+    grid-column: auto;
+    justify-self: auto;
     margin-top: 0.5rem;
   }
 
