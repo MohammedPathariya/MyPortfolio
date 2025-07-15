@@ -60,7 +60,7 @@ export const allProjects = [
     tags: ['React', 'Flask', 'Docker', 'Data Viz'],
     github: 'https://github.com/MohammedPathariya/codecrafter-language-agnostic-visualization-app',
     demo: '#',
-    thumbnail: '/images/placeholder.jpg',
+    thumbnail: '/images/codecrafter2.png',
   },
   {
     title: 'YAYU – Air Quality Forecasting',
