@@ -83,25 +83,40 @@
 .chat-toggle::after {
   content: '';
   position: absolute;
-  /* Center the line's origin point */
-  top: 50%;
-  left: 50%;
-  /* Set dimensions */
-  width: 100%; /* Make it long enough to cross the icon diagonally */
+  
+  /* --- Centering Logic --- */
+  /* 1. Move the line's left edge to the parent's horizontal center. */
+  left: 50%; 
+  /* 2. Nudge the line slightly above the true vertical center for better visual balance. */
+  top: 48%;
+  
+  /* --- Sizing --- */
+  /* This is the final width of the line. You can adjust this percentage.
+     The centering logic below will work no matter what width you set here. */
+  width: 95%; 
   height: 2px;
   background: currentColor;
-  /* Start the line rotated, but scaled to zero width (invisible) */
+  
+  /* --- Transformation & Animation --- */
+  /* The transform property does three things in order:
+     1. translate(-50%, -50%): Pulls the line left by 50% of its OWN width and up by 50% 
+        of its OWN height. This step completes the centering based on the top/left position.
+     2. rotate(45deg): Rotates the line.
+     3. scaleX(0): Shrinks the line's width to 0, making it invisible initially. */
   transform: translate(-50%, -50%) rotate(45deg) scaleX(0);
-  transform-origin: center; /* Ensure scaling and rotation happens from the center */
+  
+  /* This ensures scaling and rotation happens from the dead center of the line. 
+     This is what makes it "count the width from the center" during the animation. */
+  transform-origin: center; 
+  
   opacity: 0;
-  /* Define the smooth, springy animation */
   transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.2s ease-out;
 }
 
 /* NEW: Defines the final state of the line when the 'strikethrough' class is active */
 .chat-toggle.strikethrough::after {
   opacity: 1;
-  /* Animate to full width */
+  /* Animate to full width by scaling back to 1. The centering and rotation are maintained. */
   transform: translate(-50%, -50%) rotate(45deg) scaleX(1);
 }
 
