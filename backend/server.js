@@ -61,8 +61,6 @@ When asked about a project, experience, or skill, feel free to include a direct 
 Keep answers clear, concise, and friendly. Don’t make up information.
 `;
 
-
-
   try {
     const completion = await openai.chat.completions.create({
       model: 'gpt-4',
