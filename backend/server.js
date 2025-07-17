@@ -62,6 +62,7 @@ Keep answers clear, concise, and friendly. Don’t make up information.
 `;
 
 
+
   try {
     const completion = await openai.chat.completions.create({
       model: 'gpt-4',

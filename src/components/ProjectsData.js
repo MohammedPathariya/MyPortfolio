@@ -78,7 +78,7 @@ export const allProjects = [
     tags: ['LSTM', 'FNN', 'NLP'],
     github: '#',
     demo: '#',
-    thumbnail: '/images/placeholder.jpg',
+    thumbnail: '/images/contentdetection.png',
   },
   {
     title: 'Yudishthir Desktop Assistant',
@@ -87,6 +87,6 @@ export const allProjects = [
     tags: ['Speech Recognition', 'Automation', 'OpenCV'],
     github: 'https://github.com/MohammedPathariya/Desktop-Assistant-Yudhishthar',
     demo: '#',
-    thumbnail: '/images/placeholder.jpg',
+    thumbnail: '/images/yudhisthir.png',
   },
 ];

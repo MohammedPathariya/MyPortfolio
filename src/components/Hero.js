@@ -15,8 +15,8 @@ const Hero = () => (
 
       {/* Two-line, left-aligned tagline */}
       <p className="hero-tagline">
-        ML by trade, data storyteller by passion.<br/>
-        I train models and spin raw data into clarity.
+        I build predictive models and apply LLMs to analyze complex data. <br/>
+        I translate my findings into actionable business strategy.
       </p>
 
       <div className="hero-cta">
