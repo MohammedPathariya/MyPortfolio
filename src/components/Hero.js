@@ -12,7 +12,6 @@ const Hero = () => (
       <p className="hero-subheading">
         Machine Learning Engineer in Chicago 🇺🇸
       </p>
-
       {/* Two-line, left-aligned tagline */}
       <p className="hero-tagline">
         I build predictive models and apply LLMs to analyze complex data. <br/>
