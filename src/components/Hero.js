@@ -1,6 +1,6 @@
 import React from 'react';
 import './Hero.css';
-import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaDownload, FaInstagram } from 'react-icons/fa';
 
 const Hero = () => (
   <section id="home" className="hero">
@@ -50,6 +50,14 @@ const Hero = () => (
             aria-label="GitHub"
           >
             <FaGithub />
+          </a>
+          <a
+            href="https://www.instagram.com/mohammedjp08/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FaInstagram />
           </a>
           <a href="mailto:mjpathar@iu.edu" aria-label="Email">
             <FaEnvelope />
