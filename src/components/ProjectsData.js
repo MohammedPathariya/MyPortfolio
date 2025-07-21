@@ -6,7 +6,7 @@ export const allProjects = [
     tags: ['PyTorch', 'LSTM', 'Flask', 'Docker'],
     github: '#',
     demo: 'https://audiogroove.vercel.app/',
-    thumbnail: '/images/audiogroove.png',
+    thumbnail: '/images/audiogroove2.png',
   },
   {
     title: 'HandSpeak',
