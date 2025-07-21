@@ -24,7 +24,7 @@ export const allProjects = [
     tags: ['Flask', 'React', 'OpenAI', 'Docker'],
     github: '#',
     demo: 'https://learnloop-deployment-frontend.vercel.app/',
-    thumbnail: '/images/placeholder.jpg',
+    thumbnail: '/images/learnloop.png',
   },
   {
     title: 'The Digital Forge',
@@ -33,7 +33,7 @@ export const allProjects = [
     tags: ['CrewAI', 'GPT-4o', 'Streamlit', 'Python'],
     github: '#',
     demo: '#',
-    thumbnail: '/images/placeholder.jpg',
+    thumbnail: '/images/digitalforge.png',
   },
   {
     title: 'Automated Snake Game',

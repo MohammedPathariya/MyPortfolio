@@ -143,6 +143,7 @@ html {
   justify-content: center;
 }
 
+
 /* ── Responsive ────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   /* Revert to flex for stacking title & toggle */
