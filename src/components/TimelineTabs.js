@@ -5,50 +5,53 @@ import './TimelineTabs.css';
 const experienceData = [
   {
     logo: '/images/sparkwoodlogo.png',
-    period: 'Jan 2023 – Jul 2023',
+    period: 'Feb 2022 – Jul 2022',
     title: 'Data Engineering Intern',
-    institution: 'Sparkwood IT Solutions',
+    institution: 'Sparkwood IT Solutions, Pune, India',
     points: [
-      'Built and automated Python/SQL data pipelines handling 5M+ records/day',
-      'Optimized ETL jobs, reducing run time by 30%',
-      'Collaborated with data scientists to deploy real-time APIs',
+      'Built Python/SQL pipelines to deliver clean datasets for analytics',
+      'Optimized database schemas, cutting query times by 40%',
+      'Deployed backend APIs for real-time data access',
+      'Collaborated with data & dev teams to prepare data for reporting',
     ],
   },
-  // …add more experience entries here
 ];
 
 const educationData = [
   {
     logo: '/images/iublogo.png',
-    period: 'Aug 2024 – May 2026',
-    title: 'Master of Science in Data Science',
+    period: 'Aug 2024 – Exp. May 2026',
+    title: 'MS, Data Science',
     institution: 'Indiana University Bloomington',
     points: [
-      'Specialized in Machine Learning & Applied AI',
-      'Research on time-series forecasting published in ICML 2025',
-      'Teaching assistant for Data Engineering course',
+      'Specialized in ML coursework: time-series forecasting & NLP',
+      'Built LearnLoop: an AI-powered study assistant web app',
+      'Developed The Digital Forge: a multi-agent code generation platform',
+      'Presented The Digital Forge prototype at the IU Graduate Research Expo',
     ],
   },
   {
     logo: '/images/sppulogo.png',
     period: 'Aug 2020 – May 2024',
-    title: 'Bachelor of Engineering in AI & Data Science',
+    title: 'BE, Artificial Intelligence & Data Science',
     institution: 'Savitribai Phule Pune University',
     points: [
-      'Graduated with Distinction (Top 5%)',
-      'Capstone: Predictive maintenance dashboard using Flask & React',
-      'President of the AI Club, organized 10+ hackathons',
+      'Graduated with distinction (Top 5%)',
+      'Capstone: AudioGroove – AI music generation web app',
+      'Organized 10+ AI hackathons & hands-on workshops',
+      'Volunteered teaching coding to underprivileged students',
     ],
   },
   {
     logo: '/images/vincentslogo.png',
-    period: 'Aug 2018 – May 2020',
-    title: 'HSC (12th Grade)',
-    institution: 'St. Vincents High School & Junior College, Pune',
+    period: 'Jul 2009 – Feb 2020',
+    title: 'HSC (12th Grade), Science',
+    institution: 'St. Vincent’s High School & Junior College, Pune',
     points: [
       'Scored 95% in Physics, Chemistry & Mathematics',
-      'Led coding workshops for junior students',
-      'Captain of the debate team',
+      'Led debate team and peer coding workshops',
+      'Participated in district science fairs & Olympiads',
+      'Member of school band and sports teams',
     ],
   },
 ];
@@ -60,9 +63,9 @@ export default function TimelineTabs() {
   return (
     <section id="education-experience" className="timeline-section">
       {/* Section heading */}
-      <h2 className="section-title">Education &amp; Experience</h2>
+      <h2 className="section-title">Background</h2>
 
-      {/* ── Tabs ─────────────────────────────────────────────────────────── */}
+      {/* Tabs */}
       <div className="tabs">
         <button
           className={`tab ${activeTab === 'education' ? 'active' : ''}`}
@@ -78,7 +81,7 @@ export default function TimelineTabs() {
         </button>
       </div>
 
-      {/* ── Timeline content ─────────────────────────────────────────────── */}
+      {/* Timeline */}
       <div className="timeline-container">
         {items.map((item, idx) => (
           <div key={idx} className="timeline-item">
