@@ -15,7 +15,7 @@ export const allProjects = [
     tags: ['MediaPipe', 'Scikit-Learn', 'Flask', 'OpenCV'],
     github: 'https://github.com/MohammedPathariya/HandSpeak',
     demo: '#',
-    thumbnail: '/images/placeholder.jpg',
+    thumbnail: '/images/handspeak2.png',
   },
   {
     title: 'LearnLoop',
