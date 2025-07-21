@@ -69,7 +69,7 @@ export const allProjects = [
     tags: ['LSTM', 'Time Series', 'OpenAQ', 'Python'],
     github: 'https://github.com/MohammedPathariya/LSTM-Air-Quality-Forecasting--VAYU',
     demo: '#',
-    thumbnail: '/images/vayu.png',
+    thumbnail: '/images/vayu2.png',
   },
   {
     title: 'Content Detection',
