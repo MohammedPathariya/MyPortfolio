@@ -43,7 +43,8 @@
 
 .hero-cta {
   font-size: 1rem;
-  margin-bottom: 0.25rem;
+  /* more space below CTA before buttons */
+  margin-bottom: 1rem;  /* was 0.25rem */
 }
 .hero-cta strong {
   font-weight: 600;
@@ -52,19 +53,23 @@
   margin-left: 0.25rem;
 }
 
-/* Desktop: left-align buttons */
+/* Buttons + social icons container */
 .hero-buttons {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  /* CENTER aligns the midlines of button & icons */
+  align-items: center;    /* ← changed from baseline */
   gap: 1rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;       /* was 0.5rem */
   margin-bottom: 1.5rem;
+  /* keep them on one row */
+  white-space: nowrap;
 }
 
+/* Resume button with download icon inside */
 .hero-resume-button {
   display: inline-flex;
-  align-items: center;
+  align-items: center;    /* centers text + svg in button */
   padding: 0.5rem 1rem;
   border: 1px solid var(--text-color);
   background: none;
@@ -84,15 +89,21 @@
   color: var(--bg-color);
 }
 
+/* Social icons sitting alongside the button */
 .hero-social {
   display: flex;
   gap: 0.75rem;
 }
 .hero-social a {
+  display: inline-flex;   /* ensure proper centering */
+  align-items: center;
   font-size: 1.4rem;
   color: var(--text-color);
   opacity: 0.6;
   transition: opacity 0.2s, color 0.2s;
+}
+.hero-social a svg {
+  display: block;         /* remove inline-SVG descender gap */
 }
 .hero-social a:hover {
   opacity: 1;
@@ -116,7 +127,6 @@
   .hero-left {
     text-align: center;
   }
-  /* Mobile: center buttons */
   .hero-buttons {
     justify-content: center;
   }
