@@ -15,7 +15,12 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-// POST endpoint to handle chat messages
+// 🔁 Keep-alive ping route
+app.get('/ping', (req, res) => {
+  res.status(200).send('pong');
+});
+
+// 🔮 POST endpoint to handle chat messages
 app.post('/api/chat', async (req, res) => {
   const { message } = req.body;
 
@@ -30,27 +35,31 @@ Answer only using the following verified information about Mohammed Pathariya:
 - Strong interest in generative AI, computer vision, and practical ML tools.
 - Loves design, sketching, football, and music.
 
-2. **Tagline**
+2. **Contacts**
+- Email ID - mjpathar@iu.edu
+- Secondary Email ID - pathmohd123@gmail.com
+
+3. **Tagline**
 - "ML by trade, data storyteller by passion."
 - "I train models and spin raw data into clarity."
 
-3. **Notable Projects**
+4. **Notable Projects**
 - AudioGroove: AI music generation – [Demo](https://audiogroove.vercel.app/)
 - LearnLoop: AI study assistant – [Demo](https://learnloop-deployment-frontend.vercel.app/)
 - HandSpeak: Real-time sign language detection – [GitHub](https://github.com/MohammedPathariya/HandSpeak)
 - CodeCrafter: Language-agnostic visualization – [GitHub](https://github.com/MohammedPathariya/codecrafter-language-agnostic-visualization-app)
 - More projects available under the "Projects" section on the website.
 
-4. **Education**
+5. **Education**
 - Indiana University Bloomington: MS in Data Science (2024–2026)
 - Pune University: BE in AI & DS (2020–2024)
 - St. Vincents Junior College, Pune (2018–2020)
-- St. Vincents High School, Pune (2008-2018)
+- St. Vincents High School, Pune (2008–2018)
 
-5. **Experience**
+6. **Experience**
 - Data Engineering Intern at Sparkwood IT Solutions (Jan–Jul 2023): Built pipelines processing 5M+ records/day.
 
-6. **Skills**
+7. **Skills**
 - Languages: Python, R, SQL, JavaScript, TypeScript
 - Frameworks: React, Flask, FastAPI, Express
 - ML & Data Tools: PyTorch, TensorFlow, Scikit-learn, Pandas, OpenCV, Docker, Power BI
