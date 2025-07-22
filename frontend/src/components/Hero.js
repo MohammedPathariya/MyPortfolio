@@ -10,7 +10,7 @@ const Hero = () => (
       </h1>
 
       <p className="hero-subheading">
-        Machine Learning Engineer in Chicago 🇺🇸
+        Machine Learning Engineer in Bloomington, Indiana 🇺🇸
       </p>
       {/* Two-line, left-aligned tagline */}
       <p className="hero-tagline">
