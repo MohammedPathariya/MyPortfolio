@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const rateLimit = require('express-rate-limit');
 const OpenAI = require('openai');
 
 dotenv.config();
@@ -9,6 +10,18 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// ─── rate limiter ────────────────────────────────────────────────────
+// limit each IP to 5 chat requests per minute
+const chatLimiter = rateLimit({
+  windowMs: 60 * 1000,          // 1 minute
+  max: 5,                       // start blocking after 5 requests
+  standardHeaders: true,        // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false,         // Disable the `X-RateLimit-*` headers
+  message: {
+    error: 'Too many requests. Please wait a minute before chatting again.'
+  }
+});
 
 // Initialize OpenAI client (v4+)
 const openai = new OpenAI({
@@ -20,8 +33,8 @@ app.get('/ping', (req, res) => {
   res.status(200).send('pong');
 });
 
-// 🔮 POST endpoint to handle chat messages
-app.post('/api/chat', async (req, res) => {
+// 🔮 POST endpoint to handle chat messages (with rate limiting)
+app.post('/api/chat', chatLimiter, async (req, res) => {
   const { message } = req.body;
 
   const systemPrompt = `
