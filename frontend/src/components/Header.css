@@ -21,7 +21,7 @@
 .header-container {
   max-width: 1600px;
   width: 100%;
-  height: 100%;                /* match the 72px header */
+  height: 100%; /* match the 72px header */
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -67,16 +67,14 @@
   padding: 0.5rem;
   cursor: pointer;
   color: var(--text-color);
-  /* UPDATED: Increased opacity to make icons darker/more prominent */
   opacity: 0.85;
   transition: opacity 0.2s, color 0.2s;
   position: relative;
-  outline: none; /* Removes the blue browser border on click/focus */
+  outline: none;
 }
 
-/* NEW: Specific adjustment for the sun icon in dark mode for visual balance */
 .dark .theme-toggle {
-  font-size: 1.6rem; /* Slightly larger to match the chat icon's visual weight */
+  font-size: 1.6rem;
 }
 
 .theme-toggle:hover,
@@ -85,34 +83,24 @@
   color: var(--accent-color);
 }
 
-/* Defines the initial state and transition for the strikethrough line */
 .chat-toggle::after {
   content: '';
   position: absolute;
-  
-  /* --- Centering Logic --- */
-  left: 50%; 
-  /* Nudge the line slightly above the true vertical center for better visual balance. */
+  left: 50%;
   top: 48%;
-  
-  /* --- Sizing --- */
-  width: 80%; 
+  width: 80%;
   height: 2px;
   background: currentColor;
-  
-  /* --- Transformation & Animation --- */
   transform: translate(-50%, -50%) rotate(45deg) scaleX(0);
-  transform-origin: center; 
+  transform-origin: center;
   opacity: 0;
   transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.2s ease-out;
 }
 
-/* Defines the final state of the line when the 'strikethrough' class is active */
 .chat-toggle.strikethrough::after {
   opacity: 1;
   transform: translate(-50%, -50%) rotate(45deg) scaleX(1);
 }
-
 
 /*──────────────────────────────────────────────────────────────────────────
    Push page content below fixed header
@@ -122,11 +110,11 @@ body {
 }
 
 /*──────────────────────────────────────────────────────────────────────────
-   Responsive tweaks: just shrink text slightly
+   Responsive tweaks: tablets
 ──────────────────────────────────────────────────────────────────────────*/
 @media (max-width: 768px) {
   .header-container {
-    gap: 1rem;  /* much smaller on tablets & phones */
+    gap: 1rem;
   }
   .nav-links a {
     font-size: 0.85rem;
@@ -135,30 +123,43 @@ body {
   .chat-toggle {
     font-size: 1.25rem;
   }
-  /* NEW: Also adjust the sun icon on mobile to keep it balanced */
   .dark .theme-toggle {
-    font-size: 1.35rem; 
+    font-size: 1.35rem;
   }
 }
 
-@media (max-width: 768px) {
-  /* Pack everything up against the left */
+/*──────────────────────────────────────────────────────────────────────────
+   Responsive tweaks: small phones (e.g. iPhone 12 Pro)
+──────────────────────────────────────────────────────────────────────────*/
+@media (max-width: 420px) {
   .header-container {
-    justify-content: flex-start;
-    position: fixed
+    gap: 0.75rem;
+    justify-content: space-between;
+    padding: 0 0.75rem;
+    flex-wrap: nowrap; /* Prevent wrapping */
   }
 
-  /* Put a small gap between the links and the toggles */
-  .header-controls {
-    margin-left: 1rem;  /* adjust as needed */
-  }
-}
-
-@media (max-width: 480px) {
   .nav-links {
     gap: 1rem;
+    flex: 1;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Optional: allow horizontal scroll if needed */
   }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
   .header-controls {
+    flex-shrink: 0;
     gap: 0.5rem;
+  }
+
+  .chat-toggle,
+  .theme-toggle {
+    flex-shrink: 0;
+    font-size: 1.2rem;
   }
 }
