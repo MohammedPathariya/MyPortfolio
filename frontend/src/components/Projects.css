@@ -193,3 +193,15 @@ body {
     gap: 0.75rem;
   }
 }
+
+@media (max-width: 480px) {
+  .project-tags {
+    gap: 0.4rem;
+  }
+  .project-links a {
+    font-size: 0.9rem;
+  }
+  .tag-button {
+    padding: 0.4rem 0.8rem;
+  }
+}

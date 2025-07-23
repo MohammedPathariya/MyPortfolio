@@ -325,15 +325,23 @@ body {
   .dark .theme-toggle {
     font-size: 1.35rem; 
   }
-}
-
-@media (max-width: 768px) {
   .header-container {
     justify-content: flex-start;
     position: fixed
   }
-
   .header-controls {
     margin-left: 1rem;  /* adjust as needed */
+  }
+}
+
+
+@media (max-width: 480px) {
+  .chat-widget-wrapper {
+    width: 95vw;
+    right: 2.5vw;
+    bottom: 10px;
+  }
+  .chat-bubble {
+    font-size: 13px;
   }
 }

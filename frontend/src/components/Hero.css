@@ -134,3 +134,20 @@
     margin-top: 1rem;
   }
 }
+
+@media (max-width: 480px) {
+  .hero-heading {
+    font-size: 2rem;
+  }
+  .hero-subheading {
+    font-size: 1rem;
+  }
+  .hero-tagline,
+  .hero-cta {
+    font-size: 0.9rem;
+  }
+  .hero-resume-button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.75rem;
+  }
+}

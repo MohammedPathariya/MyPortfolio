@@ -73,3 +73,14 @@
     max-width: 100%;
   }
 }
+
+@media (max-width: 480px) {
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 0.9rem;
+  }
+}
