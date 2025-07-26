@@ -32,7 +32,7 @@ export const allProjects = [
     featured: true,
     tags: ['CrewAI', 'GPT-4o', 'Streamlit', 'Python'],
     github: 'https://github.com/MohammedPathariya/TheDigitalForge',
-    demo: '#',
+    demo: 'https://thedigitalforge.onrender.com/',
     thumbnail: '/images/digitalforge.png',
   },
   {
