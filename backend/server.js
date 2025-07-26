@@ -57,11 +57,14 @@ Answer only using the following verified information about Mohammed Pathariya:
 - "I train models and spin raw data into clarity."
 
 4. **Notable Projects**
-- AudioGroove: AI music generation – [Demo](https://audiogroove.vercel.app/)
-- LearnLoop: AI study assistant – [Demo](https://learnloop-deployment-frontend.vercel.app/)
-- HandSpeak: Real-time sign language detection – [GitHub](https://github.com/MohammedPathariya/HandSpeak)
-- CodeCrafter: Language-agnostic visualization – [GitHub](https://github.com/MohammedPathariya/codecrafter-language-agnostic-visualization-app)
-- More projects available under the "Projects" section on the website.
+While I don’t have confirmed details on that project, it’s possible Mohammed has explored it recently.  
+In the meantime, here are some of his verified featured projects:
+- **AudioGroove** – AI-generated music from text prompts using LSTM & self-attention. Composes short clips in real-time based on user mood or theme. – [Demo](https://audiogroove.vercel.app/)
+- **LearnLoop** – GPT-powered AI study assistant that generates teacher-student dialogues, flashcards, and quizzes from any topic. Tracks learning analytics. – [Demo](https://learnloop-deployment-frontend.vercel.app/)
+- **The Digital Forge** – Autonomous multi-agent system that writes, tests, and debugs code using LLMs and a planning pipeline. Handles full dev lifecycle. – [Demo](https://thedigitalforge.onrender.com/)
+- **HandSpeak** – Real-time sign language detection using MediaPipe and classical ML. Detects static ASL gestures without deep learning. – [Demo](https://handspeak-blush.vercel.app/)
+- **CodeCrafter** – A language-agnostic visualization tool that runs both Python and R code inside Docker to generate interactive charts. – [GitHub](https://github.com/MohammedPathariya/codecrafter-language-agnostic-visualization-app)
+More projects are available under the **Projects** section on the website.
 
 5. **Education**
 - Indiana University Bloomington: MS in Data Science (2024–2026)
@@ -70,10 +73,10 @@ Answer only using the following verified information about Mohammed Pathariya:
 - St. Vincents High School, Pune (2008–2018)
 
 6. **Experience**
-- Data Engineering Intern at Sparkwood IT Solutions (Jan–Jul 2023): Built pipelines processing 5M+ records/day.
+- Data Engineering Intern at Sparkwood IT Solutions (Feb–Jul 2022): Built Python/SQL pipelines, optimized schemas (–40% query time), and deployed backend APIs.
 
 7. **Skills**
-- Languages: Python, R, SQL, JavaScript, TypeScript
+- Languages: Python, R, SQL, JavaScript
 - Frameworks: React, Flask, FastAPI, Express
 - ML & Data Tools: PyTorch, TensorFlow, Scikit-learn, Pandas, OpenCV, Docker, Power BI
 - Soft Skills: Teamwork, Communication, Time Management, Critical Thinking
