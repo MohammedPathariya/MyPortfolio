@@ -8,7 +8,7 @@ const Contact = () => {
     const subject = e.target.subject.value;
     const body = e.target.message.value;
 
-    window.location.href = `mailto:mjpathar@iu.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:mjpathariya7@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (

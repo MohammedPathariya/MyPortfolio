@@ -59,7 +59,7 @@ const Hero = () => (
           >
             <FaInstagram />
           </a>
-          <a href="mailto:mjpathar@iu.edu" aria-label="Email">
+          <a href="mailto:mjpathariya7@gmail.com" aria-label="Email">
             <FaEnvelope />
           </a>
         </div>
