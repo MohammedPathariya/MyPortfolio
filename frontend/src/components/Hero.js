@@ -26,7 +26,7 @@ const Hero = () => (
 
       <div className="hero-buttons">
         <a
-          href="/Mohammed_Resume.pdf"
+          href="/Mohammed_Resume_MLE_AIE.pdf"
           className="hero-resume-button"
           target="_blank"
           rel="noopener noreferrer"
