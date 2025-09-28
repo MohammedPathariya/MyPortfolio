@@ -4,6 +4,18 @@ import './TimelineTabs.css';
 
 const experienceData = [
   {
+    logo: '/images/iublogo.png',
+    period: 'Aug 2025 – Present',
+    title: 'Research Assistant, AI in Sports Analytics',
+    institution: 'Indiana University, Kelley School of Business, Bloomington, IN',
+    points: [
+      'Developed a fault-tolerant data pipeline in Python (WhisperX, yt-dlp) to automate the extraction, transcription, and diarization of unstructured audio from YouTube.',
+      'Implemented an NLP module using Sentence-BERT to semantically link jumbled Q&A transcripts, creating a structured, analysis-ready dataset.',
+      'Conducted a data integrity audit of NBA playoff transcripts, identifying and resolving critical data gaps to ensure dataset completeness for predictive modeling.',
+      'Built a text enhancement pipeline to restore punctuation and perform sentiment analysis (VADER), creating a rich feature set for predictive modeling.',
+    ],
+  },
+  {
     logo: '/images/sparkwoodlogo.png',
     period: 'Feb 2022 – Jul 2022',
     title: 'Data Engineering Intern',
