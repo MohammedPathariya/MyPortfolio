@@ -6,13 +6,17 @@ const experienceData = [
   {
     logo: '/images/iublogo.png',
     period: 'Aug 2025 – Present',
-    title: 'Research Assistant, AI in Sports Analytics',
-    institution: 'Indiana University, Kelley School of Business, Bloomington, IN',
+    title: 'Graduate Research Assistant, AI in Sports Analytics',
+    institution: 'Indiana University, Kelley School of Business',
     points: [
-      'Developed a fault-tolerant data pipeline in Python (WhisperX, yt-dlp) to automate the extraction, transcription, and diarization of unstructured audio from YouTube.',
-      'Implemented an NLP module using Sentence-BERT to semantically link jumbled Q&A transcripts, creating a structured, analysis-ready dataset.',
-      'Conducted a data integrity audit of NBA playoff transcripts, identifying and resolving critical data gaps to ensure dataset completeness for predictive modeling.',
-      'Built a text enhancement pipeline to restore punctuation and perform sentiment analysis (VADER), creating a rich feature set for predictive modeling.',
+      // The "Scale" Story
+      'Orchestrated High-Performance Computing (HPC) workflows using Slurm to parallelize WhisperX transcription across 5 nodes, reducing processing time for 450+ hours of audio by 30x.',
+      // The "Hybrid Model" Story
+      'Designed a hybrid NLP architecture that fuses high-dimensional Sentence-BERT embeddings with rule-based VADER lexicons, solving the "smoothing" problem to capture granular emotional spikes in press conferences.',
+      // The "Data Integrity" Story
+      'Engineered a fault-tolerant scraping pipeline using SQLite in WAL (Write-Ahead Logging) mode to handle concurrent writes without locking, ensuring zero data loss during live game ingestion.',
+      // The "Impact" Story
+      'Built automated drift detection scripts to monitor sentiment distribution over time, creating a longitudinal dataset now used for causal inference studies on player performance.',
     ],
   },
   {
@@ -21,10 +25,14 @@ const experienceData = [
     title: 'Data Engineering Intern',
     institution: 'Sparkwood IT Solutions, Pune, India',
     points: [
-      'Orchestrated daily ETL pipelines using Python, SQL, and Airflow into a centralized PostgreSQL data warehouse.',
-      'Reduced query times by 40% by optimizing SQL schemas, directly increasing the productivity of downstream data consumers.',
-      'Built pandas transformation jobs to reliably process over 10 GB of data weekly for analytics and modeling.',
-      'Collaborated with data and engineering teams to align data products with cross-functional requirements.',
+      // The "Root Cause" Story
+      'Led the root-cause analysis of a 5% KPI discrepancy between Marketing and Finance, tracing it to inconsistent "Cancelled Order" logic and standardizing it via a validated SQL View.',
+      // The "Optimization" Story
+      'Optimized legacy PostgreSQL reporting queries by analyzing `EXPLAIN ANALYZE` execution plans and implementing composite indices, cutting dashboard load times by 40% (5m → 3m).',
+      // The "Reliability" Story
+      'Hardened daily ETL pipelines in Apache Airflow by implementing "Smart Retries" and data quality gates, preventing bad data from polluting the central warehouse during peak load.',
+      // The "Collaboration" Story
+      'Collaborated with the Data Science team to engineer features for inventory forecasting, translating raw transactional logs into time-series aggregates.',
     ],
   },
 ];
@@ -36,10 +44,10 @@ const educationData = [
     title: 'Master of Science in Data Science',
     institution: 'Indiana University Bloomington',
     points: [
-      'GPA: 3.6/4.0',
-      'Relevant Coursework: LLMs, Deep Learning, MLOps, Cloud Computing',
-      'Key Projects: The Digital Forge (AI Agents), LearnLoop (AI Tutor)',
-      'Presented research on multi-agent systems at the IU Graduate Research Expo',
+      'Focus: Generative AI Systems, Scalable ML Infrastructure, & LLM Evaluation',
+      'GPA: 3.7/4.0',
+      'Relevant Coursework: Large Language Models (LLMs), Deep Learning Systems, MLOps, Cloud Computing',
+      'Capstone: "The Digital Forge" – A Multi-Agent System for Autonomous Code Generation',
     ],
   },
   {
@@ -48,10 +56,10 @@ const educationData = [
     title: 'Bachelor of Engineering, AI & Data Science',
     institution: 'Savitribai Phule Pune University',
     points: [
-      'GPA: 3.8/4.0 | Graduated with distinction (Top 5%)',
-      'Relevant Coursework: ML, DSA, Operating Systems, Statistics',
-      'Capstone Project: AudioGroove (AI Music Generation)',
-      'Organized 10+ AI hackathons and hands-on workshops for students',
+      'Graduated with Distinction (Top 5% of Class) | GPA: 3.8/4.0',
+      'Relevant Coursework: Distributed Systems, Operating Systems, Algorithms, Statistical Inference',
+      'Research: Published "Tunes by Technology" (IEEE ICC Robins) on GAN vs. LSTM architectures',
+      'Leadership: Organized 10+ technical workshops, mentoring 200+ students in Python & ML basics',
     ],
   },
 ];
