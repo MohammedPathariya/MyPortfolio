@@ -46,7 +46,7 @@ const educationData = [
     points: [
       'Focus: Generative AI Systems, Scalable ML Infrastructure, & LLM Evaluation',
       'GPA: 3.7/4.0',
-      'Relevant Coursework: Large Language Models (LLMs), Deep Learning Systems, MLOps, Cloud Computing',
+      'Relevant Coursework: Large Language Models, Deep Learning Systems, MLOps, Cloud Computing',
       'Capstone: "The Digital Forge" – A Multi-Agent System for Autonomous Code Generation',
     ],
   },
