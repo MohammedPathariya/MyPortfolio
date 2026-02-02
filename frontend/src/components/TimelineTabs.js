@@ -21,7 +21,7 @@ const experienceData = [
   },
   {
     logo: '/images/sparkwoodlogo.png',
-    period: 'Feb 2022 – Jul 2022',
+    period: 'Jan 2024 – Jul 2024',
     title: 'Data Engineering Intern',
     institution: 'Sparkwood IT Solutions, Pune, India',
     points: [
