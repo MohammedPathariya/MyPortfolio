@@ -1,27 +1,30 @@
 export const allProjects = [
   {
     title: 'The Digital Forge',
-    description: 'Reduced boilerplate coding time by 60% by developing an autonomous multi-agent system that achieved an 85% success rate in generating functional Python scripts from prompts.',
+    // Narrative: Focus on "Self-Healing" and "Sandboxing"
+    description: 'An autonomous multi-agent coding system that achieved an 85% Pass@1 rate on algorithmic tasks. Features a "Self-Healing" reflection loop where agents execute code in a Dockerized sandbox, capture stderr, and iteratively debug their own errors.',
     featured: true,
-    tags: ['CrewAI', 'GPT-4o', 'Streamlit', 'Docker'],
+    tags: ['Multi-Agent Systems', 'Docker', 'CrewAI', 'CI/CD', 'Python'],
     github: 'https://github.com/MohammedPathariya/TheDigitalForge',
     demo: 'https://thedigitalforge.onrender.com/',
     thumbnail: '/images/digitalforge.png',
   },
   {
     title: 'LearnLoop',
-    description: 'Improved user knowledge retention by 25% by architecting a scalable, GPT-powered learning assistant designed to handle 500+ concurrent users.',
+    // Narrative: Focus on "Reliability" and "Concurrency"
+    description: 'A fault-tolerant RAG architecture designed for reliability. Engineered with Session-Based FAISS indexes for strict data isolation and a Pydantic-powered validation layer that autonomously corrects 90% of LLM JSON schema hallucinations.',
     featured: true,
-    tags: ['Flask', 'React', 'OpenAI', 'Docker', 'CI/CD'],
+    tags: ['RAG', 'Pydantic', 'SQLite WAL', 'Locust', 'React'],
     github: 'https://github.com/MohammedPathariya/LearnLoop-Deployment',
     demo: 'https://learnloop-deployment-frontend.vercel.app/',
     thumbnail: '/images/learnloop.png',
   },
   {
     title: 'AudioGroove',
-    description: 'Empowered content creators with royalty-free music by engineering a generative AI platform using a PyTorch LSTM model that achieved a cross-entropy loss of 0.78.',
+    // Narrative: Focus on "Scale" and "Research"
+    description: 'A comparative research study scaling Deep Learning to 175,000+ MIDI files. Built a distributed Dask ETL pipeline to handle the massive dataset and proved that Bi-Directional LSTMs statistically outperform DCGANs for symbolic music generation.',
     featured: true,
-    tags: ['PyTorch', 'MLflow', 'Flask', 'Docker', 'Dask'],
+    tags: ['Deep Learning', 'Dask', 'MLflow', 'PyTorch', 'Research'],
     github: 'https://github.com/MohammedPathariya/AudioGroove',
     demo: 'https://audiogroove.vercel.app/',
     thumbnail: '/images/audiogroove2.png',
