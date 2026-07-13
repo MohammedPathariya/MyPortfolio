@@ -10,12 +10,12 @@ const Hero = () => (
       </h1>
 
       <p className="hero-subheading">
-        Machine Learning Engineer in Bloomington, Indiana 🇺🇸
+        Machine Learning Engineer in San Jose, California
       </p>
       {/* Two-line, left-aligned tagline */}
       <p className="hero-tagline">
-        I build predictive models and apply LLMs to analyze complex data. <br/>
-        I translate my findings into actionable business strategy.
+        I build agentic AI systems and LLM pipelines that turn unstructured data into decisions. <br/>
+        From multi-agent orchestration to HPC-scale NLP, I ship systems that work in production.
       </p>
 
       <div className="hero-cta">
