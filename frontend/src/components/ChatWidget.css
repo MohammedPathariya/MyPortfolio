@@ -345,3 +345,10 @@ body {
     font-size: 13px;
   }
 }
+
+/* This is for the chat bubble content to be displayed properly with markdown formatting, including lists and bold text. */
+
+.chat-bubble p { margin: 4px 0; text-align: left; }
+.chat-bubble ul { padding-left: 16px; margin: 6px 0; text-align: left; }
+.chat-bubble li { margin: 3px 0; }
+.chat-bubble strong { font-weight: 600; }

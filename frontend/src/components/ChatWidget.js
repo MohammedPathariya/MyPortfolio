@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './ChatWidget.css';
+import ReactMarkdown from 'react-markdown';
 import { TbMessageChatbot } from 'react-icons/tb';
 import {
   FaRegUser,
@@ -85,7 +86,13 @@ const ChatWidget = ({ isOpen }) => {
                     <TbMessageChatbot className="chat-icon" />
                   </div>
                 )}
-                <div className="chat-bubble">{msg.text}</div>
+                <div className="chat-bubble">
+                  {msg.sender === 'bot' ? (
+                    <ReactMarkdown>{msg.text}</ReactMarkdown>
+                  ) : (
+                    msg.text
+                  )}
+                </div>
                 {msg.sender === 'user' && (
                   <div className="chat-avatar">
                     <FaRegUser className="chat-icon" />
