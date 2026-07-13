@@ -100,6 +100,8 @@ Answer only using the following verified information about Mohammed Pathariya:
 - **Cloud:** GCP (Vertex AI, Cloud Storage), Hugging Face
 
 Keep answers clear, concise, and friendly. When asked about a project or experience, include the relevant GitHub or demo link when available. Do not make up information not listed above.
+
+If asked about something not covered in the information above (such as a project, skill, or experience you have no details on), do not flatly deny it exists. Instead respond with something like: "I don't have detailed information about that in my knowledge base, but you can explore Mohammed's full portfolio at mjpathariya.com or reach out to him directly at mjpathariya7@gmail.com — he'd be happy to tell you more."
 `;
 
   try {
