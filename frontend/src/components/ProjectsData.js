@@ -1,10 +1,9 @@
 export const allProjects = [
   {
     title: 'The Digital Forge',
-    // Narrative: Focus on "Self-Healing" and "Sandboxing"
-    description: 'An autonomous multi-agent coding system that achieved an 85% Pass@1 rate on algorithmic tasks. Features a "Self-Healing" reflection loop where agents execute code in a Dockerized sandbox, capture stderr, and iteratively debug their own errors.',
+    description: 'A sequential multi-agent system (CrewAI) mimicking the SDLC across 4 specialized agents, achieving an 80% final pass rate on a 20-task benchmark vs. a 45% zero-shot GPT-4 baseline. Features a self-healing Docker sandbox that salvages failed tasks and a ChromaDB RAG guardrail grounding agents in verified API references.',
     featured: true,
-    tags: ['Multi-Agent Systems', 'Docker', 'CrewAI', 'CI/CD', 'Python'],
+    tags: ['Multi-Agent Systems', 'CrewAI', 'Docker', 'ChromaDB', 'Python'],
     github: 'https://github.com/MohammedPathariya/TheDigitalForge',
     demo: 'https://thedigitalforge.onrender.com/',
     thumbnail: '/images/digitalforge.png',
