@@ -22,7 +22,7 @@ const experienceData = [
     institution: 'Indiana University Kelley School of Business',
     points: [
       'Built an end-to-end NBA press conference pipeline processing 700+ games, parallelizing WhisperX transcription across 5 Slurm-managed HPC nodes with SQLite file-locking for distributed state, achieving a 30x speedup (3.5m to 7s per audio-minute).',
-      'Deployed 8-bit quantized Llama-3 8B (bitsandbytes) on Big Red 200 A100 nodes for psychological marker extraction, achieving 89% precision — a 17-point improvement over a 72% RoBERTa baseline on a 500-quote gold set.',
+      'Deployed 8-bit quantized Llama-3 8B (bitsandbytes) on Big Red 200 A100 nodes for psychological marker extraction, achieving 89% precision, a 17-point improvement over a 72% RoBERTa baseline on a 500-quote gold set.',
       'Architected a Transformer Encoder fusing Llama-3 sentiment embeddings with rolling box-score metrics, chosen over XGBoost to allow direct feature interaction, achieving 53.8% Against-The-Spread accuracy on a 120-game chronological holdout vs. 52.4% breakeven.',
     ],
   },
@@ -42,26 +42,26 @@ const experienceData = [
 const educationData = [
   {
     logo: '/images/iublogo.png',
-    period: 'Aug 2024 – Exp. May 2026',
+    period: 'Aug 2024 – May 2026',
     title: 'Master of Science in Data Science',
     institution: 'Indiana University Bloomington',
     points: [
-      'Focus: Generative AI Systems, Scalable ML Infrastructure, & LLM Evaluation',
-      'GPA: 3.7/4.0',
-      'Relevant Coursework: Large Language Models, Deep Learning Systems, MLOps, Cloud Computing',
-      'Capstone: "The Digital Forge" – A Multi-Agent System for Autonomous Code Generation',
+      'GPA: 3.75/4.0',
+      'Relevant Coursework: Large Language Models, Deep Learning, Statistical ML, MLOps, Cloud Computing',
+      'Research: Graduate Research Assistant across two labs : Kelley School of Business (NBA NLP pipeline) and Luddy School of Informatics (Genomic Edge Pipeline)',
+      'Capstone: The Digital Forge : A Sequential Multi-Agent System for Autonomous Code Generation',
     ],
   },
   {
     logo: '/images/sppulogo.png',
     period: 'Aug 2020 – May 2024',
-    title: 'Bachelor of Engineering, AI & Data Science',
+    title: 'Bachelor of Engineering, Artificial Intelligence & Data Science',
     institution: 'Savitribai Phule Pune University',
     points: [
-      'Graduated with Distinction (Top 5% of Class) | GPA: 3.8/4.0',
-      'Relevant Coursework: Distributed Systems, Operating Systems, Algorithms, Statistical Inference',
-      'Research: Published "Tunes by Technology" (IEEE ICC Robins) on GAN vs. LSTM architectures',
-      'Leadership: Organized 10+ technical workshops, mentoring 200+ students in Python & ML basics',
+      'GPA: 3.80/4.0 | Graduated with Distinction',
+      'Relevant Coursework: Machine Learning, Data Structures & Algorithms, Statistics, Probability & Inference',
+      'Research: Published "Tunes by Technology" at IEEE ICC Robins which statistically validated Bi-LSTM outperforms DCGAN for symbolic music generation',
+      'Leadership: Organized 10+ technical workshops, mentoring 200+ students in Python and ML fundamentals',
     ],
   },
 ];
