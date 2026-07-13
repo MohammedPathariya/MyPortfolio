@@ -4,19 +4,26 @@ import './TimelineTabs.css';
 
 const experienceData = [
   {
-    logo: '/images/iublogo.png',
-    period: 'Aug 2025 – Present',
-    title: 'Graduate Research Assistant, AI in Sports Analytics',
-    institution: 'Indiana University, Kelley School of Business',
+    logo: '/images/luddylogo.png',
+    period: 'Jan 2026 – May 2026',
+    title: 'Graduate Research Assistant',
+    institution: 'Indiana University Luddy School of Informatics, Computing, and Engineering',
     points: [
-      // The "Scale" Story
-      'Orchestrated High-Performance Computing (HPC) workflows using Slurm to parallelize WhisperX transcription across 5 nodes, reducing processing time for 450+ hours of audio by 30x.',
-      // The "Hybrid Model" Story
-      'Designed a hybrid NLP architecture that fuses high-dimensional Sentence-BERT embeddings with rule-based VADER lexicons, solving the "smoothing" problem to capture granular emotional spikes in press conferences.',
-      // The "Data Integrity" Story
-      'Engineered a fault-tolerant scraping pipeline using SQLite in WAL (Write-Ahead Logging) mode to handle concurrent writes without locking, ensuring zero data loss during live game ingestion.',
-      // The "Impact" Story
-      'Built automated drift detection scripts to monitor sentiment distribution over time, creating a longitudinal dataset now used for causal inference studies on player performance.',
+      'Built a complete alignment-free diagnostic pipeline on NVIDIA Jetson AGX Orin, replacing Minimap2 alignment with a custom k-mer voting classifier achieving under 1 second per sample on CPU vs. 10-20 minutes with traditional tools.',
+      'Validated against 43,000+ clinical sequences from Stanford HIVdb across 10+ HIV subtypes globally, achieving 97.5-99.7% recall with all per-mutation Fisher exact tests significant at p < 0.001.',
+      'Engineered a six-component Python preprocessing suite handling FASTQ/FASTA parsing, codon frame resolution via stop-codon counting, and gene region localization across PR/RT/IN with automated quality filtering.',
+      'Designing a CNN-Transformer architecture for resistance classification targeting TensorRT quantization for Jetson deployment, with training data prepared across 16 ACTG clinical trials and 8,000+ sequences.',
+    ],
+  },
+  {
+    logo: '/images/kellylogo.png',
+    period: 'Jun 2025 – Jan 2026',
+    title: 'Graduate Research Assistant',
+    institution: 'Indiana University Kelley School of Business',
+    points: [
+      'Built an end-to-end NBA press conference pipeline processing 700+ games, parallelizing WhisperX transcription across 5 Slurm-managed HPC nodes with SQLite file-locking for distributed state, achieving a 30x speedup (3.5m to 7s per audio-minute).',
+      'Deployed 8-bit quantized Llama-3 8B (bitsandbytes) on Big Red 200 A100 nodes for psychological marker extraction, achieving 89% precision — a 17-point improvement over a 72% RoBERTa baseline on a 500-quote gold set.',
+      'Architected a Transformer Encoder fusing Llama-3 sentiment embeddings with rolling box-score metrics, chosen over XGBoost to allow direct feature interaction, achieving 53.8% Against-The-Spread accuracy on a 120-game chronological holdout vs. 52.4% breakeven.',
     ],
   },
   {
@@ -25,14 +32,9 @@ const experienceData = [
     title: 'Data Engineering Intern',
     institution: 'Sparkwood IT Solutions, Pune, India',
     points: [
-      // The "Root Cause" Story
-      'Led the root-cause analysis of a 5% KPI discrepancy between Marketing and Finance, tracing it to inconsistent "Cancelled Order" logic and standardizing it via a validated SQL View.',
-      // The "Optimization" Story
-      'Optimized legacy PostgreSQL reporting queries by analyzing `EXPLAIN ANALYZE` execution plans and implementing composite indices, cutting dashboard load times by 40% (5m → 3m).',
-      // The "Reliability" Story
-      'Hardened daily ETL pipelines in Apache Airflow by implementing "Smart Retries" and data quality gates, preventing bad data from polluting the central warehouse during peak load.',
-      // The "Collaboration" Story
-      'Collaborated with the Data Science team to engineer features for inventory forecasting, translating raw transactional logs into time-series aggregates.',
+      'Collaborated with a senior engineer to conduct root-cause analysis on a 5% KPI discrepancy between Marketing and Finance, resolving it via a SQL View as a shared source of truth — an architectural fix rather than a query patch.',
+      'Diagnosed a legacy PostgreSQL sales report taking 5 minutes to generate, identified the root cause via execution plan analysis, and implemented composite indexing reducing report generation latency by 40% (5m to 3m).',
+      'Diagnosed recurring database lock contention in production Airflow ETL pipelines, implementing automated retry logic that reduced nightly pipeline failures by 90%, from near-daily incidents to under one manual intervention per month.',
     ],
   },
 ];
