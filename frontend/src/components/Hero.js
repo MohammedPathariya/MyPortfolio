@@ -18,8 +18,12 @@ const Hero = () => (
       </p>
 
       <div className="hero-cta">
-        <strong>
-          Got questions? Submit a ticket to Mohammed Support<span>&rarr;</span>
+        <strong 
+          className="chat-trigger" 
+          onClick={() => document.querySelector('.chat-toggle').click()}
+          style={{ cursor: 'pointer' }}
+        >
+          Have questions? Chat with my AI assistant <span>&rarr;</span>
         </strong>
       </div>
 
