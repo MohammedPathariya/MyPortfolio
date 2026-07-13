@@ -14,8 +14,7 @@ const Hero = () => (
       </p>
       {/* Two-line, left-aligned tagline */}
       <p className="hero-tagline">
-        I build agentic AI systems and LLM pipelines that turn unstructured data into decisions. <br/>
-        Multi-agent orchestration to HPC-scale NLP, I ship systems that work in production.
+        I build agentic AI systems and LLM pipelines, from multi-agent orchestration to HPC-scale NLP.
       </p>
 
       <div className="hero-cta">
