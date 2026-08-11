@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 
-const greetingSequence = [0, 1, 2, 1, 0, 1, 2, 1, 2, 3];
-const typingSequence = [2, 3, 2, 3];
-const greetingFrameDuration = 150;
-const typingFrameDuration = 520;
+const greetingSequence = [0, 1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1, 0];
+const typingSequence = [6, 7];
+const greetingFrameDuration = 220;
+const typingFrameDuration = 760;
 
 const AnimatedHeroIllustration = ({ frames, alt }) => {
   const canvasRef = useRef(null);
+  const hasGreetedRef = useRef(false);
   const fallbackFrame = frames[0];
 
   useEffect(() => {
@@ -24,7 +25,7 @@ const AnimatedHeroIllustration = ({ frames, alt }) => {
     let lastTimestamp = 0;
     let elapsed = 0;
     let sequencePosition = 0;
-    let phase = 'greeting';
+    let phase = hasGreetedRef.current ? 'typing' : 'greeting';
     let isVisible = true;
     let hasDrawn = false;
 
@@ -59,12 +60,21 @@ const AnimatedHeroIllustration = ({ frames, alt }) => {
         if (phase === 'greeting' && sequencePosition >= greetingSequence.length) {
           phase = 'typing';
           sequencePosition = 0;
+          hasGreetedRef.current = true;
         } else {
           sequencePosition %= sequence.length;
         }
       }
       drawFrame(sequence[sequencePosition]);
       animationFrame = window.requestAnimationFrame(animate);
+    };
+
+    const handleScroll = () => {
+      if (phase !== 'greeting' || window.scrollY < 48) return;
+      phase = 'typing';
+      sequencePosition = 0;
+      elapsed = 0;
+      hasGreetedRef.current = true;
     };
 
     const observer = new IntersectionObserver(([entry]) => {
@@ -80,10 +90,12 @@ const AnimatedHeroIllustration = ({ frames, alt }) => {
     }, { threshold: 0.1 });
 
     observer.observe(canvas);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     animationFrame = window.requestAnimationFrame(animate);
 
     return () => {
       observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
       if (animationFrame) window.cancelAnimationFrame(animationFrame);
       if (!hasDrawn) context.clearRect(0, 0, canvas.width, canvas.height);
     };
