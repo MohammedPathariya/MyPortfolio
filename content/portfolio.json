@@ -32,7 +32,7 @@
         "15% hallucination rescue through the ChromaDB RAG guardrail"
       ],
       "github": "https://github.com/MohammedPathariya/TheDigitalForge",
-      "demo": "https://thedigitalforge.onrender.com/",
+      "demo": "https://the-digital-forge-jade.vercel.app/",
       "thumbnail": "/images/digitalforge.png"
     },
     {
@@ -47,7 +47,7 @@
         "SQLite WAL mode sustained 500+ concurrent users with zero HTTP 500 errors"
       ],
       "github": "https://github.com/MohammedPathariya/LearnLoop-Deployment",
-      "demo": "https://learnloop-deployment-frontend.vercel.app/",
+      "demo": "https://learnloop-portfolio.vercel.app/",
       "thumbnail": "/images/learnloop.png"
     },
     {
