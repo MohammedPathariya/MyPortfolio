@@ -21,6 +21,16 @@
       "/images/hero-animation/frame-06.webp",
       "/images/hero-animation/frame-07.webp",
       "/images/hero-animation/frame-08.webp"
+    ],
+    "heroWorkFrames": [
+      "/images/hero-animation/work-01.webp",
+      "/images/hero-animation/work-02.webp",
+      "/images/hero-animation/work-03.webp",
+      "/images/hero-animation/work-04.webp",
+      "/images/hero-animation/work-05.webp",
+      "/images/hero-animation/work-06.webp",
+      "/images/hero-animation/work-07.webp",
+      "/images/hero-animation/work-08.webp"
     ]
   },
   "contact": {

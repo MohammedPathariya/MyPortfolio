@@ -82,6 +82,12 @@ if (!isObject(content.person)) {
       requireAsset(frame, `person.heroAnimationFrames[${index}]`);
     });
   }
+  requireArray(content.person.heroWorkFrames, 'person.heroWorkFrames');
+  if (Array.isArray(content.person.heroWorkFrames)) {
+    content.person.heroWorkFrames.forEach((frame, index) => {
+      requireAsset(frame, `person.heroWorkFrames[${index}]`);
+    });
+  }
 }
 
 if (!isObject(content.contact)) {

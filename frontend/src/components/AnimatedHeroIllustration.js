@@ -1,22 +1,23 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 
-const greetingSequence = [0, 1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1, 0];
-const typingSequence = [6, 7];
+const greetingSequence = [0, 1, 2, 3, 4, 5, 6, 7];
 const greetingFrameDuration = 220;
 const typingFrameDuration = 760;
 
-const AnimatedHeroIllustration = ({ frames, alt }) => {
+const AnimatedHeroIllustration = ({ frames, workFrames, alt }) => {
   const canvasRef = useRef(null);
   const hasGreetedRef = useRef(false);
   const fallbackFrame = frames[0];
+  const allFrames = useMemo(() => [...frames, ...workFrames], [frames, workFrames]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!canvas || prefersReducedMotion || frames.length < 2) return undefined;
+    if (!canvas || prefersReducedMotion || allFrames.length < 2) return undefined;
 
     const context = canvas.getContext('2d');
-    const images = frames.map((source) => {
+    const typingSequence = workFrames.map((_, index) => frames.length + index);
+    const images = allFrames.map((source) => {
       const image = new Image();
       image.src = source;
       return image;
@@ -99,7 +100,7 @@ const AnimatedHeroIllustration = ({ frames, alt }) => {
       if (animationFrame) window.cancelAnimationFrame(animationFrame);
       if (!hasDrawn) context.clearRect(0, 0, canvas.width, canvas.height);
     };
-  }, [frames]);
+  }, [allFrames, frames, workFrames]);
 
   return (
     <div className="hero-animation" aria-label={alt}>

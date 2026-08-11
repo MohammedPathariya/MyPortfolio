@@ -75,6 +75,7 @@ const Hero = () => (
     <div className="hero-right">
       <AnimatedHeroIllustration
         frames={portfolio.person.heroAnimationFrames || [portfolio.person.heroImage]}
+        workFrames={portfolio.person.heroWorkFrames || portfolio.person.heroAnimationFrames || [portfolio.person.heroImage]}
         alt="Mohammed Pathariya working at a desk"
       />
     </div>
