@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 
-const greetingSequence = [0, 1, 2, 3, 4, 5, 6, 7];
+const greetingSequence = [0, 1, 2, 3, 4, 5];
+const initialRestDuration = 1100;
 const greetingFrameDuration = 180;
 const typingFrameDuration = 520;
 
@@ -26,7 +27,7 @@ const AnimatedHeroIllustration = ({ frames, workFrames, alt }) => {
     let lastTimestamp = 0;
     let elapsed = 0;
     let sequencePosition = 0;
-    let phase = hasGreetedRef.current ? 'typing' : 'greeting';
+    let phase = hasGreetedRef.current ? 'typing' : 'resting';
     let isVisible = true;
     let hasDrawn = false;
 
@@ -50,14 +51,21 @@ const AnimatedHeroIllustration = ({ frames, workFrames, alt }) => {
       if (!lastTimestamp) lastTimestamp = timestamp;
       elapsed += timestamp - lastTimestamp;
       lastTimestamp = timestamp;
-      const sequence = phase === 'greeting' ? greetingSequence : typingSequence;
-      const duration = phase === 'greeting'
-        ? greetingFrameDuration
-        : typingFrameDuration;
+      const sequence = phase === 'resting'
+        ? [0]
+        : phase === 'greeting' ? greetingSequence : typingSequence;
+      const duration = phase === 'resting'
+        ? initialRestDuration
+        : phase === 'greeting' ? greetingFrameDuration : typingFrameDuration;
 
       if (elapsed >= duration) {
         elapsed = 0;
-        sequencePosition += 1;
+        if (phase === 'resting') {
+          phase = 'greeting';
+          sequencePosition = 0;
+        } else {
+          sequencePosition += 1;
+        }
         if (phase === 'greeting' && sequencePosition >= greetingSequence.length) {
           phase = 'typing';
           sequencePosition = 0;
@@ -71,7 +79,7 @@ const AnimatedHeroIllustration = ({ frames, workFrames, alt }) => {
     };
 
     const handleScroll = () => {
-      if (phase !== 'greeting' || window.scrollY < 48) return;
+      if (!['resting', 'greeting'].includes(phase) || window.scrollY < 48) return;
       phase = 'typing';
       sequencePosition = 0;
       elapsed = 0;

@@ -130,6 +130,12 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+.hero-animation .hero-photo,
+.hero-animation .hero-animation-canvas {
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .hero-animation-canvas {
   position: absolute;
   inset: 0;
