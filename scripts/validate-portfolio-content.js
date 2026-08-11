@@ -70,24 +70,11 @@ if (!isObject(content.person)) {
   errors.push('person must be an object');
 } else {
   requireId(content.person.id, 'person.id');
-  for (const field of ['name', 'headline', 'role', 'location', 'summary', 'website', 'resumePath', 'heroImage']) {
+  for (const field of ['name', 'headline', 'role', 'location', 'summary', 'website', 'resumePath']) {
     requireString(content.person[field], `person.${field}`);
   }
   requireUrl(content.person.website, 'person.website');
   requireAsset(content.person.resumePath, 'person.resumePath');
-  requireAsset(content.person.heroImage, 'person.heroImage');
-  requireArray(content.person.heroAnimationFrames, 'person.heroAnimationFrames');
-  if (Array.isArray(content.person.heroAnimationFrames)) {
-    content.person.heroAnimationFrames.forEach((frame, index) => {
-      requireAsset(frame, `person.heroAnimationFrames[${index}]`);
-    });
-  }
-  requireArray(content.person.heroWorkFrames, 'person.heroWorkFrames');
-  if (Array.isArray(content.person.heroWorkFrames)) {
-    content.person.heroWorkFrames.forEach((frame, index) => {
-      requireAsset(frame, `person.heroWorkFrames[${index}]`);
-    });
-  }
 }
 
 if (!isObject(content.contact)) {

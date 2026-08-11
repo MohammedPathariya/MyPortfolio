@@ -10,24 +10,7 @@
     "location": "San Jose, California",
     "summary": "An AI Engineer and MS in Data Science candidate at Indiana University Bloomington specializing in agentic AI systems, LLM pipelines, and HPC-scale NLP. Builds production-grade multi-agent systems, RAG pipelines, and transformer-based predictive models.",
     "website": "https://mjpathariya.com/",
-    "resumePath": "/Mohammed_Resume_MLE_AIE.pdf",
-    "heroImage": "/images/hero-animation/frame-01.webp",
-    "heroAnimationFrames": [
-      "/images/hero-animation/frame-01.webp",
-      "/images/hero-animation/frame-02.webp",
-      "/images/hero-animation/frame-03.webp",
-      "/images/hero-animation/frame-04.webp",
-      "/images/hero-animation/frame-05.webp",
-      "/images/hero-animation/frame-06.webp"
-    ],
-    "heroWorkFrames": [
-      "/images/hero-animation/work-01.webp",
-      "/images/hero-animation/work-02.webp",
-      "/images/hero-animation/work-03.webp",
-      "/images/hero-animation/work-04.webp",
-      "/images/hero-animation/work-05.webp",
-      "/images/hero-animation/work-06.webp"
-    ]
+    "resumePath": "/Mohammed_Resume_MLE_AIE.pdf"
   },
   "contact": {
     "email": "mjpathariya7@gmail.com",

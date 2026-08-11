@@ -157,13 +157,22 @@ Deployment follow-up: Vercel must define `REACT_APP_API_BASE_URL` before the fro
 
 The local gate passed. The deployment gate remains open until Render is rebuilt with the current canonical content and the stale JPEG is no longer served or is confirmed harmless static history. Browser-level mobile and keyboard testing also remains pending because the local verification environment denied loopback server binding.
 
-## Not started
+## Phase 7 visual implementation: 2026-08-11
 
-- Visual identity redesign
+- Started the visual identity work with a custom front-facing male character in a rolled-sleeve henley, seated with a laptop and mug.
+- Replaced generated bitmap flipbook frames with a single inline SVG rig after deployed review showed crop, scale, and alignment drift between generated frames.
+- Added a delayed one-time wave, subtle working-hand movement, blinking, off-screen animation pausing, and reduced-motion behavior.
+- Kept the illustration background transparent and made its line and fill colors follow the active site theme.
+- Removed 12 obsolete generated WebP animation frames and their canonical content fields.
+- Frontend tests, production build, canonical content validation, and asset validation passed.
+
+## Remaining visual work
+
+- Complete the broader typography, color, spacing, layout, and component redesign after the hero direction is approved.
 
 ## Current working-tree note
 
-The application source was modified through Phase 6. The generated frontend content module and `frontend/build/` directory remain disposable and are explicitly ignored by Git.
+The application source was modified through the initial Phase 7 hero work. The generated frontend content module and `frontend/build/` directory remain disposable and are explicitly ignored by Git.
 
 ## Next implementation gate
 

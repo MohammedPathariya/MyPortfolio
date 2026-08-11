@@ -145,3 +145,9 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Require the deployed frontend and backend to be checked against the same canonical source state before Phase 6 is considered complete.
 - Why: A successful local build does not prove that Vercel and Render rebuilt from the same commit or include the same content and assets. The first deployment check found a live optimized hero asset but an older backend payload and a stale JPEG, so those differences must remain visible rather than being reported as a passing deployment.
+
+## D-025: Animate the hero as a rigged vector illustration
+
+- Status: Accepted
+- Decision: Use one inline SVG character with independently animated arm, hands, head, and eyes instead of generated bitmap frame sequences.
+- Why: Generated frame sheets changed scale, crop, and character details between frames. A vector rig keeps every static element aligned, renders smoothly at browser frame rate, blends with both themes, and removes the bitmap-frame payload.
