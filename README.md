@@ -32,6 +32,16 @@ npm run build
 
 The generated `frontend/build/` directory is disposable and should not be committed.
 
+## Portfolio content validation
+
+The canonical portfolio data lives in `content/portfolio.json`. Validate its required fields, stable IDs, dates, links, and referenced public assets with:
+
+```bash
+node scripts/validate-portfolio-content.js
+```
+
+The frontend and backend are not wired to this source yet. That integration is the next phase so the migration can be verified independently from the data model.
+
 ## Backend setup
 
 ```bash

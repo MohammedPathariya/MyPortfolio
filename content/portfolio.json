@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "lastUpdated": "2026-08-11",
+  "person": {
+    "id": "person-mohammed-pathariya",
+    "name": "Mohammed Pathariya",
+    "headline": "AI Engineer building agentic AI systems and LLM pipelines, from multi-agent orchestration to HPC-scale NLP.",
+    "role": "Machine Learning Engineer",
+    "location": "San Jose, California",
+    "summary": "An AI Engineer and MS in Data Science candidate at Indiana University Bloomington specializing in agentic AI systems, LLM pipelines, and HPC-scale NLP. Builds production-grade multi-agent systems, RAG pipelines, and transformer-based predictive models.",
+    "website": "https://mjpathariya.com/",
+    "resumePath": "/Mohammed_Resume_MLE_AIE.pdf"
+  },
+  "contact": {
+    "email": "mjpathariya7@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/mjpathariya/",
+    "github": "https://github.com/MohammedPathariya",
+    "instagram": "https://www.instagram.com/mohammedjp08/"
+  },
+  "projects": [
+    {
+      "id": "project-digital-forge",
+      "title": "The Digital Forge",
+      "description": "A sequential multi-agent code generation system using CrewAI to mimic the software development lifecycle across four specialized agents. Features a self-healing Docker sandbox and a ChromaDB RAG guardrail grounding agents in verified API references.",
+      "featured": true,
+      "tags": ["Multi-Agent Systems", "CrewAI", "Docker", "ChromaDB", "Python"],
+      "metrics": [
+        "80% final pass rate on a 20-task benchmark versus a 45% zero-shot GPT-4 baseline",
+        "25% task recovery through the self-healing Docker sandbox",
+        "15% hallucination rescue through the ChromaDB RAG guardrail"
+      ],
+      "github": "https://github.com/MohammedPathariya/TheDigitalForge",
+      "demo": "https://thedigitalforge.onrender.com/",
+      "thumbnail": "/images/digitalforge.png"
+    },
+    {
+      "id": "project-learnloop",
+      "title": "LearnLoop",
+      "description": "A fault-tolerant RAG-based study tool with session-scoped FAISS indexes for strict data isolation and a Pydantic self-healing validation layer.",
+      "featured": true,
+      "tags": ["RAG", "Pydantic", "SQLite WAL", "Locust", "React"],
+      "metrics": [
+        "Autonomously corrects 90% of LLM JSON schema hallucinations",
+        "Reduced user-facing LLM errors from approximately 10% to under 1%",
+        "SQLite WAL mode sustained 500+ concurrent users with zero HTTP 500 errors"
+      ],
+      "github": "https://github.com/MohammedPathariya/LearnLoop-Deployment",
+      "demo": "https://learnloop-deployment-frontend.vercel.app/",
+      "thumbnail": "/images/learnloop.png"
+    },
+    {
+      "id": "project-audiogroove",
+      "title": "AudioGroove",
+      "description": "A comparative deep learning research study scaling symbolic music generation to 175,000+ MIDI files. Built a distributed Dask ETL pipeline and demonstrated that Bi-Directional LSTMs outperform DCGANs for symbolic music generation.",
+      "featured": true,
+      "tags": ["Deep Learning", "Dask", "MLflow", "PyTorch", "Research"],
+      "metrics": [
+        "Reduced distributed MIDI processing from 20+ hours to under 2 hours",
+        "Achieved 0.78 cross-entropy loss versus a 4.8 random baseline",
+        "Published at IEEE ICC Robins"
+      ],
+      "github": "https://github.com/MohammedPathariya/AudioGroove",
+      "demo": "https://audiogroove.vercel.app/",
+      "thumbnail": "/images/audiogroove2.png"
+    },
+    {
+      "id": "project-handspeak",
+      "title": "HandSpeak",
+      "description": "Engineered a low-latency sign language recognition system. Extracted vector landmarks with MediaPipe and classified them with Scikit-Learn Random Forest models to achieve 30+ FPS CPU inference without heavy GPUs.",
+      "featured": false,
+      "tags": ["MediaPipe", "Edge AI", "Scikit-Learn", "Real-Time"],
+      "metrics": ["30+ FPS CPU inference"],
+      "github": "https://github.com/MohammedPathariya/HandSpeak",
+      "demo": "https://handspeak-blush.vercel.app/",
+      "thumbnail": "/images/handspeak2.png"
+    },
+    {
+      "id": "project-codecrafter",
+      "title": "CodeCrafter",
+      "description": "Architected a secure remote code execution engine that runs user-submitted Python and R code inside ephemeral, network-isolated Docker containers before rendering visualizations.",
+      "featured": false,
+      "tags": ["Docker Security", "Flask", "React", "RCE"],
+      "metrics": [],
+      "github": "https://github.com/MohammedPathariya/CodeCrafter",
+      "demo": null,
+      "thumbnail": "/images/codecrafter2.png"
+    },
+    {
+      "id": "project-automated-snake-game",
+      "title": "Automated Snake Game",
+      "description": "Trained a Deep Q-Network agent to master Snake from pixel inputs using Experience Replay and Epsilon-Greedy exploration to stabilize convergence on optimal pathfinding policies.",
+      "featured": false,
+      "tags": ["Deep Q-Learning", "PyTorch", "RL", "Pygame"],
+      "metrics": [],
+      "github": "https://github.com/MohammedPathariya/Automated-Snake-Game",
+      "demo": null,
+      "thumbnail": "/images/automatedsnakegame2.png"
+    },
+    {
+      "id": "project-vayu",
+      "title": "VAYU – Air Quality Forecasting",
+      "description": "Developed a time-series forecasting pipeline for PM2.5 levels, managing the lifecycle from cleaning OpenAQ sensor data to training LSTM sequence models for temporal predictive accuracy.",
+      "featured": false,
+      "tags": ["Time Series", "LSTM", "Pandas", "End-to-End ML"],
+      "metrics": [],
+      "github": "https://github.com/MohammedPathariya/LSTM-Air-Quality-Forecasting--VAYU",
+      "demo": null,
+      "thumbnail": "/images/vayu2.png"
+    },
+    {
+      "id": "project-bloommap",
+      "title": "BloomMap",
+      "description": "Built an interactive geospatial dashboard for public facilities using GeoPandas coordinate clustering and a React/Flask container to visualize service coverage heatmaps.",
+      "featured": false,
+      "tags": ["GeoPandas", "React", "GIS", "Docker"],
+      "metrics": [],
+      "github": "https://github.com/MohammedPathariya/BloomMap",
+      "demo": null,
+      "thumbnail": "/images/bloommap2.png"
+    },
+    {
+      "id": "project-content-detection",
+      "title": "Content Detection",
+      "description": "Benchmarked spam classification architectures by comparing Sequential LSTMs with Feed-Forward Networks and implementing an NLP preprocessing pipeline with lemmatization and vectorization.",
+      "featured": false,
+      "tags": ["NLP", "LSTM", "TensorFlow", "Benchmarking"],
+      "metrics": [],
+      "github": "https://github.com/MohammedPathariya/Content-Detection",
+      "demo": null,
+      "thumbnail": "/images/contentdetection.png"
+    },
+    {
+      "id": "project-yudhisthir",
+      "title": "Yudishthir Desktop Assistant",
+      "description": "Developed a voice-controlled operating system automation agent using SpeechRecognition APIs and system-level scripting for file management, surveillance, and information retrieval tasks.",
+      "featured": false,
+      "tags": ["Automation", "Speech Recognition", "Scripting", "OpenCV"],
+      "metrics": [],
+      "github": "https://github.com/MohammedPathariya/Desktop-Assistant-Yudhishthar",
+      "demo": null,
+      "thumbnail": "/images/yudhisthir.png"
+    }
+  ],
+  "experience": [
+    {
+      "id": "experience-iu-luddy-gra",
+      "title": "Graduate Research Assistant",
+      "organization": "Indiana University Luddy School of Informatics, Computing, and Engineering",
+      "location": "Bloomington, Indiana",
+      "startDate": "2026-01-01",
+      "endDate": "2026-05-31",
+      "period": "Jan 2026 – May 2026",
+      "logo": "/images/luddylogo.png",
+      "points": [
+        "Built a complete alignment-free diagnostic pipeline on NVIDIA Jetson AGX Orin, replacing Minimap2 alignment with a custom k-mer voting classifier achieving under 1 second per sample on CPU versus 10-20 minutes with traditional tools.",
+        "Validated against 43,000+ clinical sequences from Stanford HIVdb across 10+ HIV subtypes globally, achieving 97.5-99.7% recall with all per-mutation Fisher exact tests significant at p < 0.001.",
+        "Engineered a six-component Python preprocessing suite handling FASTQ/FASTA parsing, codon frame resolution via stop-codon counting, and gene region localization across PR/RT/IN with automated quality filtering.",
+        "Designed a CNN-Transformer architecture for resistance classification targeting TensorRT quantization for Jetson deployment, with training data prepared across 16 ACTG clinical trials and 8,000+ sequences."
+      ]
+    },
+    {
+      "id": "experience-iu-kelley-gra",
+      "title": "Graduate Research Assistant",
+      "organization": "Indiana University Kelley School of Business",
+      "location": "Bloomington, Indiana",
+      "startDate": "2025-06-01",
+      "endDate": "2026-01-31",
+      "period": "Jun 2025 – Jan 2026",
+      "logo": "/images/kellylogo.png",
+      "points": [
+        "Built an end-to-end NBA press conference pipeline processing 700+ games, parallelizing WhisperX transcription across 5 Slurm-managed HPC nodes with SQLite file-locking for distributed state, achieving a 30x speedup from 3.5m to 7s per audio-minute.",
+        "Deployed 8-bit quantized Llama-3 8B with bitsandbytes on Big Red 200 A100 nodes for psychological marker extraction, achieving 89% precision, a 17-point improvement over a 72% RoBERTa baseline on a 500-quote gold set.",
+        "Architected a Transformer Encoder fusing Llama-3 sentiment embeddings with rolling box-score metrics, chosen over XGBoost to allow direct feature interaction, achieving 53.8% Against-The-Spread accuracy on a 120-game chronological holdout versus 52.4% breakeven."
+      ]
+    },
+    {
+      "id": "experience-sparkwood-data-engineering",
+      "title": "Data Engineering Intern",
+      "organization": "Sparkwood IT Solutions",
+      "location": "Pune, India",
+      "startDate": "2024-01-01",
+      "endDate": "2024-06-30",
+      "period": "Jan 2024 – Jun 2024",
+      "logo": "/images/sparkwoodlogo.png",
+      "points": [
+        "Collaborated with a senior engineer to conduct root-cause analysis on a 5% KPI discrepancy between Marketing and Finance, resolving it via a SQL View as a shared source of truth, an architectural fix rather than a query patch.",
+        "Diagnosed a legacy PostgreSQL sales report taking 5 minutes to generate, identified the root cause via execution plan analysis, and implemented composite indexing reducing report generation latency by 40% from 5m to 3m.",
+        "Diagnosed recurring database lock contention in production Airflow ETL pipelines, implementing automated retry logic that reduced nightly pipeline failures by 90%, from near-daily incidents to under one manual intervention per month."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "education-iu-ms-data-science",
+      "degree": "Master of Science in Data Science",
+      "institution": "Indiana University Bloomington",
+      "location": "Bloomington, Indiana",
+      "startDate": "2024-08-01",
+      "endDate": "2026-05-31",
+      "period": "Aug 2024 – May 2026",
+      "logo": "/images/iublogo.png",
+      "details": [
+        "GPA: 3.75/4.0",
+        "Relevant Coursework: Large Language Models, Deep Learning, Statistical ML, MLOps, Cloud Computing",
+        "Research: Graduate Research Assistant across two labs: Kelley School of Business (NBA NLP pipeline) and Luddy School of Informatics (Genomic Edge Pipeline)",
+        "Capstone: The Digital Forge: A Sequential Multi-Agent System for Autonomous Code Generation"
+      ]
+    },
+    {
+      "id": "education-sppu-be-ai-data-science",
+      "degree": "Bachelor of Engineering, Artificial Intelligence & Data Science",
+      "institution": "Savitribai Phule Pune University",
+      "location": "Pune, India",
+      "startDate": "2020-08-01",
+      "endDate": "2024-05-31",
+      "period": "Aug 2020 – May 2024",
+      "logo": "/images/sppulogo.png",
+      "details": [
+        "GPA: 3.80/4.0 | Graduated with Distinction",
+        "Relevant Coursework: Machine Learning, Data Structures & Algorithms, Statistics, Probability & Inference",
+        "Research: Published \"Tunes by Technology\" at IEEE ICC Robins, which statistically validated Bi-LSTM outperforms DCGAN for symbolic music generation",
+        "Leadership: Organized 10+ technical workshops, mentoring 200+ students in Python and ML fundamentals"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill-group-languages",
+      "category": "Languages",
+      "items": [
+        {"id": "skill-python", "name": "Python", "description": "Core language for data science and machine learning"},
+        {"id": "skill-sql", "name": "SQL", "description": "Data querying and manipulation"},
+        {"id": "skill-r", "name": "R", "description": "Statistical analysis"},
+        {"id": "skill-bash", "name": "Bash", "description": "Command-line scripting"}
+      ]
+    },
+    {
+      "id": "skill-group-data-science",
+      "category": "Data Science & Statistics",
+      "items": [
+        {"id": "skill-pandas", "name": "Pandas", "description": "Data analysis and cleaning"},
+        {"id": "skill-numpy", "name": "NumPy", "description": "Numerical computation"},
+        {"id": "skill-ab-testing", "name": "A/B Testing", "description": "Experimental design"},
+        {"id": "skill-statistical-inference", "name": "Statistical Inference", "description": "Hypothesis testing and analysis"},
+        {"id": "skill-scikit-learn", "name": "Scikit-learn", "description": "Classical machine learning models"}
+      ]
+    },
+    {
+      "id": "skill-group-mlops",
+      "category": "Machine Learning & MLOps",
+      "items": [
+        {"id": "skill-pytorch", "name": "PyTorch", "description": "Deep learning framework"},
+        {"id": "skill-mlflow", "name": "MLflow", "description": "Machine learning experiment tracking"},
+        {"id": "skill-langchain", "name": "LangChain", "description": "LLM application framework"},
+        {"id": "skill-crewai", "name": "CrewAI", "description": "Multi-agent AI systems"}
+      ]
+    },
+    {
+      "id": "skill-group-cloud-data-engineering",
+      "category": "Cloud & Data Engineering",
+      "items": [
+        {"id": "skill-gcp", "name": "GCP", "description": "Google Cloud Platform"},
+        {"id": "skill-postgresql", "name": "PostgreSQL", "description": "Relational databases"},
+        {"id": "skill-airflow", "name": "Apache Airflow", "description": "ETL orchestration"}
+      ]
+    },
+    {
+      "id": "skill-group-deployment",
+      "category": "MLOps & Deployment",
+      "items": [
+        {"id": "skill-docker", "name": "Docker", "description": "Containerization platform"},
+        {"id": "skill-flask", "name": "Flask", "description": "Python web framework"},
+        {"id": "skill-react", "name": "React", "description": "Frontend UI library"},
+        {"id": "skill-streamlit", "name": "Streamlit", "description": "Data application framework"},
+        {"id": "skill-rest-apis", "name": "REST APIs", "description": "API design and development"}
+      ]
+    },
+    {
+      "id": "skill-group-developer-tools",
+      "category": "Developer Tools",
+      "items": [
+        {"id": "skill-git", "name": "Git", "description": "Version control"},
+        {"id": "skill-github", "name": "GitHub", "description": "Code hosting and collaboration"},
+        {"id": "skill-github-actions", "name": "GitHub Actions", "description": "CI/CD automation"},
+        {"id": "skill-vs-code", "name": "VS Code", "description": "Code editor"},
+        {"id": "skill-jupyter", "name": "Jupyter", "description": "Notebooks for analysis"}
+      ]
+    }
+  ]
+}

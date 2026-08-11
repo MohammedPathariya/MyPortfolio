@@ -73,3 +73,21 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Keep theme variables, document-level behavior, body reset, typography defaults, and global button typography in `index.css`. Component-specific rules stay with their component stylesheets.
 - Why: The same global selectors were duplicated in `App.css`, `Projects.css`, and `ChatWidget.css`, making import-order behavior difficult to reason about.
+
+## D-013: Use structured JSON as the canonical content source
+
+- Status: Accepted
+- Decision: Store portfolio facts in version-controlled `content/portfolio.json`, with stable IDs and explicit fields for metadata, metrics, links, dates, and public assets.
+- Why: The portfolio content is small, factual, and shared by the frontend and chatbot. JSON keeps it portable, reviewable, and usable from both JavaScript and Node without adding a database.
+
+## D-014: Validate content with a dependency-free repository script
+
+- Status: Accepted
+- Decision: Validate `content/portfolio.json` with `scripts/validate-portfolio-content.js` using Node's standard library.
+- Why: The repository has separate frontend and backend package manifests and no root package manager configuration. A dependency-free validator keeps the content gate reproducible without introducing a new runtime dependency.
+
+## D-015: Separate content modeling from consumer integration
+
+- Status: Accepted
+- Decision: Create and validate the canonical data before changing frontend rendering or backend prompt generation.
+- Why: This isolates content-model errors from integration errors and makes the next phases easier to verify. Temporary duplicate consumers remain until they are migrated and removed.

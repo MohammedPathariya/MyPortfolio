@@ -77,10 +77,18 @@ The baseline gate is complete because the current behavior and endpoint state ar
 - Added an explicit `frontend/build/` ignore rule.
 - Frontend production build passed after cleanup.
 
+## Phase 2 implementation: 2026-08-11
+
+- Added the canonical source at `content/portfolio.json`.
+- Added stable kebab-case IDs for the person, 10 projects, 3 experience records, 2 education records, 6 skill groups, and 26 skills.
+- Moved current personal information, contact links, project metadata and metrics, experience, education, and skills into the structured source.
+- Preserved the current evidence-backed wording and existing dates, links, public asset paths, and known project limitations such as projects without live demos.
+- Added `scripts/validate-portfolio-content.js` with checks for required fields, unique IDs, valid HTTP(S) links, email format, ISO dates and date ordering, and referenced public assets.
+- Validation passed with 48 unique IDs.
+- Phase 2 is data-foundation-only. Frontend rendering and backend chatbot integration remain intentionally unstarted for Phase 3 and Phase 4.
+
 ## Not started
 
-- Canonical `content/portfolio.json` model
-- Content schema validation
 - Frontend integration with shared content
 - Backend prompt generation from shared content
 - Environment-based chatbot URL configuration
