@@ -139,3 +139,9 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Add lightweight tests for project filtering and theme persistence, plus standalone validators for canonical content and referenced public assets. Keep production build verification as an explicit command.
 - Why: These checks cover the current data-driven and stateful behavior without creating a large test framework for a small static portfolio.
+
+## D-024: Treat deployment parity as a separate Phase 6 gate
+
+- Status: Accepted
+- Decision: Require the deployed frontend and backend to be checked against the same canonical source state before Phase 6 is considered complete.
+- Why: A successful local build does not prove that Vercel and Render rebuilt from the same commit or include the same content and assets. The first deployment check found a live optimized hero asset but an older backend payload and a stale JPEG, so those differences must remain visible rather than being reported as a passing deployment.

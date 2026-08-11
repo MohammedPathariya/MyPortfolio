@@ -48,7 +48,7 @@ Validate referenced frontend assets with:
 node scripts/validate-frontend-assets.js
 ```
 
-The frontend and backend are not wired to this source yet. That integration is the next phase so the migration can be verified independently from the data model.
+The frontend generator and backend loader both consume this source. Run the validators after content changes, then rebuild the frontend and restart the backend to apply them.
 
 ## Backend setup
 
@@ -83,7 +83,12 @@ Backend runtime configuration is documented in `backend/.env.example`, including
 
 The deployed frontend is hosted on Vercel with the custom domain `mjpathariya.com`. The chatbot backend is hosted separately on Render.
 
-Deployment settings are managed by the hosting platforms and are not stored as repository configuration files. Keep the frontend and backend environment values configured in their respective deployment dashboards.
+Deployment settings are managed by the hosting platforms and are not stored as repository configuration files.
+
+- Vercel: build from the repository root with the frontend project configuration, and set `REACT_APP_API_BASE_URL` to the Render API origin before rebuilding.
+- Render: deploy the `backend` service with `OPENAI_API_KEY`, `CORS_ORIGINS`, and the runtime limits from `backend/.env.example`. The service must also include the root `content/portfolio.json`, or set `PORTFOLIO_CONTENT_PATH` to its deployed location.
+- After either deployment, check `/ping`, `/api/portfolio`, the custom-domain page, and the chatbot request. A content change is not complete until both consumers report the same updated records.
+- Never commit `.env` files, API keys, generated frontend content, or build output.
 
 ## Documentation
 

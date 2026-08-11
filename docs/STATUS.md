@@ -8,9 +8,9 @@ Last reviewed: 2026-08-11
 - Existing Express/OpenAI chatbot backend is implemented and deployed.
 - Custom-domain deployment is already in place.
 - Frontend and backend remain separate deployments.
-- The frontend currently stores project and experience content in component/data files.
-- The backend chatbot uses a manually maintained hardcoded portfolio prompt.
-- The chatbot frontend calls a hardcoded production backend URL.
+- The frontend and backend consume the canonical `content/portfolio.json` source.
+- The chatbot portfolio facts are generated from the backend's loaded canonical content.
+- The chatbot frontend API origin is configured through `REACT_APP_API_BASE_URL`.
 - The visual redesign has not started.
 
 ## Verified baseline
@@ -146,7 +146,16 @@ Deployment follow-up: Vercel must define `REACT_APP_API_BASE_URL` before the fro
 - Frontend tests passed: 2 suites, 2 tests.
 - Frontend production build passed.
 - Local backend health, canonical portfolio, and chatbot routes passed.
-- Deployment verification is pending the Phase 6 push and hosting rebuild.
+- Custom domain returned HTTP 200 after the Phase 6 push.
+- The optimized WebP returned HTTP 200 with `content-type: image/webp`, 66,118 bytes, and 1600 x 897 dimensions.
+- The deleted source JPEG still returns HTTP 200 from the custom domain, so a stale deployed asset remains available and needs hosting cleanup or cache expiry.
+- Deployed backend `/ping`, `/api/portfolio`, and `/api/chat` returned HTTP 200; production chat responses included the expected custom-domain CORS header.
+- Deployed `/api/portfolio` returned 10 projects and 3 experiences but omitted `person.heroImage`, showing that the Render deployment is not yet synchronized with the latest canonical source.
+- LearnLoop, AudioGroove, and HandSpeak demos returned HTTP 200. The Digital Forge demo remains HTTP 404, as recorded in the baseline.
+
+### Phase 6 gate result
+
+The local gate passed. The deployment gate remains open until Render is rebuilt with the current canonical content and the stale JPEG is no longer served or is confirmed harmless static history. Browser-level mobile and keyboard testing also remains pending because the local verification environment denied loopback server binding.
 
 ## Not started
 
@@ -154,8 +163,8 @@ Deployment follow-up: Vercel must define `REACT_APP_API_BASE_URL` before the fro
 
 ## Current working-tree note
 
-The application source was modified through Phase 5. The generated frontend content module and `frontend/build/` directory remain disposable and are explicitly ignored by Git.
+The application source was modified through Phase 6. The generated frontend content module and `frontend/build/` directory remain disposable and are explicitly ignored by Git.
 
 ## Next implementation gate
 
-The next implementation gate is to verify that the deployed custom-domain frontend and backend reflect the Phase 6 source, including the optimized hero asset and configured chatbot endpoint.
+The next gate is deployment parity: rebuild Render from the current source, confirm the backend exposes the current canonical payload, resolve the stale JPEG, and then re-run the custom-domain flow checks before starting the visual redesign.
