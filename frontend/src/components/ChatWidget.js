@@ -10,6 +10,8 @@ import {
   FaAngleUp,
 } from 'react-icons/fa';
 
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+
 const ChatWidget = ({ isOpen }) => {
   const [messages, setMessages] = useState([
     {
@@ -29,7 +31,11 @@ const ChatWidget = ({ isOpen }) => {
     setInput('');
 
     try {
-      const response = await fetch('https://portfolio-backend-kcnb.onrender.com/api/chat', {
+      if (!apiBaseUrl) {
+        throw new Error('REACT_APP_API_BASE_URL is not configured.');
+      }
+
+      const response = await fetch(`${apiBaseUrl.replace(/\/$/, '')}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input }),

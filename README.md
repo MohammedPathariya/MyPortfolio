@@ -32,6 +32,8 @@ npm run build
 
 The generated `frontend/build/` directory is disposable and should not be committed.
 
+For local chatbot requests, copy `frontend/.env.example` to `frontend/.env.local` and set `REACT_APP_API_BASE_URL` to the backend URL you want to use. Vercel must have the same `REACT_APP_API_BASE_URL` value configured for production builds.
+
 ## Portfolio content validation
 
 The canonical portfolio data lives in `content/portfolio.json`. Validate its required fields, stable IDs, dates, links, and referenced public assets with:
@@ -57,6 +59,8 @@ Create `backend/.env` locally with:
 ```text
 OPENAI_API_KEY=your_key_here
 PORT=5000
+# Optional when the deployed content file is not at ../content/portfolio.json.
+# PORTFOLIO_CONTENT_PATH=/absolute/path/to/portfolio.json
 ```
 
 `backend/.env` is ignored by Git and must never be committed.
@@ -64,6 +68,7 @@ PORT=5000
 The available backend routes are:
 
 - `GET /ping` for a health check
+- `GET /api/portfolio` for the sanitized canonical portfolio data
 - `POST /api/chat` for chatbot requests
 
 ## Deployment

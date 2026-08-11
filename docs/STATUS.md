@@ -102,10 +102,25 @@ The baseline gate is complete because the current behavior and endpoint state ar
 - Frontend test command passed with no tests found, using `--passWithNoTests`.
 - The backend chatbot still uses its existing prompt and remains scheduled for Phase 4 integration.
 
+## Phase 4 implementation: 2026-08-11
+
+- Replaced the backend's manually duplicated portfolio prompt facts with a startup-loaded `content/portfolio.json` object.
+- Added deterministic JSON serialization of the canonical public portfolio data to the chatbot's verified-facts context.
+- Kept behavioral instructions, response boundaries, and fallback response construction separate from portfolio facts.
+- Added sanitized `GET /api/portfolio` diagnostics endpoint.
+- Added an optional `PORTFOLIO_CONTENT_PATH` override for isolated verification and deployment layout configuration; the default remains the repository-root canonical file.
+- Replaced the hardcoded frontend Render URL with `REACT_APP_API_BASE_URL`.
+- Added `frontend/.env.example` and documented the required Vercel environment variable.
+- Added validation for empty chat messages while preserving the existing rate limit and OpenAI model behavior.
+- Local `/ping`, `/api/portfolio`, and `/api/chat` checks passed.
+- Temporary source mutation checks passed for both the frontend generator and backend loader, confirming they consume the same source.
+- Canonical content validation, frontend build, and frontend test command passed.
+
+Deployment follow-up: Vercel must define `REACT_APP_API_BASE_URL` before the frontend is rebuilt, and the backend deployment must include the root `content/portfolio.json` file or set `PORTFOLIO_CONTENT_PATH` to its deployed location.
+
 ## Not started
 
-- Backend prompt generation from shared content
-- Environment-based chatbot URL configuration
+- Chatbot reliability and accessibility improvements
 - Chatbot reliability and accessibility improvements
 - Asset optimization
 - Automated checks

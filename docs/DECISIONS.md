@@ -97,3 +97,15 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Generate the ignored `frontend/src/data/portfolio.generated.js` module from `content/portfolio.json` before frontend start, test, and build commands.
 - Why: Create React App does not support importing a repository-root JSON file from outside `frontend/src` without configuration changes. A deterministic generated module keeps the root JSON canonical while preserving synchronous static rendering.
+
+## D-017: Build chatbot context from the canonical portfolio object
+
+- Status: Accepted
+- Decision: Load `content/portfolio.json` once at backend startup, expose its sanitized public fields through `/api/portfolio`, and serialize the same object into the chatbot's verified-facts context.
+- Why: The backend should not maintain a second manually edited portfolio database. Loading once keeps each request consistent while a restart applies content changes predictably.
+
+## D-018: Configure the frontend chatbot endpoint through environment variables
+
+- Status: Accepted
+- Decision: Read `REACT_APP_API_BASE_URL` from the frontend build environment and document the required local and Vercel configuration in `.env.example` and the README.
+- Why: Local, preview, and production builds use different backend endpoints. The component should not contain deployment-specific URLs.

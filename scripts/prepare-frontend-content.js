@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const repositoryRoot = path.resolve(__dirname, '..');
-const sourcePath = path.join(repositoryRoot, 'content', 'portfolio.json');
+const sourcePath = process.env.PORTFOLIO_CONTENT_PATH || path.join(repositoryRoot, 'content', 'portfolio.json');
 const targetDirectory = path.join(repositoryRoot, 'frontend', 'src', 'data');
 const targetPath = path.join(targetDirectory, 'portfolio.generated.js');
 
