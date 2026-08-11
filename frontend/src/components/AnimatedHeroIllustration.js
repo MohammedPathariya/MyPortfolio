@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 
 const greetingSequence = [0, 1, 2, 3, 4, 5, 6, 7];
-const greetingFrameDuration = 220;
-const typingFrameDuration = 760;
+const greetingFrameDuration = 180;
+const typingFrameDuration = 520;
 
 const AnimatedHeroIllustration = ({ frames, workFrames, alt }) => {
   const canvasRef = useRef(null);
