@@ -7,7 +7,13 @@ const ProjectCard = ({ project }) => {
 
   return (
     <div className="project-card">
-      <img src={project.thumbnail} alt={`${project.title} Thumbnail`} className="project-thumbnail" />
+      <img
+        src={project.thumbnail}
+        alt={`${project.title} Thumbnail`}
+        className="project-thumbnail"
+        loading="lazy"
+        decoding="async"
+      />
       <h3 className="project-title">{project.title}</h3>
       <p className="project-description">{project.description}</p>
       <div className="project-tags">

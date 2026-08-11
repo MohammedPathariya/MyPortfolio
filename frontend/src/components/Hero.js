@@ -73,9 +73,10 @@ const Hero = () => (
 
     <div className="hero-right">
       <img
-        src="/images/hero-banner.jpeg"
+        src={portfolio.person.heroImage}
         alt="Mohammed Pathariya"
         className="hero-photo"
+        fetchPriority="high"
       />
     </div>
   </section>

@@ -42,6 +42,12 @@ The canonical portfolio data lives in `content/portfolio.json`. Validate its req
 node scripts/validate-portfolio-content.js
 ```
 
+Validate referenced frontend assets with:
+
+```bash
+node scripts/validate-frontend-assets.js
+```
+
 The frontend and backend are not wired to this source yet. That integration is the next phase so the migration can be verified independently from the data model.
 
 ## Backend setup

@@ -71,6 +71,8 @@ export default function TimelineTabs() {
               <img
                 src={item.logo}
                 alt={`${item.organization || item.institution} logo`}
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="timeline-content">

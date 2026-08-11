@@ -127,3 +127,15 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Use semantic landmarks, labeled form controls, native buttons/forms, ARIA state for tabs, filters, and toggles, keyboard tab navigation, and `:focus-visible` styles.
 - Why: These changes improve keyboard and assistive-technology access without coupling accessibility to the future visual redesign.
+
+## D-022: Optimize the hero image for its rendered role
+
+- Status: Accepted
+- Decision: Replace the oversized hero JPEG with a 1600px-wide WebP and keep the hero eager-loaded with high fetch priority while lazy-loading below-the-fold images.
+- Why: The hero is above the fold, so it should load promptly, but the original 8736px image was far larger than its display size. The optimized file preserves the role while reducing transfer size from about 3.1 MB to about 65 KB.
+
+## D-023: Keep automated checks focused on high-risk behavior
+
+- Status: Accepted
+- Decision: Add lightweight tests for project filtering and theme persistence, plus standalone validators for canonical content and referenced public assets. Keep production build verification as an explicit command.
+- Why: These checks cover the current data-driven and stateful behavior without creating a large test framework for a small static portfolio.

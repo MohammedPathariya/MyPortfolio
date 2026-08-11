@@ -134,10 +134,22 @@ Deployment follow-up: Vercel must define `REACT_APP_API_BASE_URL` before the fro
 - The frontend test command still reports no test files and exits successfully with `--passWithNoTests`.
 - Browser-level mobile and keyboard interaction testing was not completed because the local verification environment denied loopback server binding; source-level accessibility checks and backend interaction checks passed.
 
+## Phase 6 implementation: 2026-08-11
+
+- Replaced the 8736 x 4896 hero JPEG with a 1600 x 897 WebP at approximately 65 KB, down from approximately 3.1 MB.
+- Added canonical `heroImage` content validation and switched the hero component to that path.
+- Added eager high-priority loading for the hero and lazy loading plus async decoding for project and timeline images.
+- Added `scripts/validate-frontend-assets.js` to detect missing referenced public assets.
+- Added focused tests for project filtering and theme persistence.
+- Local content validation passed with 48 unique IDs.
+- Local frontend asset validation passed with 19 referenced assets.
+- Frontend tests passed: 2 suites, 2 tests.
+- Frontend production build passed.
+- Local backend health, canonical portfolio, and chatbot routes passed.
+- Deployment verification is pending the Phase 6 push and hosting rebuild.
+
 ## Not started
 
-- Asset optimization
-- Automated checks
 - Visual identity redesign
 
 ## Current working-tree note
@@ -146,4 +158,4 @@ The application source was modified through Phase 5. The generated frontend cont
 
 ## Next implementation gate
 
-The next implementation gate is to complete asset optimization and automated checks before beginning the visual identity redesign.
+The next implementation gate is to verify that the deployed custom-domain frontend and backend reflect the Phase 6 source, including the optimized hero asset and configured chatbot endpoint.
