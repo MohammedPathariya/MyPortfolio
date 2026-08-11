@@ -115,11 +115,37 @@
   color: var(--accent-color);
 }
 
-.hero-photo {
+.hero-animation {
+  position: relative;
   width: 300px;
+  max-width: 100%;
+}
+
+.hero-photo,
+.hero-animation-canvas {
+  display: block;
+  width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-animation-canvas {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.hero-animation-canvas.is-ready {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-animation-canvas {
+    display: none;
+  }
 }
 
 /* ── Responsive ────────────────────────────────────────────────────────── */

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Hero.css';
+import AnimatedHeroIllustration from './AnimatedHeroIllustration';
 import { FaLinkedin, FaGithub, FaEnvelope, FaDownload, FaInstagram } from 'react-icons/fa';
 import portfolio from '../data/portfolio.generated';
 
@@ -72,11 +73,9 @@ const Hero = () => (
     </div>
 
     <div className="hero-right">
-      <img
-        src={portfolio.person.heroImage}
-        alt="Mohammed Pathariya"
-        className="hero-photo"
-        fetchPriority="high"
+      <AnimatedHeroIllustration
+        frames={portfolio.person.heroAnimationFrames || [portfolio.person.heroImage]}
+        alt="Mohammed Pathariya working at a desk"
       />
     </div>
   </section>

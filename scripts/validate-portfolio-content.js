@@ -76,6 +76,12 @@ if (!isObject(content.person)) {
   requireUrl(content.person.website, 'person.website');
   requireAsset(content.person.resumePath, 'person.resumePath');
   requireAsset(content.person.heroImage, 'person.heroImage');
+  requireArray(content.person.heroAnimationFrames, 'person.heroAnimationFrames');
+  if (Array.isArray(content.person.heroAnimationFrames)) {
+    content.person.heroAnimationFrames.forEach((frame, index) => {
+      requireAsset(frame, `person.heroAnimationFrames[${index}]`);
+    });
+  }
 }
 
 if (!isObject(content.contact)) {
