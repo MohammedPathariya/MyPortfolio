@@ -16,7 +16,7 @@ const Header = () => {
       <header className="site-header">
         <div className="header-container">
           {/* Nav links */}
-          <nav className="nav-links">
+          <nav className="nav-links" aria-label="Primary navigation">
             <a href="#home">Home</a>
             <a href="#projects">Projects</a>
             <a href="#education-experience">Journey</a>
@@ -31,6 +31,7 @@ const Header = () => {
               className={`chat-toggle ${!showChat ? 'strikethrough' : ''}`}
               onClick={handleChatClick}
               aria-label={showChat ? 'Close chat' : 'Open chat'}
+              aria-expanded={showChat}
             >
               <TbMessageChatbot />
             </button>

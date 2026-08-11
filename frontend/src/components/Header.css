@@ -71,7 +71,12 @@
   opacity: 0.85;
   transition: opacity 0.2s, color 0.2s;
   position: relative;
-  outline: none;
+}
+
+.theme-toggle:focus-visible,
+.chat-toggle:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
 }
 
 .dark .theme-toggle {

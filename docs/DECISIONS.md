@@ -109,3 +109,21 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Read `REACT_APP_API_BASE_URL` from the frontend build environment and document the required local and Vercel configuration in `.env.example` and the README.
 - Why: Local, preview, and production builds use different backend endpoints. The component should not contain deployment-specific URLs.
+
+## D-019: Restrict chatbot CORS through an allowlist
+
+- Status: Accepted
+- Decision: Allow only configured frontend origins through `CORS_ORIGINS`, with the custom domain and local development origin as defaults.
+- Why: The chatbot is a browser-facing API. Open CORS was unnecessary and allowed unrelated origins to make browser requests against the backend.
+
+## D-020: Enforce bounded chatbot requests at both layers
+
+- Status: Accepted
+- Decision: Enforce a 1,000-character message limit, 15-second OpenAI request timeout, no SDK retries, and frontend abort/retry behavior.
+- Why: The frontend should fail quickly and communicate clearly, while the backend must bound request size and upstream spend even if a client bypasses the UI.
+
+## D-021: Prefer native semantics and visible focus behavior
+
+- Status: Accepted
+- Decision: Use semantic landmarks, labeled form controls, native buttons/forms, ARIA state for tabs, filters, and toggles, keyboard tab navigation, and `:focus-visible` styles.
+- Why: These changes improve keyboard and assistive-technology access without coupling accessibility to the future visual redesign.

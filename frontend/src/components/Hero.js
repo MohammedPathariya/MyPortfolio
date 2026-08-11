@@ -20,13 +20,13 @@ const Hero = () => (
       </p>
 
       <div className="hero-cta">
-        <strong 
+        <button
+          type="button"
           className="chat-trigger" 
           onClick={() => document.querySelector('.chat-toggle').click()}
-          style={{ cursor: 'pointer' }}
         >
           Have questions? Chat with my AI assistant <span>&rarr;</span>
-        </strong>
+        </button>
       </div>
 
       <div className="hero-buttons">

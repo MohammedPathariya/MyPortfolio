@@ -36,7 +36,7 @@ const ProjectFilter = ({ tags, selectedTags, onTagChange }) => {
   };
 
   return (
-    <div className="project-filter">
+    <div className="project-filter" role="group" aria-label="Filter projects by technology">
       {sortedTags.map(tag => (
         <button
           key={tag}
@@ -46,6 +46,7 @@ const ProjectFilter = ({ tags, selectedTags, onTagChange }) => {
               ? 'tag-button active'
               : 'tag-button'
           }
+          aria-pressed={selectedTags.includes(tag)}
         >
           {tag}
         </button>

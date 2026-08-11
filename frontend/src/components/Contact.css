@@ -20,6 +20,12 @@
   gap: 1rem;
 }
 
+.contact-form label {
+  align-self: flex-start;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
 .contact-form input,
 .contact-form textarea {
   padding: 0.75rem;

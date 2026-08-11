@@ -118,18 +118,32 @@ The baseline gate is complete because the current behavior and endpoint state ar
 
 Deployment follow-up: Vercel must define `REACT_APP_API_BASE_URL` before the frontend is rebuilt, and the backend deployment must include the root `content/portfolio.json` file or set `PORTFOLIO_CONTENT_PATH` to its deployed location.
 
+## Phase 5 implementation: 2026-08-11
+
+- Added backend CORS origin allowlisting through `CORS_ORIGINS`, with custom-domain and local-development defaults.
+- Added backend JSON body limit, 1,000-character chat message limit, 15-second OpenAI timeout, and disabled SDK retries.
+- Added frontend request abort timeout, one retry, loading state, retry action, HTTP error handling, unavailable-backend messaging, and clear-chat reset behavior.
+- Added disabled send state, input length enforcement, empty-input handling, and keyboard Enter submission.
+- Added accessible labels and state for navigation, chat controls, theme toggle, project filters, tabs, contact fields, and social links.
+- Added arrow/Home/End keyboard navigation for education and experience tabs.
+- Added semantic `main`, dialog, navigation, tablist, tabpanel, form, and social-link landmarks.
+- Added visible `:focus-visible` styling and meaningful timeline logo alt text.
+- Added mobile-safe chatbot sizing and loading/error presentation.
+- Added `backend/.env.example` documenting CORS, message length, and timeout configuration.
+- Canonical content validation, frontend build, frontend tests, backend syntax, CORS allow/deny, empty-message, oversized-message, and normal chatbot checks passed.
+- The frontend test command still reports no test files and exits successfully with `--passWithNoTests`.
+- Browser-level mobile and keyboard interaction testing was not completed because the local verification environment denied loopback server binding; source-level accessibility checks and backend interaction checks passed.
+
 ## Not started
 
-- Chatbot reliability and accessibility improvements
-- Chatbot reliability and accessibility improvements
 - Asset optimization
 - Automated checks
 - Visual identity redesign
 
 ## Current working-tree note
 
-The application source was modified through Phase 3. The generated frontend content module and `frontend/build/` directory remain disposable and are explicitly ignored by Git.
+The application source was modified through Phase 5. The generated frontend content module and `frontend/build/` directory remain disposable and are explicitly ignored by Git.
 
 ## Next implementation gate
 
-The next implementation gate is to make the backend load `content/portfolio.json`, generate chatbot context from it, and remove the duplicated hardcoded portfolio facts from `backend/server.js`.
+The next implementation gate is to complete asset optimization and automated checks before beginning the visual identity redesign.

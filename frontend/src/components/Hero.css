@@ -46,7 +46,12 @@
   /* more space below CTA before buttons */
   margin-bottom: 1rem;  /* was 0.25rem */
 }
-.hero-cta strong {
+.chat-trigger {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text-color);
+  cursor: pointer;
   font-weight: 600;
 }
 .hero-cta span {

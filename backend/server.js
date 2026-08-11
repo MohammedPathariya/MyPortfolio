@@ -9,8 +9,23 @@ const OpenAI = require('openai');
 dotenv.config();
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+const defaultAllowedOrigins = [
+  'https://mjpathariya.com',
+  'https://www.mjpathariya.com',
+  'http://localhost:3000',
+];
+const allowedOrigins = (process.env.CORS_ORIGINS || defaultAllowedOrigins.join(','))
+  .split(',')
+  .map(origin => origin.trim())
+  .filter(Boolean);
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(null, false);
+  },
+}));
+app.use(express.json({ limit: '16kb' }));
 
 const defaultPortfolioPath = path.resolve(__dirname, '..', 'content', 'portfolio.json');
 const portfolioPath = process.env.PORTFOLIO_CONTENT_PATH || defaultPortfolioPath;
@@ -54,6 +69,9 @@ Verified portfolio facts:
 ${portfolioContext}
 `;
 
+const maxChatMessageLength = Number(process.env.MAX_CHAT_MESSAGE_LENGTH || 1000);
+const chatTimeoutMs = Number(process.env.CHAT_TIMEOUT_MS || 15000);
+
 const chatLimiter = rateLimit({
   windowMs: 60 * 1000,
   max: 5,
@@ -66,6 +84,8 @@ const chatLimiter = rateLimit({
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
+  timeout: chatTimeoutMs,
+  maxRetries: 0,
 });
 
 app.get('/ping', (req, res) => {
@@ -82,13 +102,18 @@ app.post('/api/chat', chatLimiter, async (req, res) => {
   if (typeof message !== 'string' || message.trim() === '') {
     return res.status(400).json({ error: 'A non-empty message is required.' });
   }
+  if (message.length > maxChatMessageLength) {
+    return res.status(413).json({
+      error: `Message must be ${maxChatMessageLength} characters or fewer.`,
+    });
+  }
 
   try {
     const completion = await openai.chat.completions.create({
       model: 'gpt-4',
       messages: [
         { role: 'system', content: systemPrompt },
-        { role: 'user', content: message }
+        { role: 'user', content: message.trim() }
       ],
     });
 

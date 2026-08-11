@@ -71,6 +71,8 @@ The available backend routes are:
 - `GET /api/portfolio` for the sanitized canonical portfolio data
 - `POST /api/chat` for chatbot requests
 
+Backend runtime configuration is documented in `backend/.env.example`, including allowed frontend origins, message length, and chatbot timeout settings.
+
 ## Deployment
 
 The deployed frontend is hosted on Vercel with the custom domain `mjpathariya.com`. The chatbot backend is hosted separately on Render.
