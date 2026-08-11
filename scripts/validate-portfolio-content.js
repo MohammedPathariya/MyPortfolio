@@ -70,11 +70,12 @@ if (!isObject(content.person)) {
   errors.push('person must be an object');
 } else {
   requireId(content.person.id, 'person.id');
-  for (const field of ['name', 'headline', 'role', 'location', 'summary', 'website', 'resumePath']) {
+  for (const field of ['name', 'headline', 'role', 'location', 'summary', 'website', 'resumePath', 'heroImage']) {
     requireString(content.person[field], `person.${field}`);
   }
   requireUrl(content.person.website, 'person.website');
   requireAsset(content.person.resumePath, 'person.resumePath');
+  requireAsset(content.person.heroImage, 'person.heroImage');
 }
 
 if (!isObject(content.contact)) {
