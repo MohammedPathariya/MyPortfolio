@@ -117,7 +117,7 @@
 
 .hero-animation {
   position: relative;
-  width: 340px;
+  width: 390px;
   max-width: 100%;
   color: var(--text-color);
 }
@@ -131,6 +131,14 @@
 
 .hero-character-ink {
   vector-effect: non-scaling-stroke;
+}
+
+.hero-head,
+.hero-wave-arm,
+.hero-wave-hand,
+.hero-left-working-hand,
+.hero-right-working-hand {
+  will-change: transform;
 }
 
 .hero-wave-arm {
@@ -150,6 +158,12 @@
 
 .hero-character--waving .hero-wave-arm {
   animation: hero-wave 1.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.hero-character--waving .hero-wave-hand {
+  animation: hero-wave-hand 900ms ease-in-out 350ms 2;
+  transform-box: view-box;
+  transform-origin: 169px 113px;
 }
 
 .hero-character--working .hero-left-working-hand {
@@ -207,6 +221,13 @@
 @keyframes hero-type-left {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(3px); }
+}
+
+@keyframes hero-wave-hand {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-7deg); }
+  50% { transform: rotate(6deg); }
+  75% { transform: rotate(-5deg); }
 }
 
 @keyframes hero-type-right {

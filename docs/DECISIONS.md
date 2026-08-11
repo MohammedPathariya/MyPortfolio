@@ -151,3 +151,9 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Use one inline SVG character with independently animated arm, hands, head, and eyes instead of generated bitmap frame sequences.
 - Why: Generated frame sheets changed scale, crop, and character details between frames. A vector rig keeps every static element aligned, renders smoothly at browser frame rate, blends with both themes, and removes the bitmap-frame payload.
+
+## D-026: Preserve the original hero character direction
+
+- Status: Accepted
+- Decision: Keep the polished manga-style male character, layered dark hair, large expressive eyes, henley placket, rolled sleeves, laptop, and mug as the visual reference while retaining the SVG rig.
+- Why: The first vector pass solved frame drift but simplified the character too far. Motion quality and illustration quality are separate concerns, so the rig stays while its artwork is redrawn to match the approved character direction.
