@@ -12,6 +12,7 @@ node_modules/
 # production
 /build
 /frontend/build/
+/frontend/src/data/portfolio.generated.js
 
 # misc
 .DS_Store

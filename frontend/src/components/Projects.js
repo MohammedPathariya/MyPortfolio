@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import ProjectCard from './ProjectCard';
 import ProjectFilter from './ProjectFilter';
-import { allProjects } from './ProjectsData';
+import portfolio from '../data/portfolio.generated';
 import './Projects.css';
 
 const Projects = () => {
@@ -11,8 +11,9 @@ const Projects = () => {
   const projectsRef = useRef(null);
 
   // Split featured vs. other projects
+  const allProjects = portfolio.projects;
   const featuredProjects = allProjects.filter(p => p.featured);
-  const otherProjects    = allProjects.filter(p => !p.featured);
+  const otherProjects = allProjects.filter(p => !p.featured);
 
   // Build tag sets
   const allTags      = Array.from(new Set(allProjects.flatMap(p => p.tags)));

@@ -1,4 +1,5 @@
 import React from 'react';
+import portfolio from '../data/portfolio.generated';
 import './Contact.css';
 
 const Contact = () => {
@@ -8,7 +9,7 @@ const Contact = () => {
     const subject = e.target.subject.value;
     const body = e.target.message.value;
 
-    window.location.href = `mailto:mjpathariya7@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${portfolio.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -23,9 +24,9 @@ const Contact = () => {
       </form>
 
       <div className="social-links">
-        <a href="https://www.linkedin.com/in/mjpathariya/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/MohammedPathariya" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.instagram.com/mohammedjp08/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href={portfolio.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href={portfolio.contact.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href={portfolio.contact.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
     </section>
   );

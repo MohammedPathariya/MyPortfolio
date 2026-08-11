@@ -91,3 +91,9 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Create and validate the canonical data before changing frontend rendering or backend prompt generation.
 - Why: This isolates content-model errors from integration errors and makes the next phases easier to verify. Temporary duplicate consumers remain until they are migrated and removed.
+
+## D-016: Generate a CRA-compatible frontend content module
+
+- Status: Accepted
+- Decision: Generate the ignored `frontend/src/data/portfolio.generated.js` module from `content/portfolio.json` before frontend start, test, and build commands.
+- Why: Create React App does not support importing a repository-root JSON file from outside `frontend/src` without configuration changes. A deterministic generated module keeps the root JSON canonical while preserving synchronous static rendering.

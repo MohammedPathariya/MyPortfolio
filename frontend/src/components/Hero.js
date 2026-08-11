@@ -1,8 +1,10 @@
 import React from 'react';
 import './Hero.css';
 import { FaLinkedin, FaGithub, FaEnvelope, FaDownload, FaInstagram } from 'react-icons/fa';
+import portfolio from '../data/portfolio.generated';
 
 const Hero = () => (
+  <>
   <section id="home" className="hero">
     <div className="hero-left">
       <h1 className="hero-heading">
@@ -10,11 +12,11 @@ const Hero = () => (
       </h1>
 
       <p className="hero-subheading">
-        Machine Learning Engineer in San Jose, California
+        {portfolio.person.role} in {portfolio.person.location}
       </p>
       {/* Two-line, left-aligned tagline */}
       <p className="hero-tagline">
-        I build agentic AI systems and LLM pipelines, from multi-agent orchestration to HPC-scale NLP.
+        {portfolio.person.tagline}
       </p>
 
       <div className="hero-cta">
@@ -29,7 +31,7 @@ const Hero = () => (
 
       <div className="hero-buttons">
         <a
-          href="/Mohammed_Resume_MLE_AIE.pdf"
+          href={portfolio.person.resumePath}
           className="hero-resume-button"
           target="_blank"
           rel="noopener noreferrer"
@@ -39,7 +41,7 @@ const Hero = () => (
 
         <div className="hero-social">
           <a
-            href="https://www.linkedin.com/in/mjpathariya/"
+            href={portfolio.contact.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -47,7 +49,7 @@ const Hero = () => (
             <FaLinkedin />
           </a>
           <a
-            href="https://github.com/MohammedPathariya"
+            href={portfolio.contact.github}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -55,14 +57,14 @@ const Hero = () => (
             <FaGithub />
           </a>
           <a
-            href="https://www.instagram.com/mohammedjp08/"
+            href={portfolio.contact.instagram}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
             <FaInstagram />
           </a>
-          <a href="mailto:mjpathariya7@gmail.com" aria-label="Email">
+          <a href={`mailto:${portfolio.contact.email}`} aria-label="Email">
             <FaEnvelope />
           </a>
         </div>
@@ -77,6 +79,7 @@ const Hero = () => (
       />
     </div>
   </section>
+  </>
 );
 
 export default Hero;

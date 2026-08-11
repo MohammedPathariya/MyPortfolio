@@ -5,6 +5,7 @@
     "id": "person-mohammed-pathariya",
     "name": "Mohammed Pathariya",
     "headline": "AI Engineer building agentic AI systems and LLM pipelines, from multi-agent orchestration to HPC-scale NLP.",
+    "tagline": "I build agentic AI systems and LLM pipelines, from multi-agent orchestration to HPC-scale NLP.",
     "role": "Machine Learning Engineer",
     "location": "San Jose, California",
     "summary": "An AI Engineer and MS in Data Science candidate at Indiana University Bloomington specializing in agentic AI systems, LLM pipelines, and HPC-scale NLP. Builds production-grade multi-agent systems, RAG pipelines, and transformer-based predictive models.",

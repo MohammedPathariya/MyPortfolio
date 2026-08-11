@@ -85,11 +85,25 @@ The baseline gate is complete because the current behavior and endpoint state ar
 - Preserved the current evidence-backed wording and existing dates, links, public asset paths, and known project limitations such as projects without live demos.
 - Added `scripts/validate-portfolio-content.js` with checks for required fields, unique IDs, valid HTTP(S) links, email format, ISO dates and date ordering, and referenced public assets.
 - Validation passed with 48 unique IDs.
-- Phase 2 is data-foundation-only. Frontend rendering and backend chatbot integration remain intentionally unstarted for Phase 3 and Phase 4.
+- Phase 2 was data-foundation-only; its consumers were migrated in Phase 3, while backend chatbot integration remains scheduled for Phase 4.
+
+## Phase 3 implementation: 2026-08-11
+
+- Added `scripts/prepare-frontend-content.js` to generate the CRA-compatible frontend module from `content/portfolio.json`.
+- Added automatic content preparation before frontend start, test, and build commands.
+- Migrated projects and filters to `portfolio.projects` and removed `ProjectsData.js`.
+- Migrated education and experience tabs to `portfolio.education` and `portfolio.experience`, using stable IDs as React keys.
+- Added a skills section rendered from `portfolio.skills`.
+- Migrated hero role, location, tagline, resume path, social links, contact email, and footer identity to canonical content.
+- Confirmed no duplicate project, experience, education, or skills data definitions remain in `frontend/src`.
+- Generated frontend content remains ignored and reproducible; only `content/portfolio.json` is version-controlled.
+- Portfolio content validation passed.
+- Frontend production build passed.
+- Frontend test command passed with no tests found, using `--passWithNoTests`.
+- The backend chatbot still uses its existing prompt and remains scheduled for Phase 4 integration.
 
 ## Not started
 
-- Frontend integration with shared content
 - Backend prompt generation from shared content
 - Environment-based chatbot URL configuration
 - Chatbot reliability and accessibility improvements
@@ -99,8 +113,8 @@ The baseline gate is complete because the current behavior and endpoint state ar
 
 ## Current working-tree note
 
-The application source was modified for Phase 1 cleanup. The generated `frontend/build/` directory remains disposable and is now explicitly ignored by Git.
+The application source was modified through Phase 3. The generated frontend content module and `frontend/build/` directory remain disposable and are explicitly ignored by Git.
 
 ## Next implementation gate
 
-The next implementation gate is to inspect the generated content model against the current project, experience, education, skills, links, and resume data. Then implement schema validation and shared content integration as a small, verifiable change.
+The next implementation gate is to make the backend load `content/portfolio.json`, generate chatbot context from it, and remove the duplicated hardcoded portfolio facts from `backend/server.js`.
