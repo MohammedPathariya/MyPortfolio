@@ -61,3 +61,15 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Build output, local secrets, dependency directories, and other generated artifacts stay out of Git unless a later deployment requirement explicitly needs them.
 - Why: These files are environment-specific, increase noise, and can expose secrets or create misleading source history.
+
+## D-011: Remove confirmed-unused source and assets
+
+- Status: Accepted
+- Decision: Delete components and public assets with no active references in the rendered frontend, metadata, or manifest instead of keeping them in the application tree.
+- Why: The old files were not part of the current page and increased maintenance cost. Reference audits were completed before removal.
+
+## D-012: Assign global CSS ownership to `index.css`
+
+- Status: Accepted
+- Decision: Keep theme variables, document-level behavior, body reset, typography defaults, and global button typography in `index.css`. Component-specific rules stay with their component stylesheets.
+- Why: The same global selectors were duplicated in `App.css`, `Projects.css`, and `ChatWidget.css`, making import-order behavior difficult to reason about.

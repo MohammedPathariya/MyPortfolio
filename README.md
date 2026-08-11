@@ -1,77 +1,73 @@
-# Portfolio Website
+# Mohammed Pathariya Portfolio
 
-This is my personal portfolio website built to showcase my **projects**, **experience**, and **skills** as a Master's student in Data Science, with a strong focus on **AI, Machine Learning, and Full-Stack Development**.
+Personal portfolio website for Mohammed Pathariya, focused on machine learning, AI engineering, data science, and full-stack project work.
 
-## 🌐 Live Site
-🔗 [Visit Portfolio](https://mjpathariya.com)
+Live site: [mjpathariya.com](https://mjpathariya.com)
 
----
+## Repository structure
 
-## 🚀 Features
+```text
+frontend/   React static site deployed on Vercel
+backend/    Express API for the portfolio chatbot, deployed separately
+docs/       Revamp plan, decisions, and implementation status
+```
 
-- Fully **responsive** design for desktop and mobile devices  
-- **Dark mode** toggle  
-- **Interactive chatbot** to answer questions about my portfolio  
-- **Projects showcase** with demos and GitHub links  
-- Highlights of **experience and skills**  
-- Smooth navigation with fixed navbar  
+The frontend and backend currently use separate deployments. The chatbot backend is not required for the portfolio page itself to render.
 
----
-
-## 🛠️ Tech Stack
-
-- **Frontend:** React.js, CSS3  
-- **Styling:** Custom responsive CSS  
-- **Hosting:** Vercel  
-- **Version Control:** Git & GitHub  
-
----
-
-## 🔥 Featured Projects
-
-- **[AudioGroove](https://audiogroove.vercel.app/)** – AI-generated music from text prompts using LSTM & self-attention.  
-- **[LearnLoop](https://learnloop-deployment-frontend.vercel.app/)** – GPT-powered AI study assistant with interactive learning features.  
-- **[The Digital Forge](https://thedigitalforge.onrender.com/)** – Autonomous multi-agent coding system.  
-- **[HandSpeak](https://handspeak-blush.vercel.app/)** – Real-time sign language detection using MediaPipe & ML.  
-- **[CodeCrafter](https://github.com/MohammedPathariya/codecrafter-language-agnostic-visualization-app)** – Language-agnostic visualization app for Python & R.  
-
----
-
-## 💼 Experience
-
-- **Data Engineering Intern** – *Sparkwood IT Solutions* *(Feb 2022 – Jul 2022)*  
-  Built Python/SQL pipelines, optimized database schemas (–40% query time), deployed backend APIs.
-
----
-
-## 🧑‍💻 Running Locally
+## Frontend setup
 
 ```bash
-# Clone the repository
-git clone https://github.com/MohammedPathariya/MyPortfolio.git
-
-# Navigate to project folder
-cd MyPortfolio/frontend
-
-# Install dependencies
+cd frontend
 npm install
-
-# Start the development server
 npm start
-````
+```
 
----
+The development site runs at `http://localhost:3000`.
 
-## 📜 License
+Create a production build with:
 
-Licensed under the MIT License.
+```bash
+npm run build
+```
 
----
+The generated `frontend/build/` directory is disposable and should not be committed.
 
-### 👨‍💻 Author
+## Backend setup
 
-**Mohammed Pathariya**
-Master’s in Data Science – Indiana University Bloomington
-[LinkedIn](https://www.linkedin.com/in/mohammedpathariya) | [GitHub](https://github.com/MohammedPathariya)
+```bash
+cd backend
+npm install
+npm start
+```
 
----
+The backend runs on port `5000` by default. Set `PORT` to use another port.
+
+Create `backend/.env` locally with:
+
+```text
+OPENAI_API_KEY=your_key_here
+PORT=5000
+```
+
+`backend/.env` is ignored by Git and must never be committed.
+
+The available backend routes are:
+
+- `GET /ping` for a health check
+- `POST /api/chat` for chatbot requests
+
+## Deployment
+
+The deployed frontend is hosted on Vercel with the custom domain `mjpathariya.com`. The chatbot backend is hosted separately on Render.
+
+Deployment settings are managed by the hosting platforms and are not stored as repository configuration files. Keep the frontend and backend environment values configured in their respective deployment dashboards.
+
+## Documentation
+
+- [Revamp plan](docs/PLAN.md)
+- [Architecture and product decisions](docs/DECISIONS.md)
+- [Current status](docs/STATUS.md)
+
+## License
+
+MIT

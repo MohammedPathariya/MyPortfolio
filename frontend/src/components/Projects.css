@@ -1,14 +1,5 @@
 /* src/components/Projects.css */
 
-/* ── Base ─────────────────────────────────────────────────────────────── */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-}
-
 /* ── Section ───────────────────────────────────────────────────────────── */
 .projects {
   background-color: var(--bg-color);

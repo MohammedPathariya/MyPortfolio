@@ -64,9 +64,21 @@ The baseline gate is complete because the current behavior and endpoint state ar
 - Added the decision log in `docs/DECISIONS.md`.
 - Added this status record in `docs/STATUS.md`.
 
+## Phase 1 implementation: 2026-08-11
+
+- Removed the unused `About`, `FeaturedProjects`, `Logo`, and `Skills` component families.
+- Removed the stale `frontend/all_code_dump.txt` snapshot.
+- Removed 12 confirmed-unused public image and illustration assets after auditing active source and metadata references.
+- Confirmed that no tracked `.DS_Store` files exist.
+- Rewrote the root README with accurate repository structure, local frontend/backend setup, environment variables, routes, deployment context, and documentation links.
+- Replaced the generic frontend README with project-specific frontend instructions.
+- Updated the PWA manifest name from the Create React App placeholder values.
+- Removed duplicate global rules from component stylesheets and assigned global CSS ownership to `frontend/src/index.css`.
+- Added an explicit `frontend/build/` ignore rule.
+- Frontend production build passed after cleanup.
+
 ## Not started
 
-- Repository cleanup
 - Canonical `content/portfolio.json` model
 - Content schema validation
 - Frontend integration with shared content
@@ -79,8 +91,8 @@ The baseline gate is complete because the current behavior and endpoint state ar
 
 ## Current working-tree note
 
-The application source was not modified in this planning step. A local generated `frontend/build/` directory was already present from the baseline build and remains untouched.
+The application source was modified for Phase 1 cleanup. The generated `frontend/build/` directory remains disposable and is now explicitly ignored by Git.
 
 ## Next implementation gate
 
-Before changing application code, inspect the generated content model against the current project, experience, education, skills, links, and resume data. Then implement schema validation and shared content integration as a small, verifiable change.
+The next implementation gate is to inspect the generated content model against the current project, experience, education, skills, links, and resume data. Then implement schema validation and shared content integration as a small, verifiable change.
