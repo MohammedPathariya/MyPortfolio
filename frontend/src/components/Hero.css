@@ -143,13 +143,8 @@
     drop-shadow(0 -1px rgba(255, 255, 255, 0.45));
 }
 
-.hero-character-base {
+.hero-character-neutral {
   position: relative;
-}
-
-.hero-character-rest-arm {
-  transform-origin: 39.2% 43%;
-  will-change: transform, opacity;
 }
 
 .hero-character-wave-arm {
@@ -157,81 +152,89 @@
   will-change: transform, opacity;
 }
 
-.hero-character-rest-arm {
-  opacity: 1;
+.hero-character-wave-base,
+.hero-character-wave-arm {
+  opacity: 0;
 }
 
 .hero-character-wave-arm {
-  opacity: 0;
   transform: rotate(-8deg);
 }
 
-.hero-character--waving .hero-character-rest-arm {
-  animation: hero-rest-arm-out 1.8s ease-in-out both;
+.hero-character--waving .hero-character-neutral {
+  animation: hero-neutral-return 1.8s linear both;
+}
+
+.hero-character--waving .hero-character-wave-base {
+  animation: hero-wave-base-exit 1.8s linear both;
 }
 
 .hero-character--waving .hero-character-wave-arm {
   animation: hero-manga-wave 1.8s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
-.hero-character--working .hero-character-rest-arm {
-  animation: hero-manga-working 2.4s ease-in-out infinite;
+.hero-character--working .hero-character-neutral {
+  animation: hero-manga-working 4.2s ease-in-out infinite;
 }
 
-.hero-character-blink {
+.hero-character-pupils,
+.hero-character-eyelids {
   position: absolute;
-  left: 47.7%;
-  top: 31.2%;
-  width: 11.5%;
-  height: 3.8%;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-character-pupils {
+  animation: hero-eyes-glance 8s ease-in-out infinite;
+}
+
+.hero-character-pupil {
+  position: absolute;
+  top: 31.8%;
+  width: 0.62%;
+  aspect-ratio: 1;
   border-radius: 50%;
   background: #fff;
-  opacity: 0;
-  pointer-events: none;
-  transform: scaleY(0.14);
-  animation: hero-manga-blink 6.5s ease-in-out infinite;
+  opacity: 0.9;
 }
 
-.hero-character-blink::before,
-.hero-character-blink::after {
-  content: '';
+.hero-character-pupil-left {
+  left: 49.55%;
+}
+
+.hero-character-pupil-right {
+  left: 54.68%;
+}
+
+.hero-character-eyelid {
   position: absolute;
-  top: 48%;
-  width: 31%;
-  border-top: 2px solid #202020;
+  top: 30.55%;
+  width: 2.9%;
+  height: 3.75%;
+  background: #fff;
+  border-bottom: 2px solid #191919;
   border-radius: 50%;
+  opacity: 0;
+  transform: scaleY(0.5);
+  transform-origin: center;
+  animation: hero-eye-blink 6.5s ease-in-out infinite;
 }
 
-.hero-character-blink::before {
-  left: 3%;
+.hero-character-eyelid-left {
+  left: 48.15%;
 }
 
-.hero-character-blink::after {
-  right: 3%;
+.hero-character-eyelid-right {
+  left: 53.28%;
 }
 
 .hero-animation.is-paused * {
   animation-play-state: paused !important;
 }
 
-@keyframes hero-rest-arm-out {
-  0% {
-    opacity: 1;
-    transform: rotate(0deg);
-  }
-  18%, 82% {
-    opacity: 0;
-    transform: rotate(-4deg);
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(0deg);
-  }
-}
-
 @keyframes hero-manga-wave {
   0% {
-    opacity: 0;
+    opacity: 1;
     transform: rotate(-8deg);
   }
   18% {
@@ -241,7 +244,7 @@
   34% { transform: rotate(-3.5deg); }
   50% { transform: rotate(3deg); }
   66% { transform: rotate(-2.5deg); }
-  82% {
+  82%, 94% {
     opacity: 1;
     transform: rotate(2deg);
   }
@@ -251,15 +254,31 @@
   }
 }
 
-@keyframes hero-manga-working {
-  0%, 100% { transform: translateY(0); }
-  35% { transform: translateY(1.5px) rotate(0.35deg); }
-  70% { transform: translateY(-0.75px) rotate(-0.2deg); }
+@keyframes hero-neutral-return {
+  0%, 94% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-@keyframes hero-manga-blink {
-  0%, 45%, 49%, 100% { opacity: 0; }
-  46.5%, 47.5% { opacity: 1; }
+@keyframes hero-wave-base-exit {
+  0%, 94% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes hero-manga-working {
+  0%, 100% { transform: translateY(0); }
+  35% { transform: translateY(0.8px); }
+  70% { transform: translateY(-0.4px); }
+}
+
+@keyframes hero-eye-blink {
+  0%, 38%, 44%, 70%, 76%, 100% { opacity: 0; }
+  40%, 42%, 72%, 74% { opacity: 1; }
+}
+
+@keyframes hero-eyes-glance {
+  0%, 18%, 48%, 66%, 100% { transform: translateX(0); }
+  24%, 40% { transform: translate(-2px, 0.25px); }
+  72%, 90% { transform: translate(2px, -0.25px); }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -46,14 +46,14 @@ const AnimatedHeroIllustration = ({ alt }) => {
       aria-label={alt}
     >
       <img
-        className="hero-character-layer hero-character-base"
-        src="/images/hero-character/base.webp"
+        className="hero-character-layer hero-character-neutral"
+        src="/images/hero-character/neutral.webp"
         alt=""
         aria-hidden="true"
       />
       <img
-        className="hero-character-layer hero-character-rest-arm"
-        src="/images/hero-character/rest-arm.webp"
+        className="hero-character-layer hero-character-wave-base"
+        src="/images/hero-character/base.webp"
         alt=""
         aria-hidden="true"
       />
@@ -63,7 +63,14 @@ const AnimatedHeroIllustration = ({ alt }) => {
         alt=""
         aria-hidden="true"
       />
-      <span className="hero-character-blink" aria-hidden="true" />
+      <span className="hero-character-pupils" aria-hidden="true">
+        <span className="hero-character-pupil hero-character-pupil-left" />
+        <span className="hero-character-pupil hero-character-pupil-right" />
+      </span>
+      <span className="hero-character-eyelids" aria-hidden="true">
+        <span className="hero-character-eyelid hero-character-eyelid-left" />
+        <span className="hero-character-eyelid hero-character-eyelid-right" />
+      </span>
     </div>
   );
 };

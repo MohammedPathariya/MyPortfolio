@@ -163,6 +163,7 @@ The local gate passed. The deployment gate remains open until Render is rebuilt 
 - Replaced generated bitmap flipbook frames with a single inline SVG rig after deployed review showed crop, scale, and alignment drift between generated frames.
 - Redrew the SVG character to restore the original manga-style henley design, including layered hair, expressive eyes, rolled cuffs, clothing folds, and a detailed open waving hand.
 - Replaced the simplified vector artwork with an approved manga raster base and registered transparent arm overlays while retaining the same one-time greeting and browser-interpolated motion architecture.
+- Replaced the default layered shoulder with one complete neutral illustration and limited compositing to the greeting transition; added visible two-stage blinking and subtle pupil movement.
 - Added a delayed one-time wave, subtle working-hand movement, blinking, off-screen animation pausing, and reduced-motion behavior.
 - Kept the illustration background transparent and made its line and fill colors follow the active site theme.
 - Removed 12 obsolete generated WebP animation frames and their canonical content fields.
