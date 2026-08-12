@@ -147,17 +147,17 @@
   position: relative;
 }
 
-.hero-character-wave-arm {
-  transform-origin: 43.4% 63.8%;
+.hero-character-wave-forearm {
+  transform-origin: 30.3% 54.8%;
   will-change: transform, opacity;
 }
 
-.hero-character-wave-base,
-.hero-character-wave-arm {
+.hero-character-wave-body,
+.hero-character-wave-forearm {
   opacity: 0;
 }
 
-.hero-character-wave-arm {
+.hero-character-wave-forearm {
   transform: rotate(-8deg);
 }
 
@@ -165,11 +165,11 @@
   animation: hero-neutral-return 1.8s linear both;
 }
 
-.hero-character--waving .hero-character-wave-base {
-  animation: hero-wave-base-exit 1.8s linear both;
+.hero-character--waving .hero-character-wave-body {
+  animation: hero-wave-body-exit 1.8s linear both;
 }
 
-.hero-character--waving .hero-character-wave-arm {
+.hero-character--waving .hero-character-wave-forearm {
   animation: hero-manga-wave 1.8s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
@@ -259,7 +259,7 @@
   100% { opacity: 1; }
 }
 
-@keyframes hero-wave-base-exit {
+@keyframes hero-wave-body-exit {
   0%, 94% { opacity: 1; }
   100% { opacity: 0; }
 }

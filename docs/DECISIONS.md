@@ -161,5 +161,5 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 ## D-027: Use registered raster layers for the hero character
 
 - Status: Accepted
-- Decision: Use a complete high-quality manga neutral pose for idle and working states, plus a registered armless base and raised-arm overlay only during the greeting. Animate the raised arm with CSS around one measured shoulder anchor.
-- Why: The inline SVG preserved motion but could not match the approved manga rendering, while assembling the neutral pose from separate body and arm images exposed a shoulder seam. A complete neutral pose removes that seam; registered greeting layers retain detailed line art and browser-interpolated movement without full-frame drift.
+- Decision: Use complete high-quality manga poses for idle and greeting states. For greeting motion, keep the shoulder and upper arm baked into the complete waving body and animate only a registered forearm overlay around the rolled cuff.
+- Why: The inline SVG preserved motion but could not match the approved manga rendering, while rotating a separate full arm exposed a shoulder seam. Complete poses remove the shoulder joint entirely, and the rolled cuff provides a natural seam for browser-interpolated forearm motion without full-frame drift.

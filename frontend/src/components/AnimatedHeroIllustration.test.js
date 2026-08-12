@@ -34,6 +34,14 @@ test('rests before waving once and then starts working', () => {
   );
   expect(container.querySelectorAll('.hero-character-pupil')).toHaveLength(2);
   expect(container.querySelectorAll('.hero-character-eyelid')).toHaveLength(2);
+  expect(container.querySelector('.hero-character-wave-body')).toHaveAttribute(
+    'src',
+    '/images/hero-character/wave-body.webp'
+  );
+  expect(container.querySelector('.hero-character-wave-forearm')).toHaveAttribute(
+    'src',
+    '/images/hero-character/wave-forearm.webp'
+  );
 });
 
 test('scrolling down skips the greeting and does not restart it', () => {

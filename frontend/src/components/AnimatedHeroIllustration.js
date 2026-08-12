@@ -52,14 +52,14 @@ const AnimatedHeroIllustration = ({ alt }) => {
         aria-hidden="true"
       />
       <img
-        className="hero-character-layer hero-character-wave-base"
-        src="/images/hero-character/base.webp"
+        className="hero-character-layer hero-character-wave-body"
+        src="/images/hero-character/wave-body.webp"
         alt=""
         aria-hidden="true"
       />
       <img
-        className="hero-character-layer hero-character-wave-arm"
-        src="/images/hero-character/wave-arm.webp"
+        className="hero-character-layer hero-character-wave-forearm"
+        src="/images/hero-character/wave-forearm.webp"
         alt=""
         aria-hidden="true"
       />
