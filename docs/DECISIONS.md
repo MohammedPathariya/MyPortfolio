@@ -148,7 +148,7 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 
 ## D-025: Animate the hero as a rigged vector illustration
 
-- Status: Accepted
+- Status: Superseded by D-027
 - Decision: Use one inline SVG character with independently animated arm, hands, head, and eyes instead of generated bitmap frame sequences.
 - Why: Generated frame sheets changed scale, crop, and character details between frames. A vector rig keeps every static element aligned, renders smoothly at browser frame rate, blends with both themes, and removes the bitmap-frame payload.
 
@@ -157,3 +157,9 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Keep the polished manga-style male character, layered dark hair, large expressive eyes, henley placket, rolled sleeves, laptop, and mug as the visual reference while retaining the SVG rig.
 - Why: The first vector pass solved frame drift but simplified the character too far. Motion quality and illustration quality are separate concerns, so the rig stays while its artwork is redrawn to match the approved character direction.
+
+## D-027: Use registered raster layers for the hero character
+
+- Status: Accepted
+- Decision: Use a high-quality manga raster base with full-canvas transparent resting-arm and waving-arm overlays. Animate the overlays with CSS around one measured shoulder anchor.
+- Why: The inline SVG preserved motion but could not match the approved manga rendering. Registered raster layers preserve detailed line art while retaining browser-interpolated movement and fixed coordinates, avoiding the drift caused by full-frame image sequences.

@@ -162,10 +162,11 @@ The local gate passed. The deployment gate remains open until Render is rebuilt 
 - Started the visual identity work with a custom front-facing male character in a rolled-sleeve henley, seated with a laptop and mug.
 - Replaced generated bitmap flipbook frames with a single inline SVG rig after deployed review showed crop, scale, and alignment drift between generated frames.
 - Redrew the SVG character to restore the original manga-style henley design, including layered hair, expressive eyes, rolled cuffs, clothing folds, and a detailed open waving hand.
+- Replaced the simplified vector artwork with an approved manga raster base and registered transparent arm overlays while retaining the same one-time greeting and browser-interpolated motion architecture.
 - Added a delayed one-time wave, subtle working-hand movement, blinking, off-screen animation pausing, and reduced-motion behavior.
 - Kept the illustration background transparent and made its line and fill colors follow the active site theme.
 - Removed 12 obsolete generated WebP animation frames and their canonical content fields.
-- Frontend tests, production build, canonical content validation, and asset validation passed.
+- Frontend tests, production build, canonical content validation, asset validation, and browser-level animation inspection passed.
 
 ## Remaining visual work
 

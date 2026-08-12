@@ -28,6 +28,10 @@ test('rests before waving once and then starts working', () => {
 
   act(() => jest.advanceTimersByTime(1800));
   expect(illustration).toHaveClass('hero-character--working');
+  expect(container.querySelector('.hero-character-base')).toHaveAttribute(
+    'src',
+    '/images/hero-character/base.webp'
+  );
 });
 
 test('scrolling down skips the greeting and does not restart it', () => {
