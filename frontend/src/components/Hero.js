@@ -1,7 +1,6 @@
 import React from 'react';
 import './Hero.css';
 import AnimatedHeroIllustration from './AnimatedHeroIllustration';
-import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from 'react-icons/fa';
 import portfolio from '../data/portfolio.generated';
 
 const Hero = () => (
@@ -21,37 +20,20 @@ const Hero = () => (
         </button>
       </div>
 
-      <div className="hero-buttons">
+      <div className="hero-links" aria-label="Professional links">
         <a
           href={portfolio.person.resumePath}
-          className="hero-resume-button"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Resume <FaDownload />
+          Resume
         </a>
-
-        <div className="hero-social">
-          <a
-            href={portfolio.contact.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href={portfolio.contact.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <FaGithub />
-          </a>
-          <a href={`mailto:${portfolio.contact.email}`} aria-label="Email">
-            <FaEnvelope />
-          </a>
-        </div>
+        <span aria-hidden="true">·</span>
+        <a href={portfolio.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <span aria-hidden="true">·</span>
+        <a href={portfolio.contact.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+        <span aria-hidden="true">·</span>
+        <a href={`mailto:${portfolio.contact.email}`}>Email</a>
       </div>
     </div>
 
