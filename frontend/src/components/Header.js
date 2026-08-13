@@ -18,8 +18,8 @@ const Header = () => {
           <a className="header-name" href="#home">Mohammed Pathariya</a>
 
           <nav className="nav-links" aria-label="Primary navigation">
-            <a href="#work">Work</a>
-            <a href="#projects">Projects</a>
+            <a href="#work">Projects</a>
+            <a href="#background">Path</a>
             <a href="#contact">Contact</a>
           </nav>
 

@@ -4,7 +4,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer id="contact" className="site-footer">
+    <footer className="site-footer">
       <div>
         <h2>Let&apos;s build something that works.</h2>
         <a className="footer-email" href={`mailto:${portfolio.contact.email}`}>{portfolio.contact.email}</a>

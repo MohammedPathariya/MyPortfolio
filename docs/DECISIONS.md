@@ -169,3 +169,9 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Present featured work as concise numbered records with integrated evidence and external links, place the background after work in separate experience and education groups, and replace the contact form with a direct contact footer. Keep the header sticky with a gradient surface and retain the existing chatbot entry points.
 - Why: The previous card grid, filters, logo-heavy background tabs, and contact form made the page denser than the approved direction. Rendering the same canonical content through compact records preserves proof and links while making the hierarchy easier to scan. The hero animation is a finalized asset and remains structurally untouched.
+
+## D-029: Standardize project actions and restore the email contact form
+
+- Status: Accepted
+- Decision: Give every project the same sequence of description, optional primary evidence, and one shared row for external links and details. Restore a subject-and-message form that opens a prefilled email draft rather than submitting data to a new service.
+- Why: The earlier record layout split actions across different vertical positions, making projects hard to scan. The mailto form restores a direct contact path with no backend, storage, or privacy surface to maintain.

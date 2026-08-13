@@ -52,11 +52,8 @@
 }
 
 .project-evidence {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 1rem;
-  align-items: baseline;
   margin-top: 0.7rem;
+  margin-bottom: 0;
   color: var(--muted-color);
   font-size: 0.82rem;
 }
@@ -69,6 +66,15 @@
 .project-links {
   display: inline-flex;
   gap: 0.85rem;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.7rem;
+  font-size: 0.82rem;
 }
 
 .project-links a,
@@ -90,8 +96,7 @@
 }
 
 .project-details-toggle {
-  margin-top: 0.65rem;
-  font-size: 0.82rem;
+  font-size: inherit;
 }
 
 .project-details {

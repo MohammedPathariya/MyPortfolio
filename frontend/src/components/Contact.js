@@ -14,22 +14,18 @@ const Contact = () => {
 
   return (
     <section id="contact" className="contact-section">
-      <h2>Contact</h2>
-      <p>Feel free to reach out via email or connect with me on other platforms.</p>
+      <div className="contact-heading">
+        <h2>Contact</h2>
+        <p>Send a note and your email app will open with the subject and message ready to review.</p>
+      </div>
 
       <form className="contact-form" onSubmit={handleSubmit}>
         <label htmlFor="contact-subject">Subject</label>
         <input id="contact-subject" type="text" name="subject" placeholder="Subject" autoComplete="off" required />
         <label htmlFor="contact-message">Message</label>
         <textarea id="contact-message" name="message" placeholder="Message" rows="5" required></textarea>
-        <button type="submit">Send</button>
+        <button type="submit">Open email draft <span aria-hidden="true">&rarr;</span></button>
       </form>
-
-      <nav className="social-links" aria-label="Social links">
-        <a href={portfolio.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href={portfolio.contact.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href={portfolio.contact.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
     </section>
   );
 };

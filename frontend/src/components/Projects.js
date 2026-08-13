@@ -21,20 +21,22 @@ const ProjectRow = ({ project, index }) => {
       <div className="project-content">
         <h3>{project.title}</h3>
         <p className="project-description">{project.description}</p>
-        <div className="project-evidence">
-          {project.metrics[0] && <strong>{project.metrics[0]}</strong>}
-          <ProjectLinks project={project} />
-        </div>
+        {project.metrics[0] && (
+          <p className="project-evidence"><strong>{project.metrics[0]}</strong></p>
+        )}
         {hasDetails && (
           <>
-            <button
-              type="button"
-              className="project-details-toggle"
-              onClick={() => setDetailsOpen((open) => !open)}
-              aria-expanded={detailsOpen}
-            >
-              {detailsOpen ? 'Hide details' : 'More details'} <span aria-hidden="true">{detailsOpen ? '−' : '+'}</span>
-            </button>
+            <div className="project-actions">
+              <ProjectLinks project={project} />
+              <button
+                type="button"
+                className="project-details-toggle"
+                onClick={() => setDetailsOpen((open) => !open)}
+                aria-expanded={detailsOpen}
+              >
+                {detailsOpen ? 'Hide details' : 'More details'} <span aria-hidden="true">{detailsOpen ? '−' : '+'}</span>
+              </button>
+            </div>
             {detailsOpen && (
               <div className="project-details">
                 {project.metrics.slice(1).map((metric) => <p key={metric}>{metric}</p>)}
@@ -43,6 +45,7 @@ const ProjectRow = ({ project, index }) => {
             )}
           </>
         )}
+        {!hasDetails && <div className="project-actions"><ProjectLinks project={project} /></div>}
       </div>
     </article>
   );
