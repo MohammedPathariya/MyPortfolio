@@ -26,14 +26,16 @@
 
 .background-entry {
   display: grid;
-  grid-template-columns: 6rem minmax(0, 1fr);
+  grid-template-columns: 10rem minmax(0, 1fr);
   gap: 1rem;
 }
 
 .background-period {
+  align-self: start;
   padding-top: 0.15rem;
   color: var(--muted-color);
   font-size: 0.78rem;
+  white-space: nowrap;
 }
 
 .background-entry h4 {
