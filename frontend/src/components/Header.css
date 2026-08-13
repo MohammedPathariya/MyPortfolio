@@ -69,6 +69,11 @@
   height: 1.1em;
 }
 
+.theme-toggle-moon svg {
+  width: 0.9em;
+  height: 0.9em;
+}
+
 .theme-toggle:focus-visible,
 .chat-toggle:focus-visible {
   outline: 3px solid var(--accent-color);
