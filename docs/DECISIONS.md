@@ -187,3 +187,9 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Style the existing chatbot entirely with the global theme tokens and use the same restrained borders, compact controls, and typography as the rest of the portfolio.
 - Why: The chatbot remains a useful portfolio entry point, but its former hardcoded grays, Segoe UI typeface, and oversized rounded controls visually belonged to the previous site.
+
+## D-032: Make chatbot answers scan-first
+
+- Status: Accepted
+- Decision: Give the chatbot a strict short-response contract: one direct opening sentence, up to three bullets, a default 90-word limit, and URLs copied verbatim from canonical portfolio facts.
+- Why: The chatbot should help visitors scan the portfolio, not reproduce long project summaries or fabricate alternative destinations.

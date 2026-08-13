@@ -186,6 +186,7 @@ The local gate passed. The deployment gate remains open until Render is rebuilt 
 - Standardized project records so actions stay in one row, renamed header links to Projects, Path, and Contact, widened the chatbot/theme control spacing, and restored the prefilled email contact form.
 - Renamed the project anchor to `#projects`, aligned and equalized the header controls, removed hero-control borders, and rewrote the canonical hero copy to avoid repetitive AI terminology.
 - Restyled the chatbot in both themes using the portfolio's global color tokens, compact spacing, and minimal controls without changing chat behavior or its backend data path.
+- Added a scan-first chatbot response contract that limits default answers, keeps project explanations concise, and requires links to be copied verbatim from canonical content.
 
 ## Current working-tree note
 
