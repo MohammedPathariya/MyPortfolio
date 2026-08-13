@@ -172,7 +172,17 @@ The local gate passed. The deployment gate remains open until Render is rebuilt 
 
 ## Remaining visual work
 
-- Complete the broader typography, color, spacing, layout, and component redesign after the hero direction is approved.
+- Complete any follow-up visual refinements after deployed review.
+
+## Phase 7 visual redesign implementation: 2026-08-13
+
+- Replaced the centered navigation with a sticky, gradient-backed header containing the home link, Work, Projects, Contact, chatbot, and theme controls.
+- Rebuilt the page around an editorial hero while preserving the existing `AnimatedHeroIllustration` component and all of its registered raster layers and motion behavior.
+- Replaced the filterable card grid with numbered project records sourced from canonical portfolio content, including integrated evidence, GitHub and demo links, per-project details, and a full-project expansion control.
+- Replaced logo-heavy background tabs with separate newest-first Experience and Education groups sourced from canonical content.
+- Replaced the contact form and generic footer with a compact direct-contact footer while preserving email, GitHub, LinkedIn, and resume destinations.
+- Removed the now-unrepresented skills and contact-form sections from the rendered page without removing their source files.
+- Canonical content validation, frontend tests, production build, desktop and mobile browser checks, chatbot opening, project expansion, and animation asset loading passed locally.
 
 ## Current working-tree note
 

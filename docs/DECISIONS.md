@@ -163,3 +163,9 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Use complete high-quality manga poses for idle and greeting states. For greeting motion, keep the shoulder and upper arm baked into the complete waving body and animate only a registered forearm overlay around the rolled cuff.
 - Why: The inline SVG preserved motion but could not match the approved manga rendering, while rotating a separate full arm exposed a shoulder seam. Complete poses remove the shoulder joint entirely, and the rolled cuff provides a natural seam for browser-interpolated forearm motion without full-frame drift.
+
+## D-028: Use an editorial portfolio layout with canonical records
+
+- Status: Accepted
+- Decision: Present featured work as concise numbered records with integrated evidence and external links, place the background after work in separate experience and education groups, and replace the contact form with a direct contact footer. Keep the header sticky with a gradient surface and retain the existing chatbot entry points.
+- Why: The previous card grid, filters, logo-heavy background tabs, and contact form made the page denser than the approved direction. Rendering the same canonical content through compact records preserves proof and links while making the hierarchy easier to scan. The hero animation is a finalized asset and remains structurally untouched.

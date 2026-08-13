@@ -15,31 +15,28 @@ const Header = () => {
     <>
       <header className="site-header">
         <div className="header-container">
-          {/* Nav links */}
+          <a className="header-name" href="#home">Mohammed Pathariya</a>
+
           <nav className="nav-links" aria-label="Primary navigation">
-            <a href="#home">Home</a>
+            <a href="#work">Work</a>
             <a href="#projects">Projects</a>
-            <a href="#education-experience">Journey</a>
             <a href="#contact">Contact</a>
           </nav>
 
-          {/* Theme toggle & chat button */}
           <div className="header-controls">
-            <ThemeToggle />
             <button
-              // Adds the 'strikethrough' class when chat is not shown
-              className={`chat-toggle ${!showChat ? 'strikethrough' : ''}`}
+              className="chat-toggle"
               onClick={handleChatClick}
               aria-label={showChat ? 'Close chat' : 'Open chat'}
               aria-expanded={showChat}
             >
               <TbMessageChatbot />
             </button>
+            <ThemeToggle />
           </div>
         </div>
       </header>
 
-      {/* Render chatbot */}
       <ChatWidget isOpen={showChat} />
     </>
   );

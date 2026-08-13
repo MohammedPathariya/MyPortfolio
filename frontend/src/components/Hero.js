@@ -1,32 +1,23 @@
 import React from 'react';
 import './Hero.css';
 import AnimatedHeroIllustration from './AnimatedHeroIllustration';
-import { FaLinkedin, FaGithub, FaEnvelope, FaDownload, FaInstagram } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from 'react-icons/fa';
 import portfolio from '../data/portfolio.generated';
 
 const Hero = () => (
-  <>
   <section id="home" className="hero">
     <div className="hero-left">
-      <h1 className="hero-heading">
-        Hi, Mohammed here <span role="img" aria-label="waving hand">👋</span>
-      </h1>
+      <p className="hero-eyebrow">Hi, I&apos;m Mohammed Pathariya.</p>
+      <h1 className="hero-heading">I build AI systems that hold up in the real world.</h1>
+      <p className="hero-tagline">{portfolio.person.headline}</p>
 
-      <p className="hero-subheading">
-        {portfolio.person.role} in {portfolio.person.location}
-      </p>
-      {/* Two-line, left-aligned tagline */}
-      <p className="hero-tagline">
-        {portfolio.person.tagline}
-      </p>
-
-      <div className="hero-cta">
+      <div className="hero-chat-cta">
         <button
           type="button"
-          className="chat-trigger" 
+          className="chat-trigger"
           onClick={() => document.querySelector('.chat-toggle').click()}
         >
-          Have questions? Chat with my AI assistant <span>&rarr;</span>
+          Have questions? Ask my portfolio assistant <span>&rarr;</span>
         </button>
       </div>
 
@@ -57,14 +48,6 @@ const Hero = () => (
           >
             <FaGithub />
           </a>
-          <a
-            href={portfolio.contact.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <FaInstagram />
-          </a>
           <a href={`mailto:${portfolio.contact.email}`} aria-label="Email">
             <FaEnvelope />
           </a>
@@ -78,7 +61,6 @@ const Hero = () => (
       />
     </div>
   </section>
-  </>
 );
 
 export default Hero;

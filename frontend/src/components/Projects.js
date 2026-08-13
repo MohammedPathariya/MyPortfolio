@@ -1,105 +1,77 @@
-// src/components/Projects.js
-import React, { useState, useRef } from 'react';
-import ProjectCard from './ProjectCard';
-import ProjectFilter from './ProjectFilter';
+import React, { useState } from 'react';
 import portfolio from '../data/portfolio.generated';
 import './Projects.css';
 
-const Projects = () => {
-  const [selectedTags, setSelectedTags] = useState(['All']);
-  const [showAll, setShowAll] = useState(false);
-  const projectsRef = useRef(null);
+const ProjectLinks = ({ project }) => (
+  <span className="project-links">
+    <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&rarr;</span></a>
+    {project.demo && (
+      <a href={project.demo} target="_blank" rel="noopener noreferrer">Demo <span aria-hidden="true">&rarr;</span></a>
+    )}
+  </span>
+);
 
-  // Split featured vs. other projects
-  const allProjects = portfolio.projects;
-  const featuredProjects = allProjects.filter(p => p.featured);
-  const otherProjects = allProjects.filter(p => !p.featured);
-
-  // Build tag sets
-  const allTags      = Array.from(new Set(allProjects.flatMap(p => p.tags)));
-  const featuredTags = Array.from(new Set(featuredProjects.flatMap(p => p.tags)));
-
-  // Filter featured and full lists by tags
-  const filteredFeatured = selectedTags.includes('All')
-    ? featuredProjects
-    : featuredProjects.filter(p =>
-        p.tags.some(tag => selectedTags.includes(tag))
-      );
-
-  const filteredFull = selectedTags.includes('All')
-    ? [...featuredProjects, ...otherProjects]
-    : [...featuredProjects, ...otherProjects].filter(p =>
-        p.tags.some(tag => selectedTags.includes(tag))
-      );
-
-  // Decide which list to render
-  const projectsToShow = showAll ? filteredFull : filteredFeatured;
-
-  // Chunk into rows of 3
-  const chunk = arr => {
-    const rows = [];
-    for (let i = 0; i < arr.length; i += 3) {
-      rows.push(arr.slice(i, i + 3));
-    }
-    return rows;
-  };
-
-  const handleToggle = () => {
-    const newShowAll = !showAll;
-    setShowAll(newShowAll);
-    if (showAll) {
-      // Reset filters when collapsing
-      setSelectedTags(['All']);
-    }
-    // Smooth scroll with offset for navbar
-    const nav = document.querySelector('nav');
-    const navHeight = nav ? nav.offsetHeight : 0;
-    const top =
-      projectsRef.current.getBoundingClientRect().top +
-      window.scrollY -
-      navHeight;
-    window.scrollTo({ top, behavior: 'smooth' });
-  };
+const ProjectRow = ({ project, index }) => {
+  const [detailsOpen, setDetailsOpen] = useState(false);
+  const hasDetails = project.metrics.length > 1 || project.tags.length > 0;
 
   return (
-    <section id="projects" className="projects" ref={projectsRef}>
-      <div className="projects-header">
-        <h2 className="projects-title">
-          {showAll ? 'All Projects' : 'Featured Projects'}
-        </h2>
-        <a
-          href="#projects"
-          className="toggle-link"
-          onClick={e => {
-            e.preventDefault();
-            handleToggle();
-          }}
-        >
-          {showAll ? 'Show Featured Only' : 'View All Projects'}
-        </a>
+    <article className="project-row">
+      <span className="project-index">{String(index + 1).padStart(2, '0')}</span>
+      <div className="project-content">
+        <h3>{project.title}</h3>
+        <p className="project-description">{project.description}</p>
+        <div className="project-evidence">
+          {project.metrics[0] && <strong>{project.metrics[0]}</strong>}
+          <ProjectLinks project={project} />
+        </div>
+        {hasDetails && (
+          <>
+            <button
+              type="button"
+              className="project-details-toggle"
+              onClick={() => setDetailsOpen((open) => !open)}
+              aria-expanded={detailsOpen}
+            >
+              {detailsOpen ? 'Hide details' : 'More details'} <span aria-hidden="true">{detailsOpen ? '−' : '+'}</span>
+            </button>
+            {detailsOpen && (
+              <div className="project-details">
+                {project.metrics.slice(1).map((metric) => <p key={metric}>{metric}</p>)}
+                <p className="project-tags">{project.tags.join(' · ')}</p>
+              </div>
+            )}
+          </>
+        )}
       </div>
+    </article>
+  );
+};
 
-      {/* Show only featuredTags initially, then allTags */}
-      <ProjectFilter
-        tags={showAll ? allTags : featuredTags}
-        selectedTags={selectedTags}
-        onTagChange={setSelectedTags}
-      />
+const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+  const featured = portfolio.projects.filter((project) => project.featured);
+  const visibleProjects = showAll ? portfolio.projects : featured;
 
-      <div className="project-wrapper">
-        {chunk(projectsToShow).map((row, rowIndex) => (
-          <div
-            key={rowIndex}
-            className={`project-row ${
-              rowIndex === chunk(projectsToShow).length - 1 ? 'last-row' : ''
-            }`}
-          >
-            {row.map(project => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
-          </div>
+  return (
+    <section id="work" className="projects">
+      <div className="section-heading">
+        <h2>Selected work</h2>
+        <span>systems / research / product</span>
+      </div>
+      <div id="projects">
+        {visibleProjects.map((project, index) => (
+          <ProjectRow key={project.id} project={project} index={index} />
         ))}
       </div>
+      <button
+        type="button"
+        className="all-projects-toggle"
+        onClick={() => setShowAll((open) => !open)}
+        aria-expanded={showAll}
+      >
+        {showAll ? 'Show selected work only' : 'View all projects'} <span aria-hidden="true">&rarr;</span>
+      </button>
     </section>
   );
 };

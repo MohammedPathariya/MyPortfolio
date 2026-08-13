@@ -1,14 +1,20 @@
 /* Global theme, reset, and typography ownership. */
 :root {
-  --bg-color: #ffffff;
-  --text-color: #333333;
-  --accent-color: #2a9d8f;
+  --bg-color: #fbfcfa;
+  --text-color: #242826;
+  --accent-color: #2da69b;
+  --muted-color: #707975;
+  --line-color: #d8dfda;
+  --surface-color: #f1f6f3;
 }
 
 .dark {
-  --bg-color: #121212;
-  --text-color: #f0f0f0;
-  --accent-color: #4f9d92;
+  --bg-color: #141716;
+  --text-color: #f4f7f4;
+  --accent-color: #69cfc1;
+  --muted-color: #abb6b0;
+  --line-color: #37433d;
+  --surface-color: #202724;
 }
 
 html {
@@ -21,7 +27,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
                Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
                sans-serif;
-  padding-top: 72px;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
