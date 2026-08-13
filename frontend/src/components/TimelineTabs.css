@@ -30,12 +30,24 @@
   gap: 1rem;
 }
 
-.background-period {
+.background-meta {
   align-self: start;
   padding-top: 0.15rem;
+}
+
+.background-period,
+.background-location {
+  display: block;
   color: var(--muted-color);
   font-size: 0.78rem;
+}
+
+.background-period {
   white-space: nowrap;
+}
+
+.background-location {
+  margin-top: 0.2rem;
 }
 
 .background-entry h4 {

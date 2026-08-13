@@ -10,7 +10,10 @@ const BackgroundGroup = ({ title, items, detailKey, titleKey, institutionKey }) 
     <div className="background-list">
       {items.sort(byNewestEndDate).map((item) => (
         <article className="background-entry" key={item.id}>
-          <span className="background-period">{item.period}</span>
+          <div className="background-meta">
+            <span className="background-period">{item.period}</span>
+            <span className="background-location">{item.location}</span>
+          </div>
           <div>
             <h4>{item[titleKey]}</h4>
             <p className="background-institution">{item[institutionKey]}</p>
