@@ -181,3 +181,9 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Render the hero role, headline, and supporting statement from the `person` record and use `#projects` as the dedicated project anchor.
 - Why: The hero should describe the portfolio concretely without duplicated hardcoded claims, and a project navigation label must resolve to a project-specific anchor rather than the former generic work identifier.
+
+## D-031: Make the chatbot share the portfolio visual system
+
+- Status: Accepted
+- Decision: Style the existing chatbot entirely with the global theme tokens and use the same restrained borders, compact controls, and typography as the rest of the portfolio.
+- Why: The chatbot remains a useful portfolio entry point, but its former hardcoded grays, Segoe UI typeface, and oversized rounded controls visually belonged to the previous site.

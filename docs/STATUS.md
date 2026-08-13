@@ -185,6 +185,7 @@ The local gate passed. The deployment gate remains open until Render is rebuilt 
 - Canonical content validation, frontend tests, production build, desktop and mobile browser checks, chatbot opening, project expansion, and animation asset loading passed locally.
 - Standardized project records so actions stay in one row, renamed header links to Projects, Path, and Contact, widened the chatbot/theme control spacing, and restored the prefilled email contact form.
 - Renamed the project anchor to `#projects`, aligned and equalized the header controls, removed hero-control borders, and rewrote the canonical hero copy to avoid repetitive AI terminology.
+- Restyled the chatbot in both themes using the portfolio's global color tokens, compact spacing, and minimal controls without changing chat behavior or its backend data path.
 
 ## Current working-tree note
 
