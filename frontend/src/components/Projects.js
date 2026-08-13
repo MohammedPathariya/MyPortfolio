@@ -57,12 +57,12 @@ const Projects = () => {
   const visibleProjects = showAll ? portfolio.projects : featured;
 
   return (
-    <section id="work" className="projects">
+    <section id="projects" className="projects">
       <div className="section-heading">
         <h2>Selected work</h2>
         <span>systems / research / product</span>
       </div>
-      <div id="projects">
+      <div>
         {visibleProjects.map((project, index) => (
           <ProjectRow key={project.id} project={project} index={index} />
         ))}

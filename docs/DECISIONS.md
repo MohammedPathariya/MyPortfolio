@@ -175,3 +175,9 @@ This file records major decisions for the portfolio revamp. Add new decisions ra
 - Status: Accepted
 - Decision: Give every project the same sequence of description, optional primary evidence, and one shared row for external links and details. Restore a subject-and-message form that opens a prefilled email draft rather than submitting data to a new service.
 - Why: The earlier record layout split actions across different vertical positions, making projects hard to scan. The mailto form restores a direct contact path with no backend, storage, or privacy surface to maintain.
+
+## D-030: Keep hero copy in canonical portfolio content
+
+- Status: Accepted
+- Decision: Render the hero role, headline, and supporting statement from the `person` record and use `#projects` as the dedicated project anchor.
+- Why: The hero should describe the portfolio concretely without duplicated hardcoded claims, and a project navigation label must resolve to a project-specific anchor rather than the former generic work identifier.

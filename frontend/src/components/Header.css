@@ -11,8 +11,8 @@
   width: min(1080px, calc(100% - 3rem));
   height: 100%;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 1.5rem;
 }
@@ -27,7 +27,6 @@
 
 .nav-links {
   display: flex;
-  margin-left: auto;
   gap: 1.5rem;
 }
 .nav-links a {
@@ -45,8 +44,10 @@
 
 .header-controls {
   display: flex;
+  justify-self: end;
   align-items: center;
   gap: 1.5rem;
+  line-height: 0;
 }
 
 .theme-toggle,
@@ -59,6 +60,13 @@
   color: var(--muted-color);
   opacity: 1;
   transition: opacity 0.2s, color 0.2s;
+}
+
+.theme-toggle svg,
+.chat-toggle svg {
+  display: block;
+  width: 1.1em;
+  height: 1.1em;
 }
 
 .theme-toggle:focus-visible,

@@ -7,9 +7,9 @@ import portfolio from '../data/portfolio.generated';
 const Hero = () => (
   <section id="home" className="hero">
     <div className="hero-left">
-      <p className="hero-eyebrow">Hi, I&apos;m Mohammed Pathariya.</p>
-      <h1 className="hero-heading">I build AI systems that hold up in the real world.</h1>
-      <p className="hero-tagline">{portfolio.person.headline}</p>
+      <p className="hero-eyebrow">{portfolio.person.role}</p>
+      <h1 className="hero-heading">{portfolio.person.headline}</h1>
+      <p className="hero-tagline">{portfolio.person.tagline}</p>
 
       <div className="hero-chat-cta">
         <button
@@ -17,7 +17,7 @@ const Hero = () => (
           className="chat-trigger"
           onClick={() => document.querySelector('.chat-toggle').click()}
         >
-          Have questions? Ask my portfolio assistant <span>&rarr;</span>
+          Questions about the work? Ask the portfolio assistant <span>&rarr;</span>
         </button>
       </div>
 

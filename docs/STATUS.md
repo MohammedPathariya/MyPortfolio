@@ -184,6 +184,7 @@ The local gate passed. The deployment gate remains open until Render is rebuilt 
 - Removed the now-unrepresented skills and contact-form sections from the rendered page without removing their source files.
 - Canonical content validation, frontend tests, production build, desktop and mobile browser checks, chatbot opening, project expansion, and animation asset loading passed locally.
 - Standardized project records so actions stay in one row, renamed header links to Projects, Path, and Contact, widened the chatbot/theme control spacing, and restored the prefilled email contact form.
+- Renamed the project anchor to `#projects`, aligned and equalized the header controls, removed hero-control borders, and rewrote the canonical hero copy to avoid repetitive AI terminology.
 
 ## Current working-tree note
 
