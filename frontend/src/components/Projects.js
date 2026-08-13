@@ -59,7 +59,7 @@ const Projects = () => {
   return (
     <section id="projects" className="projects">
       <div className="section-heading">
-        <h2>Selected work</h2>
+        <h2>Projects</h2>
         <span>systems / research / product</span>
       </div>
       <div>
